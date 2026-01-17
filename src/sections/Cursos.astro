@@ -1,0 +1,60 @@
+---
+import CardLinkRectangle from '../components/CardLinkRectangle.astro'
+import CardLinkSquare from '../components/CardLinkSquare.astro'
+import TestimonyCard from '../components/TestimonyCard.astro'
+import TrustNumbers from '../components/TrustNumbers.astro'
+import Wrapper from '../components/Wrapper.astro'
+---
+
+<Wrapper>
+    <p>Cursos Section</p>
+
+    <section class="trust-container">
+        <TrustNumbers num="300" title="Egresados" />
+        <TrustNumbers num="1200" title="Clases impartidas" />
+        <TrustNumbers num="15" title="Trayectoria" />
+    </section>
+
+    <section class="grid">
+        <CardLinkSquare title="Salud y Belleza" path="img/saludybelleza.png" />
+        <CardLinkSquare title="Administración" path="img/saludybelleza.png" />
+        <CardLinkRectangle title="Organización de eventos" path="img/saludybelleza.png" />
+        <CardLinkSquare title="Oficios" path="img/saludybelleza.png" />
+        <CardLinkSquare title="Diseño y Marketing" path="img/saludybelleza.png" />
+    </section>
+
+    <section>
+        <TestimonyCard path="img/saludybelleza.png">
+            <Fragment slot="quote">
+                Las clases son excelentes a nivel profesional al igual que los docentes, super cálidos, amables y dispuestos a enseñarte hasta que aprendas de verdad
+            </Fragment>
+            <Fragment slot="author">
+                María G.
+            </Fragment>
+            <Fragment slot="role">
+                Egresada en Marketing
+            </Fragment>
+        </TestimonyCard>
+    </section>
+
+
+</Wrapper>
+
+<style>
+    .trust-container {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .row {
+        display: flex;
+        gap: 0.75rem;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+    }
+</style>

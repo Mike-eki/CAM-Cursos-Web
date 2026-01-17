@@ -1,0 +1,66 @@
+---
+import ArrowDownIcon from "../icons/ArrowDownIcon.astro";
+import CAMIcon from "../icons/CAMIcon.astro";
+
+---
+
+<main>
+    <header>
+        <CAMIcon />
+        <h1>Formarte con acompañamiento hace la diferencia</h1>
+    </header>
+
+    <footer>
+        <h2>¡Descubre lo que te espera!</h2>
+        <ArrowDownIcon />
+    </footer>
+</main>
+
+
+<style>
+    main {
+        background-image: url('img/hero-image.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        aspect-ratio: 1;
+        overflow: hidden;
+        box-sizing: border-box;
+        background-clip: padding-box;
+    }
+
+    main > * {
+        box-sizing: border-box;
+    }
+    h1, h2 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        text-align: center;
+        margin: 0;
+    }
+
+    header, footer {
+        padding-inline: 0.75rem;
+        padding-block: 1rem;
+        background-color: var(--color-container-bg);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    header {
+        gap: 0.5rem;
+    }
+    footer {
+        gap: 1.25rem;
+        border-radius: inherit;
+        overflow: hidden;
+    }
+
+
+</style>

@@ -1,0 +1,66 @@
+---
+import StarIcon from "../icons/StarIcon.astro";
+
+const { path, desc } = Astro.props;
+
+---
+
+<blockquote>
+    <header>
+        <q>
+            <slot name="quote" />
+        </q>
+    </header>
+    <footer>
+        <img src={ path } alt={ desc }>
+        <aside>
+            <p>
+                <slot name="author" />
+                <span>
+                    <StarIcon />
+                    <StarIcon />
+                    <StarIcon />
+                    <StarIcon />
+                    <StarIcon />
+                </span>
+            </p>
+            <small>
+                <slot name="role" />
+            </small>
+        </aside>
+    </footer>
+</blockquote>
+
+<style>
+    blockquote {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        border: 1px solid var(--color-bg-card-border);
+        border-radius: 1rem;
+        padding: 1.75rem;
+        margin: 0;
+    }
+    img {
+        max-width: 100%;
+        aspect-ratio: 1;
+        width: 3.5rem;
+        border-radius: 100%;
+    }
+
+    footer {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+    p {
+        margin: 0
+    }
+
+    aside {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+</style>

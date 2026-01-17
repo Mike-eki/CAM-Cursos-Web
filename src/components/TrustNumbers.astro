@@ -1,0 +1,39 @@
+---
+import PlusIcon from "../icons/PlusIcon.astro"
+
+const { num = "100", title } = Astro.props
+---
+
+<aside>
+    <p>+{ num }</p>
+    <span>{ title }</span>
+    <PlusIcon />
+</aside>
+
+<style>
+    aside {
+        width: -webkit-fill-available;
+        width: -moz-available;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.75rem;
+        border: 1px solid var(--color-bg-card-border);
+        border-radius: 1rem;
+        padding-inline: 0.5rem;
+        padding-block: 0.75rem;
+    }
+
+    p {
+        font-weight: 600;
+        margin: 0;
+        text-align: center;
+    }
+    span {
+        font-size: 0.75rem;
+        text-align: center;
+    }
+
+</style>
