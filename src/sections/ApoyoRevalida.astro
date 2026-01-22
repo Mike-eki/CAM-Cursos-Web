@@ -1,7 +1,118 @@
 ---
+import CardLinkRectangle from '../components/CardLinkRectangle.astro'
+import CTAButton from '../components/CTAButton.astro'
+import TestimonyCard from '../components/TestimonyCard.astro'
+import TrustNumbers from '../components/TrustNumbers.astro'
 import Wrapper from '../components/Wrapper.astro'
+import GraduateHatIcon from '../icons/GraduateHatIcon.astro'
 ---
 
-<Wrapper>
-    <p>Apoyo Revalida Section</p>
+<Wrapper classname="mobile-wrapper">
+
+    <header class="heading-icon">
+        <GraduateHatIcon />
+        <h2>¡Acelera tu carrera de medicina!</h2>
+    </header>
+
+    <section class="trust-container">
+        <TrustNumbers num="600" title="Clases impartidas" />
+        <TrustNumbers num="36" title="Medicos" />
+        <TrustNumbers num="90" title="Simulacros" />
+    </section>
+
+    <section class="companies">
+        <p>Creemos firmemente que el acompañamiento es clave para el éxito de tu carrera académica.</p>
+    </section>
+
+    <section class="grid">
+        <CardLinkRectangle title="Clases de apoyo en Medicina" path="img/apoyo.webp" desc="Cursado de apoyo en medicina" />
+    </section>
+
+    <header class="heading-icon">
+        <GraduateHatIcon />
+        <h2>¡No pierdas tu progreso!</h2>
+    </header>
+
+    <section class="companies">
+        <p>Solicita la reválida y mantén viva tu oportunidad de rendir el final. Gestiona tus trámites académicos  y mantenete en camino.</p>
+    </section>
+
+    <section class="grid">
+        <CardLinkRectangle title="Revalidación y Tramites académicos" path="img/revalida.jpg" />
+    </section>
+
+    <section class="heading-icon">
+        <h2>Experiencias de estudiantes</h2>
+    </section>
+
+    <section>
+        <TestimonyCard path="img/autor1.png">
+            <Fragment slot="quote">
+                Las clases son excelentes a nivel profesional al igual que los docentes, super cálidos, amables y dispuestos a enseñarte hasta que aprendas de verdad
+            </Fragment>
+            <Fragment slot="author">
+                María G.
+            </Fragment>
+            <Fragment slot="role">
+                Egresada en Marketing
+            </Fragment>
+        </TestimonyCard>
+    </section>
+
+    <footer>
+        <CTAButton text="Quiero acelerar mi carrera"/>
+    </footer>
+
 </Wrapper>
+
+<style>
+    .heading-icon {
+        text-align: center;
+    }
+
+    .trust-container {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .companies {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .companies small {
+        font-weight: 600;
+    }
+    .logos {
+        display: flex;
+        justify-content: center;
+        gap: 1.25rem;
+    }
+
+    .row {
+        display: flex;
+        gap: 0.75rem;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+    }
+
+
+    h2, p {
+        margin: 0;
+    }
+
+
+    @media screen and (max-width: 400px) {
+        .grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+</style>

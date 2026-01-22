@@ -1,7 +1,201 @@
 ---
-import Wrapper from '../components/Wrapper.astro'
+import Wrapper from "../components/Wrapper.astro";
+import WhatsAppIcon from "../icons/WhatsAppIcon.astro";
+import FacebookIcon from "../icons/FacebookIcon.astro";
+import InstagramIcon from "../icons/InstagramIcon.astro";
+import YoutubeIcon from "../icons/YoutubeIcon.astro";
+import TiktokIcon from "../icons/TiktokIcon.astro";
+import CamLogo from "../icons/CAMIcon.astro";
+import PinIcon from "../icons/PinIcon.astro";
+import MapIcon from "../icons/MapIcon.astro";
+import ScheduleIcon from "../icons/ScheduleIcon.astro";
+import ClockIcon from "../icons/ClockIcon.astro";
+import EmailSymbolIcon from "../icons/EmailSymbolIcon.astro";
 ---
 
-<Wrapper>
-    <p>Footer Section</p>
+<Wrapper >
+    <footer>
+        <nav class="nav-links">
+            <figure class="cam">
+                <CamLogo />
+            </figure>
+            <ul>
+                <li>
+                    <a href="https://wa.me/5493412166867"
+                        ><WhatsAppIcon
+                            size={24}
+                        /></a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/institutocam.medicina"
+                        ><FacebookIcon /></a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/institutocam/?hl=es-la"
+                        ><InstagramIcon/></a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@caminstituto5827"
+                        ><YoutubeIcon /></a>
+                </li>
+            </ul>
+        </nav>
+
+        <p>
+            Contamos con más de 15 años de experiencia brindando cursos
+            personalizados de Clases de Apoyo, Medicina e Idiomas. Te preparamos
+            con profesionales altamente capacitados para acompañar tu carrera y
+            rendir los exámenes de la facultad de medicina en todas las
+            materias.
+        </p>
+
+        <hgroup class="idiomas">
+            <h4>Centro Evaluador Dele & Aplicador Siele y Cele</h4>
+            <picture>
+                <img src="img/dele_LOGO_white.webp" alt="Logo de DELE" class="DELE"/>
+                <img src="img/siele_LOGO_white.webp" alt="Logo de SIELE" class="SIELE"/>
+                <img src="img/cele_LOGO_white.webp" alt="Logo de CELE" class="CELE"/>
+            </picture>
+        </hgroup>
+
+        <nav class="nav-info">
+            <hgroup>
+                <h4>Sede Lagos</h4>
+                <address>
+                    <PinIcon color="--hue-purple" />
+                    <a href="https://maps.app.goo.gl/YWyaSkCwqar3gCwc8"
+                        >Ovidio Lagos 640</a
+                    >
+                </address>
+                <address>
+                    <MapIcon color="--hue-purple" />
+                    <a href="https://maps.app.goo.gl/YWyaSkCwqar3gCwc8"
+                        >Rosario, Santa Fe</a
+                    >
+                </address>
+            </hgroup>
+
+            <hgroup>
+                <h4>Horarios</h4>
+                <em>
+                    <ScheduleIcon color="--hue-purple" /> Lunes - Viernes
+                </em>
+                <em>
+                    <ClockIcon
+                        color="--hue-purple"
+                        lineColor="--hue-purple-dark"
+                    /> 9:00h a 16:00h
+                </em>
+            </hgroup>
+
+            <hgroup>
+                <h4>Contactos</h4>
+                <a href="https://wa.me/5493412166867" target="_blank">
+                    <WhatsAppIcon color="--hue-purple" size={24} />
+                    +54 9 341 216-6867
+                </a>
+                <em> Atenção para ingressantes em português </em>
+                <a href="https://wa.me/5493415469738" target="_blank">
+                    <WhatsAppIcon color="--hue-purple" size={24} />
+                    +54 9 341 546-9738
+                </a>
+                <em>Atencion al cliente Paraguay</em>
+                <a href="https://wa.me/595991870719" target="_blank">
+                    <WhatsAppIcon color="--hue-purple" size={24} />
+                    +595 991 870719
+                </a>
+                <a href="#contacto">
+                    <EmailSymbolIcon color="--hue-purple" size={24} />
+                    contacto@caminstituto.com
+                </a>
+            </hgroup>
+        </nav>
+    </footer>
 </Wrapper>
+
+<style>
+    img {
+        display: block;
+        max-width: 100%;
+        object-fit: contain;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    ul, li {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    figure, p, h4 {
+        margin: 0;
+    }
+    h4 {
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+
+    footer {
+        padding-block: 1rem;
+        padding-inline: 0.25rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav-links ul {
+        display: flex;
+        gap: 1rem;
+    }
+    .cam {
+        width: 100px;
+    }
+
+
+    .idiomas {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    picture {
+        display: flex;
+        gap: 1rem;
+    }
+    .DELE {
+        width: 80px;
+    }
+    .SIELE {
+        width: 120px;
+    }
+    .CELE {
+        width: 100px;
+    }
+
+
+    .nav-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .nav-info hgroup {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    .nav-info address, .nav-info em, .nav-info a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    em svg {
+        width: 30px;
+    }
+</style>

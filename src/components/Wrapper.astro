@@ -1,4 +1,8 @@
-<article>
+---
+const { classname = "" } = Astro.props;
+---
+
+<article class={ classname }>
     <slot />
 </article>
 
@@ -8,5 +12,11 @@
         padding-block: 1rem;
         border-radius: 1rem;
         background-color: var(--color-container-bg)
+    }
+
+    .mobile-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
     }
 </style>

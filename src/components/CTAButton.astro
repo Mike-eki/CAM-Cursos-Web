@@ -1,0 +1,66 @@
+---
+import WhatsAppIcon from "../icons/WhatsAppIcon.astro"
+
+const { text = "Button" } = Astro.props
+---
+
+<a href="#" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+    <WhatsAppIcon />
+    { text }
+</a>
+
+<style>
+  .whatsapp-btn {
+    width: -webkit-fill-available;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-button);        /* ej: #25D366 */
+    color: var(--color-button-text);              /* ej: white */
+    padding-inline: 0.75rem;
+    padding-block: 0.5rem;
+    border-radius: 1rem;
+    
+/* Glow base muy sutil */
+    box-shadow: 
+      0 0 8px 1px #25d36640,
+      0 0 14px 1px #25d36620;
+    
+    /* Animación neón suave y discreta */
+    animation: subtle-neon 5s ease-in-out infinite alternate;
+  }
+
+@keyframes subtle-neon {
+    from {
+      box-shadow: 
+        0 0 8px  1px #25d36630,
+        0 0 14px 1px #25d36618,
+        0 0 22px 0px #25d3660d;
+    }
+    to {
+      box-shadow: 
+        0 0 12px  3px #25d36655,
+        0 0 20px  2px #25d36635,
+        0 0 30px  1px #25d36618;
+    }
+  }
+
+  /* Opcional: leve mejora al hover */
+  .whatsapp-btn:hover,
+  .whatsapp-btn:focus-visible {
+    animation-duration: 3.2s;   /* acelera un toque al interactuar */
+    scale: 1.03;
+    box-shadow: 
+      0 0 14px  4px #25d36670,
+      0 0 24px  5px #25d36640;
+    transition: all 0.3s ease;
+  }
+
+  /* Para que el hover no "salte" si ya está animado */
+  .whatsapp-btn {
+    transition: scale 0.25s ease;
+  }
+</style>

@@ -1,0 +1,15 @@
+---
+const { color = "--something", size = 20, lineColor = "--something"} = Astro.props;
+---
+
+<svg width=`${size}` height=`${size}` viewBox="0 0 20 20" fill="none">
+<g clip-path="url(#clip0_175_70)">
+<path fill=`var(${color}, #FFF)` d="M20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10Z" />
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 5.25C10.4142 5.25 10.75 5.58579 10.75 6V9.6893L13.0303 11.9697C13.3232 12.2626 13.3232 12.7374 13.0303 13.0303C12.7374 13.3232 12.2626 13.3232 11.9697 13.0303L9.4697 10.5303C9.329 10.3897 9.25 10.1989 9.25 10V6C9.25 5.58579 9.5858 5.25 10 5.25Z" fill="#000"/>
+</g>
+<defs>
+<clipPath id="clip0_175_70">
+<rect width="20" height="20" fill="#000"/>
+</clipPath>
+</defs>
+</svg>

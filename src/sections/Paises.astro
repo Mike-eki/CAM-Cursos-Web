@@ -1,0 +1,31 @@
+---
+import CardCountry from "../components/CardCountry.astro";
+import ArgentinaFlagIcon from "../icons/ArgentinaFlagIcon.astro";
+import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
+---
+
+<section>
+    <CardCountry>
+        <ArgentinaFlagIcon slot="flag-icon" />
+        <h4 slot="title">Argentina</h4>
+    </CardCountry>
+    <CardCountry>
+        <ParaguayFlagIcon slot="flag-icon" />
+        <h4 slot="title">Paraguay</h4>
+    </CardCountry>
+</section>
+
+<style>
+    section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    h4 {
+        margin: 0;
+        font-weight: 600;
+        font-size: 1.25rem;
+    }
+</style>

@@ -1,7 +1,108 @@
 ---
+import CardLinkRectangle from '../components/CardLinkRectangle.astro'
+import CardLinkSquare from '../components/CardLinkSquare.astro'
+import CTAButton from '../components/CTAButton.astro'
+import TestimonyCard from '../components/TestimonyCard.astro'
+import TrustNumbers from '../components/TrustNumbers.astro'
 import Wrapper from '../components/Wrapper.astro'
+import GraduateHatIcon from '../icons/GraduateHatIcon.astro'
+import HSBCIcon from '../icons/HSBCIcon.astro'
 ---
 
-<Wrapper>
-    <p>Idiomas Section</p>
+<Wrapper classname="mobile-wrapper">
+
+    <header class="heading-icon">
+        <GraduateHatIcon />
+        <h2>¡Aprende un nuevo idioma!</h2>
+    </header>
+
+    <section class="trust-container">
+        <TrustNumbers num="1000" title="Experiencias" />
+        <TrustNumbers num="900" title="Clases" />
+        <TrustNumbers num="15" title="Trayectoria" />
+    </section>
+
+    <section class="companies">
+        <p>Con un enfoque cultural y totalmente personalizado, aprende a comunicarte de forma profesional y nativa con otra lengua.</p>
+    </section>
+
+    <section class="grid">
+        <CardLinkRectangle title="Idiomas" path="img/idioma.jpg" />
+    </section>
+
+    <section class="heading-icon">
+        <h2>Experiencias de nuestros estudiantes extranjeros</h2>
+    </section>
+
+    <section>
+        <TestimonyCard path="img/autor1.png">
+            <Fragment slot="quote">
+                Las clases son excelentes a nivel profesional al igual que los docentes, super cálidos, amables y dispuestos a enseñarte hasta que aprendas de verdad
+            </Fragment>
+            <Fragment slot="author">
+                María G.
+            </Fragment>
+            <Fragment slot="role">
+                Egresada en Marketing
+            </Fragment>
+        </TestimonyCard>
+    </section>
+
+    <footer>
+        <CTAButton text="Quiero aprender un nuevo idioma"/>
+    </footer>
+
 </Wrapper>
+
+<style>
+    .heading-icon {
+        text-align: center;
+    }
+
+    .trust-container {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .companies {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .companies small {
+        font-weight: 600;
+    }
+    .logos {
+        display: flex;
+        justify-content: center;
+        gap: 1.25rem;
+    }
+
+    .row {
+        display: flex;
+        gap: 0.75rem;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+    }
+
+
+    h2, p {
+        margin: 0;
+    }
+
+
+
+    @media screen and (max-width: 400px) {
+        .grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+</style>
