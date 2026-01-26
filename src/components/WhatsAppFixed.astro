@@ -1,0 +1,104 @@
+---
+import WhatsAppIcon from "../icons/WhatsAppIcon.astro";
+---
+
+<a
+    href="#"
+    class="whatsapp-button"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    <WhatsAppIcon color="#FFF"/>
+</a>
+
+<style>
+    /* Botón de WhatsApp flotante */
+    .whatsapp-button {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 99999900;
+        text-decoration: none;
+    }
+
+    .whatsapp-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+    }
+
+    .whatsapp-button:active {
+        transform: scale(0.95);
+    }
+
+    .whatsapp-button svg {
+        width: 35px;
+        height: 35px;
+        fill: white;
+    }
+
+    /* Tooltip */
+    .whatsapp-button::before {
+        content: "¡Consultá disponibilidad!";
+        position: absolute;
+        right: 70px;
+        background: #333;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 8px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        font-size: 14px;
+    }
+
+    .whatsapp-button:hover::before {
+        opacity: 1;
+    }
+
+    /* Animación de pulso */
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        }
+        50% {
+            box-shadow: 0 4px 30px rgba(37, 211, 102, 0.7);
+        }
+        100% {
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        }
+    }
+
+    .whatsapp-button {
+        animation: pulse 2s infinite;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .whatsapp-button {
+            bottom: 20px;
+            right: 20px;
+            width: 55px;
+            height: 55px;
+        }
+
+        .whatsapp-button svg {
+            width: 30px;
+            height: 30px;
+        }
+
+        .whatsapp-button::before {
+            display: none;
+        }
+    }
+</style>

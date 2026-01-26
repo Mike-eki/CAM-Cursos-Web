@@ -28,30 +28,44 @@ const { text = "Button" } = Astro.props
     box-shadow: 
       0 0 8px 1px #25d36640,
       0 0 14px 1px #25d36620;
+
+    /* box-shadow: 
+      0 0 8px 1px #aaaaaa40,
+      0 0 14px 1px #88888820; */
     
     /* Animación neón suave y discreta */
     animation: subtle-neon 5s ease-in-out infinite alternate;
+
+    transition: 
+      box-shadow 0.4s ease,
+      scale 0.25s ease;
   }
 
 @keyframes subtle-neon {
     from {
-      box-shadow: 
+      /* box-shadow: 
         0 0 8px  1px #25d36630,
         0 0 14px 1px #25d36618,
-        0 0 22px 0px #25d3660d;
+        0 0 22px 0px #25d3660d; */
+
+      box-shadow: 
+        0 0 8px  1px #aaaaaa30,
+        0 0 14px 1px #aaaaaa18,
+        0 0 22px 0px #aaaaaa0d;
     }
     to {
-      box-shadow: 
-        0 0 12px  3px #25d36655,
-        0 0 20px  2px #25d36635,
-        0 0 30px  1px #25d36618;
+        box-shadow: 
+        0 0 12px  3px #bbbbbb55,
+        0 0 20px  2px #aaaaaa35,
+        0 0 30px  1px #88888818;
     }
   }
 
   /* Opcional: leve mejora al hover */
   .whatsapp-btn:hover,
   .whatsapp-btn:focus-visible {
-    animation-duration: 3.2s;   /* acelera un toque al interactuar */
+    animation: subtle-neon-green 3.2s ease-in-out infinite alternate;
+    /*animation-duration: 3.2s;    acelera un toque al interactuar */
     scale: 1.03;
     box-shadow: 
       0 0 14px  4px #25d36670,
@@ -62,5 +76,21 @@ const { text = "Button" } = Astro.props
   /* Para que el hover no "salte" si ya está animado */
   .whatsapp-btn {
     transition: scale 0.25s ease;
+  }
+
+
+  @keyframes subtle-neon-green {
+    from {
+      box-shadow: 
+        0 0 10px  2px #25d36650,
+        0 0 18px  3px #25d36630,
+        0 0 28px  1px #25d36615;
+    }
+    to {
+      box-shadow: 
+        0 0 16px  6px #25d36680,
+        0 0 28px  8px #25d36650,
+        0 0 40px  4px #25d36625;
+    }
   }
 </style>
