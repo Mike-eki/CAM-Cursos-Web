@@ -7,9 +7,9 @@ import Wrapper from '../components/Wrapper.astro'
 import GraduateHatIcon from '../icons/GraduateHatIcon.astro'
 ---
 
-<Wrapper classname="mobile-wrapper">
+<Wrapper classname="grid-wrapper">
 
-    <header class="heading-icon">
+    <header class="heading-icon h-grid-one">
         <GraduateHatIcon />
         <h2>¡Acelera tu carrera de medicina!</h2>
     </header>
@@ -20,32 +20,32 @@ import GraduateHatIcon from '../icons/GraduateHatIcon.astro'
         <TrustNumbers num="90" title="Simulacros" />
     </section>
 
-    <section class="companies">
+    <section class="companies description-one">
         <p>Creemos firmemente que el acompañamiento es clave para el éxito de tu carrera académica.</p>
     </section>
 
-    <section class="grid">
-        <CardLinkRectangle title="Clases de apoyo en Medicina" path="img/apoyo.webp" desc="Cursado de apoyo en medicina" />
+    <section class="grid card-one">
+        <CardLinkRectangle title="Clases de apoyo en Medicina" path="img/apoyo.webp" desc="Cursado de apoyo en medicina" className="rect"/>
     </section>
 
-    <header class="heading-icon">
+    <header class="heading-icon h-grid-two">
         <GraduateHatIcon />
         <h2>¡No pierdas tu progreso!</h2>
     </header>
 
-    <section class="companies">
+    <section class="companies description-two">
         <p>Solicita la reválida y mantén viva tu oportunidad de rendir el final. Gestiona tus trámites académicos  y mantenete en camino.</p>
     </section>
 
-    <section class="grid">
-        <CardLinkRectangle title="Revalidación y Tramites académicos" path="img/revalida.jpg" />
+    <section class="grid card-two">
+        <CardLinkRectangle title="Revalidación y Tramites académicos" path="img/revalida.jpg" className="rect" />
     </section>
 
-    <section class="heading-icon">
+    <section class="heading-icon h-grid-three">
         <h2>Experiencias de estudiantes</h2>
     </section>
 
-    <section>
+    <section class="testimonies">
         <TestimonyCard path="img/autor1.png">
             <Fragment slot="quote">
                 Las clases son excelentes a nivel profesional al igual que los docentes, super cálidos, amables y dispuestos a enseñarte hasta que aprendas de verdad
@@ -59,7 +59,7 @@ import GraduateHatIcon from '../icons/GraduateHatIcon.astro'
         </TestimonyCard>
     </section>
 
-    <footer>
+    <footer class="button">
         <CTAButton text="Quiero acelerar mi carrera"/>
     </footer>
 
@@ -112,6 +112,88 @@ import GraduateHatIcon from '../icons/GraduateHatIcon.astro'
     @media screen and (max-width: 400px) {
         .grid {
             grid-template-columns: 1fr;
+        }
+    }
+
+    @media screen and (min-width: 850px) {
+        .grid {
+            grid-template-columns: auto;
+        }
+        .mobile-wrapper {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+
+        .h-grid-one {
+            grid-column: 1/5;
+            grid-row: 1;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 1.5rem;
+        }
+        .h-grid-two {
+            grid-column: 1/5;
+            grid-row: 5;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 1.5rem;
+        }
+        .h-grid-three {
+            grid-column: 1/5;
+            grid-row: 8;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 1.5rem;
+
+        }
+        .trust-container {
+            grid-column: 1/5;
+            grid-row: 2;
+        }
+        .description-one {
+            grid-column: 1/5;
+            grid-row: 3;
+        }
+        .description-two {
+            grid-column: 1/5;
+            grid-row: 6;
+        }
+        .description-one p, .description-two p {
+            max-width: 42ch;
+            font-size: 1.5rem;
+            margin-inline: auto;
+        }
+        .card-one {
+            grid-column: 2/4;
+            grid-row: 4;
+        }
+        .card-two {
+            grid-column: 2/4;
+            grid-row: 7;
+        }
+        .last-card {
+            grid-column: 3;
+            grid-row: 1;
+        }
+        .testimonies {
+            grid-column: 2/4;
+            grid-row: 9;
+        }
+        .button {
+            grid-column: 2/4;
+            grid-row: 10;
         }
     }
 

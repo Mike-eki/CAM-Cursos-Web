@@ -2,7 +2,7 @@
 const { classname = "" } = Astro.props;
 ---
 
-<article class={ classname }>
+<article class={ "base " + classname }>
     <slot />
 </article>
 
@@ -14,9 +14,17 @@ const { classname = "" } = Astro.props;
         background-color: var(--color-container-bg)
     }
 
-    .mobile-wrapper {
+    .base {
         display: flex;
         flex-direction: column;
         gap: 1.25rem;
+    }
+
+    @media screen and (min-width: 850px) {
+        .grid-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1rem;
+        }
     }
 </style>

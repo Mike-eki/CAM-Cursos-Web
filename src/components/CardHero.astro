@@ -1,6 +1,9 @@
 ---
+import ArgentinaFlagIcon from "../icons/ArgentinaFlagIcon.astro";
 import ArrowDownIcon from "../icons/ArrowDownIcon.astro";
 import CAMIcon from "../icons/CAMIcon.astro";
+import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
+import CardCountry from "./CardCountry.astro";
 
 ---
 
@@ -11,18 +14,31 @@ import CAMIcon from "../icons/CAMIcon.astro";
     </header>
 
     <picture>
-        <img src="img/hero-image.jpg" alt="hero image">
+        <img src="img/hero-image.jpg" alt="hero image" />
     </picture>
-
 
     <footer>
         <h2>¡Descubre lo que te espera!</h2>
         <ArrowDownIcon />
     </footer>
+
+    <div class="countries">
+        <CardCountry>
+            <ArgentinaFlagIcon slot="flag-icon" />
+            <h4 slot="title">Argentina</h4>
+        </CardCountry>
+        <CardCountry>
+            <ParaguayFlagIcon slot="flag-icon" />
+            <h4 slot="title">Paraguay</h4>
+        </CardCountry>
+    </div>
 </main>
 
-
 <style>
+    .countries {
+        display: none;
+    }
+
     main {
         display: flex;
         position: relative;
@@ -33,7 +49,8 @@ import CAMIcon from "../icons/CAMIcon.astro";
         overflow: hidden;
     }
 
-    h1, h2 {
+    h1,
+    h2 {
         font-size: 1.5rem;
         font-weight: 500;
         text-align: center;
@@ -48,7 +65,8 @@ import CAMIcon from "../icons/CAMIcon.astro";
         top: 20%;
     }
 
-    header, footer {
+    header,
+    footer {
         padding-inline: 0.75rem;
         padding-block: 1rem;
         background-color: var(--color-container-bg);
@@ -63,8 +81,9 @@ import CAMIcon from "../icons/CAMIcon.astro";
         z-index: 10;
     }
     header {
-        color: #0077FF;
-        top: 0; left: 0;
+        color: #0077ff;
+        top: 0;
+        left: 0;
         gap: 0.5rem;
     }
     header h1 {
@@ -84,9 +103,46 @@ import CAMIcon from "../icons/CAMIcon.astro";
 
     @media screen and (max-width: 480px) {
         main {
-            height: 75vh;
+            height: 50vh;
         }
     }
 
+    @media screen and (min-width: 600px) {
+        main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            aspect-ratio: auto;
+            gap: 1rem;
+        }
+        header {
+        }
+        picture {
+            position: static;
+            grid-row: span 2;
+            height: auto;
+        }
+        img {
+            border-radius: 1rem;
+        }
+        footer {
+        }
+    }
 
+    @media screen and (min-width: 850px) {
+
+        main {
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+        picture {
+            grid-row: span 3;
+        }
+        .countries {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .countries h4 {
+            margin: 0;
+        }
+    }
 </style>

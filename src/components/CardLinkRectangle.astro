@@ -1,13 +1,13 @@
 ---
 import RedirectIcon from "../icons/RedirectIcon.astro"
 
-const { path, desc = "Imagen de la card", title } = Astro.props
+const { path, desc = "Imagen de la card", title, className } = Astro.props
 ---
 
 <a href="#">
     <article>
         <header>
-            <img src={ path } alt={ desc }>
+            <img src={ path } alt={ desc } class={ className }>
         </header>
         <footer>
             <RedirectIcon />
@@ -74,11 +74,6 @@ const { path, desc = "Imagen de la card", title } = Astro.props
         color: black;
     }
 
-    a:hover img {
-        transform: scale(1.06);
-        transition: transform 0.4s ease;
-    }
-
         /* Mejora el ícono (opcional) */
     a:hover svg {  /* ajusta el selector según tu icono */
         transform: translateX(4px);
@@ -89,6 +84,20 @@ const { path, desc = "Imagen de la card", title } = Astro.props
     @media screen and (max-width: 400px) {
         a {
             grid-column: span 1;
+        }
+    }
+
+    @media screen and (min-width: 850px) {
+        img {
+            aspect-ratio: 1;
+        }
+        a {
+            grid-column: auto;
+            grid-column: auto;
+        }
+
+        .rect {
+            aspect-ratio: 16/7.7;
         }
     }
 

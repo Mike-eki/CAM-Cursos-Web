@@ -9,9 +9,9 @@ import GraduateHatIcon from '../icons/GraduateHatIcon.astro'
 import HSBCIcon from '../icons/HSBCIcon.astro'
 ---
 
-<Wrapper classname="mobile-wrapper">
+<Wrapper classname="grid-wrapper">
 
-    <header class="heading-icon">
+    <header class="heading-icon h-grid-one">
         <GraduateHatIcon />
         <h2>¡Aprende un nuevo idioma!</h2>
     </header>
@@ -22,19 +22,19 @@ import HSBCIcon from '../icons/HSBCIcon.astro'
         <TrustNumbers num="15" title="Trayectoria" />
     </section>
 
-    <section class="companies">
+    <section class="companies description-one">
         <p>Con un enfoque cultural y totalmente personalizado, aprende a comunicarte de forma profesional y nativa con otra lengua.</p>
     </section>
 
-    <section class="grid">
-        <CardLinkRectangle title="Idiomas" path="img/idioma.jpg" />
+    <section class="grid card-one">
+        <CardLinkRectangle title="Idiomas" path="img/idioma.jpg" className="rect"/>
     </section>
 
-    <section class="heading-icon">
+    <section class="heading-icon h-grid-two">
         <h2>Experiencias de nuestros estudiantes extranjeros</h2>
     </section>
 
-    <section>
+    <section class="testimonies">
         <TestimonyCard path="img/autor1.png">
             <Fragment slot="quote">
                 Las clases son excelentes a nivel profesional al igual que los docentes, super cálidos, amables y dispuestos a enseñarte hasta que aprendas de verdad
@@ -48,7 +48,7 @@ import HSBCIcon from '../icons/HSBCIcon.astro'
         </TestimonyCard>
     </section>
 
-    <footer>
+    <footer class="button">
         <CTAButton text="Quiero aprender un nuevo idioma"/>
     </footer>
 
@@ -102,6 +102,64 @@ import HSBCIcon from '../icons/HSBCIcon.astro'
     @media screen and (max-width: 400px) {
         .grid {
             grid-template-columns: 1fr;
+        }
+    }
+
+     @media screen and (min-width: 850px) {
+        .grid {
+            grid-template-columns: auto;
+        }
+        .mobile-wrapper {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+
+
+        .h-grid-one {
+            grid-column: 1/5;
+            grid-row: 1;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 1.5rem;
+        }
+        .h-grid-two {
+            grid-column: 1/5;
+            grid-row: 5;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 1.5rem;
+        }
+        .trust-container {
+            grid-column: 1/5;
+            grid-row: 2;
+        }
+        .description-one {
+            grid-column: 1/5;
+            grid-row: 3;
+        }
+        .description-one p {
+            max-width: 42ch;
+            font-size: 1.5rem;
+            margin-inline: auto;
+        }
+        .card-one {
+            grid-column: 2/4;
+            grid-row: 4;
+        }
+        .testimonies {
+            grid-column: 2/4;
+            grid-row: 6;
+        }
+        .button {
+            grid-column: 2/4;
+            grid-row: 7;
         }
     }
 

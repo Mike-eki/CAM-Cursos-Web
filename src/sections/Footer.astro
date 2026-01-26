@@ -13,8 +13,8 @@ import ClockIcon from "../icons/ClockIcon.astro";
 import EmailSymbolIcon from "../icons/EmailSymbolIcon.astro";
 ---
 
-<Wrapper >
-    <footer>
+<Wrapper classname="grid-wrapper" >
+    <footer class="main-footer">
         <nav class="nav-links">
             <figure class="cam">
                 <CamLogo />
@@ -197,5 +197,29 @@ import EmailSymbolIcon from "../icons/EmailSymbolIcon.astro";
 
     em svg {
         width: 30px;
+    }
+
+    @media screen and (min-width: 850px) {
+        .main-footer {
+            grid-column: 2/4;
+        }
+
+
+        .nav-info {
+            margin-inline: auto;
+            width: fit-content;
+            text-align: center;
+        }
+
+        .idiomas h4 {
+            text-align: center;
+        }
+        .idiomas picture {
+            justify-content: center;
+        }
+
+        .nav-info hgroup {
+            align-items: center;
+        }
     }
 </style>

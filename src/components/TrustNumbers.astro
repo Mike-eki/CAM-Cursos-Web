@@ -17,7 +17,7 @@ const uniqueId = `counter-${Math.random().toString(36).slice(2, 9)}`;
 
 <aside data-target={targetNumber} data-duration={animationDuration}>
     <p>+<span class="counter-number" id={uniqueId}>0</span></p>
-    <span>{title}</span>
+    <span class="name-title">{title}</span>
     <PlusIcon />
 </aside>
 
@@ -51,6 +51,15 @@ const uniqueId = `counter-${Math.random().toString(36).slice(2, 9)}`;
     span {
         font-size: 0.75rem;
         text-align: center;
+    }
+
+    @media screen and (min-width: 850px) {
+        .counter-number {
+            font-size: 2rem;
+        }
+        .name-title {
+            font-size: 1.5rem;
+        }
     }
 </style>
 
