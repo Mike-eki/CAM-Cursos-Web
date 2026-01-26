@@ -1,0 +1,454 @@
+---
+// CourseModal.astro
+export interface Props {
+  courseName?: string;
+  certifiedBy?: string;
+  certifiedByLogo?: string;
+  duration?: string;
+  totalHours?: string;
+  topics?: string[];
+  requirements?: string[];
+  paymentMethods?: string[];
+  modality?: string;
+  backgroundImage?: string;
+  ctaText?: string;
+  ctaLink?: string;
+  isOpen?: boolean;
+}
+
+const {
+  courseName = "Nombre curso",
+  certifiedBy = "Certificación avalada por:",
+  certifiedByLogo = "HSBC",
+  duration = "4 meses",
+  totalHours = "180 horas en total de clases",
+  topics = ["Tema 1", "Tema 2", "Tema 3"],
+  requirements = [
+    "Mayor a 16 años",
+    "Con o sin experiencia previa",
+    "Mínimo de 80% de asistencia"
+  ],
+  paymentMethods = ["Mensual", "Total"],
+  modality = "Presencial y/o virtual",
+  backgroundImage = "",
+  ctaText = "Quiero inscribirme y/o reservar",
+  ctaLink = "#",
+  isOpen = false
+} = Astro.props;
+---
+
+<div class={`course-modal ${isOpen ? 'is-open' : ''}`} id="courseModal">
+  <div class="modal-overlay" data-close-modal></div>
+  
+  <div class="modal-content">
+    <button class="close-button" data-close-modal aria-label="Cerrar modal">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <div class="modal-header">
+      <div class="header-image">
+        {backgroundImage && <img src={backgroundImage} alt="Curso" />}
+        <div class="image-overlay"></div>
+      </div>
+      
+      <div class="course-title-container">
+        <h2 class="course-title">{courseName}</h2>
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <div class="info-section">
+        <h3 class="section-label">{certifiedBy}</h3>
+        <div class="certification-badge">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L3 7v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V7l-9-5z"/>
+          </svg>
+          <span>{certifiedByLogo}</span>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <h3 class="section-label">Duración:</h3>
+        <ul class="info-list">
+          <li>{duration}</li>
+          <li>{totalHours}</li>
+        </ul>
+      </div>
+
+      <div class="info-section">
+        <h3 class="section-label">Lo que vas a aprender:</h3>
+        <ul class="info-list">
+          {topics.map(topic => <li>{topic}</li>)}
+        </ul>
+      </div>
+
+      <div class="info-section">
+        <h3 class="section-label">Requisitos:</h3>
+        <ul class="info-list">
+          {requirements.map(req => <li>{req}</li>)}
+        </ul>
+      </div>
+
+      <div class="info-section">
+        <h3 class="section-label">Forma de pago:</h3>
+        <ul class="info-list">
+          {paymentMethods.map(method => <li>{method}</li>)}
+        </ul>
+      </div>
+
+      <div class="info-section">
+        <h3 class="section-label">Modalidad de cursado:</h3>
+        <ul class="info-list">
+          <li>{modality}</li>
+        </ul>
+      </div>
+
+      <div class="info-section">
+          <a href={ctaLink} class="cta-button">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            {ctaText}
+          </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .course-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .course-modal.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    cursor: pointer;
+  }
+
+  .modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    max-height: 92vh;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    animation: modalSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+  }
+
+  @keyframes modalSlideIn {
+    from {
+      transform: scale(0.9) translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .close-button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    transition: all 0.2s ease;
+  }
+
+  .close-button:hover {
+    background: rgba(0, 0, 0, 0.6);
+    transform: scale(1.1);
+  }
+
+  .modal-header {
+    position: relative;
+    height: 280px;
+    flex-shrink: 0;
+  }
+
+  .header-image {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .header-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 40%,
+      rgba(0, 0, 0, 0.4) 70%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+
+  .course-title-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 75%;
+    background: #FF5C67;
+    padding: 18px 20px;
+    border-radius: 1rem;
+    z-index: 10;
+  }
+
+  .course-title {
+    color: #FFFFFF;
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: -0.3px;
+  }
+
+  .modal-body {
+    flex: 1;
+    overflow-y: auto;
+    border-radius: 1rem;
+    padding-bottom: 24px;
+    background-color: #FF5C67;
+    scrollbar-width: thin;
+    scrollbar-color: #FF5C67 rgba(255, 255, 255, 0.05);
+  }
+
+  .modal-body::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .modal-body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+  }
+
+  .modal-body::-webkit-scrollbar-thumb {
+    background: #FF5C67;
+    border-radius: 10px;
+  }
+
+  .modal-body::-webkit-scrollbar-thumb:hover {
+    background: #FF4D59;
+  }
+
+  .info-section {
+    background: #FF5C67;
+    padding: 14px 18px;
+  }
+
+  .section-label {
+    background-color: #FFFFFF;
+    color: #FF5C67;
+    border-radius: 1rem;
+    padding: 0.25rem;
+    padding-inline: 0.75rem;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    letter-spacing: 0.2px;
+  }
+
+  .certification-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 12px;
+    border-radius: 8px;
+    width: fit-content;
+  }
+
+  .certification-badge svg {
+    color: #FFFFFF;
+    flex-shrink: 0;
+  }
+
+  .certification-badge span {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+  .info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .info-list li {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #FFFFFF;
+  }
+
+  .info-list li:last-child {
+    margin-bottom: 0;
+  }
+
+  .info-list li::before {
+    content: "•";
+    position: absolute;
+    left: 4px;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .cta-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* width: 100%; */
+    padding: 15px 20px;
+    background: #FFFFFF;
+    color: #FF5C67;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    margin-top: 12px;
+    box-shadow: 0 4px 12px rgba(255, 92, 103, 0.2);
+  }
+
+  .cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 92, 103, 0.3);
+    background: #FFFFFF;
+  }
+
+  .cta-button:active {
+    transform: translateY(0);
+  }
+
+  .cta-button svg {
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 480px) {
+    .modal-content {
+      width: 95%;
+      max-width: 95%;
+      border-radius: 16px;
+    }
+
+    .modal-header {
+      height: 240px;
+    }
+
+    .course-title {
+      font-size: 22px;
+    }
+
+    .modal-body {
+      /* padding: 16px; */
+    }
+  }
+
+
+  /* Scrollbar más visible - versión clara */
+.modal-body {
+  scrollbar-color: #ffffff80 #ffffff1a;   /* thumb    track */
+  scrollbar-width: thin;
+}
+
+.modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);   /* fondo del track */
+  border-radius: 10px;
+  margin: 4px 2px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.75);   /* color principal thumb */
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15); /* borde sutil para contraste */
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+</style>
+
+<script>
+  function initModal() {
+    const modal = document.getElementById('courseModal');
+    const closeButtons = modal?.querySelectorAll('[data-close-modal]');
+
+    closeButtons?.forEach(button => {
+      button.addEventListener('click', () => {
+        modal?.classList.remove('is-open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal?.classList.contains('is-open')) {
+        modal.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  (window as any).openCourseModal = () => {
+    const modal = document.getElementById('courseModal');
+    modal?.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initModal);
+  } else {
+    initModal();
+  }
+</script>

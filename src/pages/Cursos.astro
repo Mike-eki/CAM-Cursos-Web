@@ -1,0 +1,16 @@
+---
+import ModalCurso from "../components/ModalCurso.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+    <h1>Cursos</h1>
+    <button>Ver un curso</button>
+
+    <ModalCurso 
+        courseName="Fotografía Profesional"
+        backgroundImage="img/fotografia.png"
+        topics={["Composición", "Iluminación", "Edición"]}
+        isOpen={true}
+    />
+</Layout>
