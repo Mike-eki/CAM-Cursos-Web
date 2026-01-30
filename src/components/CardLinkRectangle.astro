@@ -1,10 +1,10 @@
 ---
 import RedirectIcon from "../icons/RedirectIcon.astro"
 
-const { path, desc = "Imagen de la card", title, className } = Astro.props
+const { path, desc = "Imagen de la card", title, className, courseId } = Astro.props
 ---
 
-<a href="#">
+<a href="#" data-course-id={courseId}>
     <article>
         <header>
             <img src={ path } alt={ desc } class={ className }>

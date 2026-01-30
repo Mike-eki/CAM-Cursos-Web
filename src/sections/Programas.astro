@@ -5,8 +5,10 @@ import CTAButton from "../components/CTAButton.astro";
 import TestimonyCard from "../components/TestimonyCard.astro";
 import TrustNumbers from "../components/TrustNumbers.astro";
 import Wrapper from "../components/Wrapper.astro";
+import BienestarIcon from "../icons/BienestarIcon.astro";
 import GraduateHatIcon from "../icons/GraduateHatIcon.astro";
 import HSBCIcon from "../icons/HSBCIcon.astro";
+import ModalCurso from "../components/ModalCurso.astro";
 ---
 
 <Wrapper classname="grid-wrapper">
@@ -34,6 +36,7 @@ import HSBCIcon from "../icons/HSBCIcon.astro";
             <HSBCIcon />
             <HSBCIcon />
             <HSBCIcon />
+            
         </div>
     </section>
 
@@ -42,27 +45,32 @@ import HSBCIcon from "../icons/HSBCIcon.astro";
             title="Salud y Belleza"
             path="img/saludybelleza.png"
             desc="Cursos de salud y belleza"
+            courseId="salud-belleza"
         />
         <CardLinkSquare
             title="Administración"
             path="img/administracion.png"
             desc="Cursos de administración"
+            courseId="administracion"
         />
         <CardLinkRectangle
             title="Organización de eventos"
             path="img/organizacioneventos.png"
             desc="Cursos de organización de eventos"
+            courseId="organizacion-eventos"
         />
         <CardLinkSquare
             title="Oficios"
             path="img/oficios.png"
             desc="Cursos de oficios"
+            courseId="oficios"
         />
         <CardLinkSquare
             title="Diseño y Marketing"
             path="img/diseniomarketing.png"
             desc="Cursos de diseño y marketing"
             className="last-card"
+            courseId="disenio-marketing"
         />
     </section>
 
@@ -72,19 +80,22 @@ import HSBCIcon from "../icons/HSBCIcon.astro";
 
     <section class="testimonies">
         <TestimonyCard path="img/autor1.png">
-            <Fragment slot="quote">
+            <span slot="quote">
                 Las clases son excelentes a nivel profesional al igual que los
                 docentes, super cálidos, amables y dispuestos a enseñarte hasta
                 que aprendas de verdad
-            </Fragment>
-            <Fragment slot="author"> María G. </Fragment>
-            <Fragment slot="role"> Egresada en Marketing </Fragment>
+            </span>
+            <span slot="author"> María G. </span>
+            <span slot="role"> Egresada en Marketing </span>
         </TestimonyCard>
     </section>
 
     <footer class="button">
         <CTAButton text="Quiero encontrar mi curso ideal" />
     </footer>
+
+    <!-- Modal de cursos global para esta sección -->
+    <ModalCurso />
 </Wrapper>
 
 <style>
