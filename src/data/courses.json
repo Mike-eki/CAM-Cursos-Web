@@ -1,172 +1,483 @@
 {
   "salud-belleza": {
     "id": "salud-belleza",
-    "courseName": "Salud y Belleza",
-    "certifiedBy": "Certificación avalada por:",
-    "certifiedByLogo": "HSBC",
-    "duration": "4 meses",
-    "totalHours": "180 horas en total de clases",
-    "topics": [
-      "Peluquería profesional",
-      "Estética facial y corporal",
-      "Maquillaje artístico",
-      "Manicura y pedicura"
-    ],
-    "requirements": [
-      "Mayor a 16 años",
-      "Con o sin experiencia previa",
-      "Mínimo de 80% de asistencia"
-    ],
-    "paymentMethods": ["Mensual", "Total"],
-    "modality": "Presencial y/o virtual",
+    "title": "Salud y Belleza",
     "backgroundImage": "img/saludybelleza.png",
-    "ctaText": "Quiero inscribirme y/o reservar",
+    "sections": [
+      {
+        "id": "certification",
+        "title": "Certificación avalada por:",
+        "kind": "badge",
+        "text": "HSBC"
+      },
+      {
+        "id": "duration",
+        "title": "Duración:",
+        "kind": "list",
+        "items": [
+          "4 meses",
+          "180 horas en total de clases"
+        ]
+      },
+      {
+        "id": "topics",
+        "title": "Lo que vas a aprender:",
+        "kind": "list",
+        "items": [
+          "Peluquería profesional",
+          "Estética facial y corporal",
+          "Maquillaje artístico",
+          "Manicura y pedicura"
+        ]
+      },
+      {
+        "id": "requirements",
+        "title": "Requisitos:",
+        "kind": "list",
+        "items": [
+          "Mayor a 16 años",
+          "Con o sin experiencia previa",
+          "Mínimo de 80% de asistencia"
+        ]
+      },
+      {
+        "id": "payment-methods",
+        "title": "Forma de pago:",
+        "kind": "list",
+        "items": [
+          "Mensual",
+          "Total"
+        ]
+      },
+      {
+        "id": "modality",
+        "title": "Modalidad de cursado:",
+        "kind": "list",
+        "items": [
+          "Presencial y/o virtual"
+        ]
+      }
+    ],
     "ctaLink": "https://wa.me/1234567890"
   },
   "administracion": {
     "id": "administracion",
-    "courseName": "Administración Empresarial",
-    "certifiedByLogo": "HSBC",
-    "duration": "6 meses",
-    "totalHours": "240 horas en total de clases",
-    "topics": [
-      "Contabilidad básica",
-      "Recursos Humanos",
-      "Gestión empresarial",
-      "Finanzas corporativas"
-    ],
-    "requirements": [
-      "Mayor a 18 años",
-      "Secundario completo",
-      "Mínimo de 80% de asistencia"
-    ],
-    "paymentMethods": ["Mensual", "Total", "Becas disponibles"],
-    "modality": "Presencial",
+    "title": "Administración Empresarial",
     "backgroundImage": "img/administracion.png",
+    "sections": [
+      {
+        "id": "certification",
+        "title": "Certificación avalada por:",
+        "kind": "badge",
+        "text": "HSBC"
+      },
+      {
+        "id": "duration",
+        "title": "Duración:",
+        "kind": "list",
+        "items": [
+          "6 meses",
+          "240 horas en total de clases"
+        ]
+      },
+      {
+        "id": "topics",
+        "title": "Lo que vas a aprender:",
+        "kind": "list",
+        "items": [
+          "Contabilidad básica",
+          "Recursos Humanos",
+          "Gestión empresarial",
+          "Finanzas corporativas"
+        ]
+      },
+      {
+        "id": "requirements",
+        "title": "Requisitos:",
+        "kind": "list",
+        "items": [
+          "Mayor a 18 años",
+          "Secundario completo",
+          "Mínimo de 80% de asistencia"
+        ]
+      },
+      {
+        "id": "payment-methods",
+        "title": "Forma de pago:",
+        "kind": "list",
+        "items": [
+          "Mensual",
+          "Total",
+          "Becas disponibles"
+        ]
+      },
+      {
+        "id": "modality",
+        "title": "Modalidad de cursado:",
+        "kind": "list",
+        "items": [
+          "Presencial"
+        ]
+      }
+    ],
     "ctaLink": "https://wa.me/1234567890"
   },
   "organizacion-eventos": {
     "id": "organizacion-eventos",
-    "courseName": "Organización de Eventos",
-    "certifiedByLogo": "HSBC",
-    "duration": "5 meses",
-    "totalHours": "200 horas en total",
-    "topics": [
-      "Planificación de eventos",
-      "Protocolo y ceremonial",
-      "Catering y logística",
-      "Marketing de eventos"
-    ],
-    "requirements": [
-      "Mayor a 18 años",
-      "Experiencia deseable pero no obligatoria"
-    ],
-    "paymentMethods": ["Mensual", "Total"],
-    "modality": "Virtual",
+    "title": "Organización de Eventos",
     "backgroundImage": "img/organizacioneventos.png",
+    "sections": [
+      {
+        "id": "certification",
+        "title": "Certificación avalada por:",
+        "kind": "badge",
+        "text": "HSBC"
+      },
+      {
+        "id": "duration",
+        "title": "Duración:",
+        "kind": "list",
+        "items": [
+          "5 meses",
+          "200 horas en total"
+        ]
+      },
+      {
+        "id": "topics",
+        "title": "Lo que vas a aprender:",
+        "kind": "list",
+        "items": [
+          "Planificación de eventos",
+          "Protocolo y ceremonial",
+          "Catering y logística",
+          "Marketing de eventos"
+        ]
+      },
+      {
+        "id": "requirements",
+        "title": "Requisitos:",
+        "kind": "list",
+        "items": [
+          "Mayor a 18 años",
+          "Experiencia deseable pero no obligatoria"
+        ]
+      },
+      {
+        "id": "payment-methods",
+        "title": "Forma de pago:",
+        "kind": "list",
+        "items": [
+          "Mensual",
+          "Total"
+        ]
+      },
+      {
+        "id": "modality",
+        "title": "Modalidad de cursado:",
+        "kind": "list",
+        "items": [
+          "Virtual"
+        ]
+      }
+    ],
     "ctaLink": "https://wa.me/1234567890"
   },
   "oficios": {
     "id": "oficios",
-    "courseName": "Oficios",
-    "certifiedByLogo": "HSBC",
-    "duration": "3 meses",
-    "totalHours": "120 horas en total de clases",
-    "topics": [
-      "Electricidad básica",
-      "Carpintería",
-      "Plomería",
-      "Reparaciones del hogar"
-    ],
-    "requirements": [
-      "Mayor a 16 años",
-      "Ganas de aprender un oficio práctico"
-    ],
-    "paymentMethods": ["Mensual", "Total"],
-    "modality": "Presencial",
+    "title": "Oficios",
     "backgroundImage": "img/oficios.png",
+    "sections": [
+      {
+        "id": "certification",
+        "title": "Certificación avalada por:",
+        "kind": "badge",
+        "text": "HSBC"
+      },
+      {
+        "id": "duration",
+        "title": "Duración:",
+        "kind": "list",
+        "items": [
+          "3 meses",
+          "120 horas en total de clases"
+        ]
+      },
+      {
+        "id": "topics",
+        "title": "Lo que vas a aprender:",
+        "kind": "list",
+        "items": [
+          "Electricidad básica",
+          "Carpintería",
+          "Plomería",
+          "Reparaciones del hogar"
+        ]
+      },
+      {
+        "id": "requirements",
+        "title": "Requisitos:",
+        "kind": "list",
+        "items": [
+          "Mayor a 16 años",
+          "Ganas de aprender un oficio práctico"
+        ]
+      },
+      {
+        "id": "payment-methods",
+        "title": "Forma de pago:",
+        "kind": "list",
+        "items": [
+          "Mensual",
+          "Total"
+        ]
+      },
+      {
+        "id": "modality",
+        "title": "Modalidad de cursado:",
+        "kind": "list",
+        "items": [
+          "Presencial"
+        ]
+      }
+    ],
     "ctaLink": "https://wa.me/1234567890"
   },
   "disenio-marketing": {
     "id": "disenio-marketing",
-    "courseName": "Diseño y Marketing",
-    "certifiedByLogo": "HSBC",
-    "duration": "4 meses",
-    "totalHours": "160 horas en total de clases",
-    "topics": [
-      "Diseño gráfico básico",
-      "Introducción a Photoshop e Illustrator",
-      "Marketing digital y redes sociales",
-      "Branding y comunicación visual"
-    ],
-    "requirements": [
-      "Mayor a 16 años",
-      "Manejo básico de PC"
-    ],
-    "paymentMethods": ["Mensual", "Total"],
-    "modality": "Virtual y presencial",
+    "title": "Diseño y Marketing",
     "backgroundImage": "img/diseniomarketing.png",
+    "sections": [
+      {
+        "id": "certification",
+        "title": "Certificación avalada por:",
+        "kind": "badge",
+        "text": "HSBC"
+      },
+      {
+        "id": "duration",
+        "title": "Duración:",
+        "kind": "list",
+        "items": [
+          "4 meses",
+          "160 horas en total de clases"
+        ]
+      },
+      {
+        "id": "topics",
+        "title": "Lo que vas a aprender:",
+        "kind": "list",
+        "items": [
+          "Diseño gráfico básico",
+          "Introducción a Photoshop e Illustrator",
+          "Marketing digital y redes sociales",
+          "Branding y comunicación visual"
+        ]
+      },
+      {
+        "id": "requirements",
+        "title": "Requisitos:",
+        "kind": "list",
+        "items": [
+          "Mayor a 16 años",
+          "Manejo básico de PC"
+        ]
+      },
+      {
+        "id": "payment-methods",
+        "title": "Forma de pago:",
+        "kind": "list",
+        "items": [
+          "Mensual",
+          "Total"
+        ]
+      },
+      {
+        "id": "modality",
+        "title": "Modalidad de cursado:",
+        "kind": "list",
+        "items": [
+          "Virtual y presencial"
+        ]
+      }
+    ],
     "ctaLink": "https://wa.me/1234567890"
   },
   "clases-apoyo-medicina": {
     "id": "clases-apoyo-medicina",
-    "courseName": "Clases de apoyo en Medicina",
-    "certifiedByLogo": "HSBC",
-    "duration": "Acompañamiento anual",
-    "totalHours": "Carga horaria flexible según necesidades",
-    "topics": [
-      "Repaso de contenido teórico",
-      "Resolución de casos clínicos",
-      "Preparación para parciales y finales"
-    ],
-    "requirements": [
-      "Ser estudiante de medicina o carreras afines"
-    ],
-    "paymentMethods": ["Mensual", "Pack de clases"],
-    "modality": "Presencial y/o virtual",
+    "title": "Clases de apoyo en Medicina",
     "backgroundImage": "img/apoyo.webp",
+    "sections": [
+      {
+        "id": "certification",
+        "title": "Certificación avalada por:",
+        "kind": "badge",
+        "text": "HSBC"
+      },
+      {
+        "id": "duration",
+        "title": "Duración:",
+        "kind": "list",
+        "items": [
+          "Acompañamiento anual",
+          "Carga horaria flexible según necesidades"
+        ]
+      },
+      {
+        "id": "topics",
+        "title": "Lo que vas a aprender:",
+        "kind": "list",
+        "items": [
+          "Repaso de contenido teórico",
+          "Resolución de casos clínicos",
+          "Preparación para parciales y finales"
+        ]
+      },
+      {
+        "id": "requirements",
+        "title": "Requisitos:",
+        "kind": "list",
+        "items": [
+          "Ser estudiante de medicina o carreras afines"
+        ]
+      },
+      {
+        "id": "payment-methods",
+        "title": "Forma de pago:",
+        "kind": "list",
+        "items": [
+          "Mensual",
+          "Pack de clases"
+        ]
+      },
+      {
+        "id": "modality",
+        "title": "Modalidad de cursado:",
+        "kind": "list",
+        "items": [
+          "Presencial y/o virtual"
+        ]
+      }
+    ],
     "ctaLink": "https://wa.me/1234567890"
   },
   "revalidacion-tramites": {
     "id": "revalidacion-tramites",
-    "courseName": "Revalidación y Trámites Académicos",
-    "certifiedByLogo": "HSBC",
-    "duration": "1 a 2 meses (según caso)",
-    "totalHours": "Acompañamiento en todo el proceso",
-    "topics": [
-      "Gestión de reválidas",
-      "Orientación en trámites académicos",
-      "Organización de documentación",
-      "Seguimiento de fechas importantes"
-    ],
-    "requirements": [
-      "Ser estudiante activo",
-      "Contar con documentación académica básica"
-    ],
-    "paymentMethods": ["Pago único", "Por trámite"],
-    "modality": "Virtual",
+    "title": "Revalidación y Trámites Académicos",
     "backgroundImage": "img/revalida.jpg",
+    "sections": [
+      {
+        "id": "certification",
+        "title": "Certificación avalada por:",
+        "kind": "badge",
+        "text": "HSBC"
+      },
+      {
+        "id": "duration",
+        "title": "Duración:",
+        "kind": "list",
+        "items": [
+          "1 a 2 meses (según caso)",
+          "Acompañamiento en todo el proceso"
+        ]
+      },
+      {
+        "id": "topics",
+        "title": "Lo que vas a aprender:",
+        "kind": "list",
+        "items": [
+          "Gestión de reválidas",
+          "Orientación en trámites académicos",
+          "Organización de documentación",
+          "Seguimiento de fechas importantes"
+        ]
+      },
+      {
+        "id": "requirements",
+        "title": "Requisitos:",
+        "kind": "list",
+        "items": [
+          "Ser estudiante activo",
+          "Contar con documentación académica básica"
+        ]
+      },
+      {
+        "id": "payment-methods",
+        "title": "Forma de pago:",
+        "kind": "list",
+        "items": [
+          "Pago único",
+          "Por trámite"
+        ]
+      },
+      {
+        "id": "modality",
+        "title": "Modalidad de cursado:",
+        "kind": "list",
+        "items": [
+          "Virtual"
+        ]
+      }
+    ],
     "ctaLink": "https://wa.me/1234567890"
   },
   "idiomas": {
     "id": "idiomas",
-    "courseName": "Idiomas",
-    "certifiedByLogo": "HSBC",
-    "duration": "6 meses",
-    "totalHours": "180 horas en total de clases",
-    "topics": [
-      "Inglés general",
-      "Conversación práctica",
-      "Preparación para exámenes internacionales",
-      "Práctica de comprensión auditiva y lectura"
-    ],
-    "requirements": [
-      "Mayor a 16 años",
-      "Nivel inicial o intermedio (según grupo)"
-    ],
-    "paymentMethods": ["Mensual", "Total"],
-    "modality": "Presencial y virtual",
+    "title": "Idiomas",
     "backgroundImage": "img/idioma.jpg",
+    "sections": [
+      {
+        "id": "certification",
+        "title": "Certificación avalada por:",
+        "kind": "badge",
+        "text": "HSBC"
+      },
+      {
+        "id": "duration",
+        "title": "Duración:",
+        "kind": "list",
+        "items": [
+          "6 meses",
+          "180 horas en total de clases"
+        ]
+      },
+      {
+        "id": "topics",
+        "title": "Lo que vas a aprender:",
+        "kind": "list",
+        "items": [
+          "Inglés general",
+          "Conversación práctica",
+          "Preparación para exámenes internacionales",
+          "Práctica de comprensión auditiva y lectura"
+        ]
+      },
+      {
+        "id": "requirements",
+        "title": "Requisitos:",
+        "kind": "list",
+        "items": [
+          "Mayor a 16 años",
+          "Nivel inicial o intermedio (según grupo)"
+        ]
+      },
+      {
+        "id": "payment-methods",
+        "title": "Forma de pago:",
+        "kind": "list",
+        "items": [
+          "Mensual",
+          "Total"
+        ]
+      },
+      {
+        "id": "modality",
+        "title": "Modalidad de cursado:",
+        "kind": "list",
+        "items": [
+          "Presencial y virtual"
+        ]
+      }
+    ],
     "ctaLink": "https://wa.me/1234567890"
   }
 }
