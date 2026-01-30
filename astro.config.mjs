@@ -5,7 +5,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
 
     site: "https://mike-eki.github.io",
-    // base: "/CAM-Cursos-Web",
+    base: "/CAM-Cursos-Web",
     trailingSlash: "never",
     experimental: {
         fonts: [
