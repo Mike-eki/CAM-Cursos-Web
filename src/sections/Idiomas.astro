@@ -2,6 +2,7 @@
 import CardLinkRectangle from '../components/CardLinkRectangle.astro'
 import CardLinkSquare from '../components/CardLinkSquare.astro'
 import CTAButton from '../components/CTAButton.astro'
+import Icon from '../components/Icon.astro'
 import TestimonyCard from '../components/TestimonyCard.astro'
 import TrustNumbers from '../components/TrustNumbers.astro'
 import Wrapper from '../components/Wrapper.astro'
@@ -27,7 +28,9 @@ import LanguageIcon from '../icons/LanguageIcon.astro'
     </section>
 
     <section class="grid card-one">
-        <CardLinkRectangle title="Idiomas" path="img/idioma.jpg" desc="Cursos de idiomas" className="rect"/>
+        <CardLinkRectangle title="Idiomas" path="img/idioma.jpg" desc="Cursos de idiomas" className="rect">
+            <Icon icon='idiomas' width="30" slot="icon" color="inherit" fill="currentColor"/>
+        </CardLinkRectangle>
     </section>
 
     <section class="heading-icon h-grid-two">

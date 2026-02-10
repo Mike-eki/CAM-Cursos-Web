@@ -1,6 +1,7 @@
 ---
 import CardLinkRectangle from '../components/CardLinkRectangle.astro'
 import CTAButton from '../components/CTAButton.astro'
+import Icon from '../components/Icon.astro'
 import TestimonyCard from '../components/TestimonyCard.astro'
 import TrustNumbers from '../components/TrustNumbers.astro'
 import Wrapper from '../components/Wrapper.astro'
@@ -26,7 +27,9 @@ import HeartHearIcon from '../icons/HeartHearIcon.astro'
     </section>
 
     <section class="grid card-one">
-        <CardLinkRectangle title="Clases de apoyo en Medicina" path="img/apoyo.webp" desc="Cursado de apoyo en medicina" className="rect"/>
+        <CardLinkRectangle title="Clases de apoyo en Medicina" path="img/apoyo.webp" desc="Cursado de apoyo en medicina" className="rect">
+            <Icon icon='salud' width="30" slot="icon" color="inherit" fill="currentColor"/>
+        </CardLinkRectangle>
     </section>
 
     <header class="heading-icon h-grid-two">
@@ -39,7 +42,9 @@ import HeartHearIcon from '../icons/HeartHearIcon.astro'
     </section>
 
     <section class="grid card-two">
-        <CardLinkRectangle title="Revalidación y Tramites académicos" path="img/revalida.jpg" className="rect" />
+        <CardLinkRectangle title="Revalidación y Tramites académicos" path="img/revalida.jpg" className="rect">
+            <Icon icon='convalidacion' width="30" slot="icon" color="inherit" fill="currentColor" />
+        </CardLinkRectangle>
     </section>
 
     <section class="heading-icon h-grid-three">

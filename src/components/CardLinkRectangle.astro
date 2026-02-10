@@ -10,7 +10,9 @@ const { path, desc = "Imagen de la card", title, className, courseId } = Astro.p
             <img src={ path } alt={ desc } class={ className }>
         </header>
         <footer>
-            <RedirectIcon />
+            <slot name="icon">
+                <RedirectIcon />
+            </slot>
             <h2>{ title }</h2>
         </footer>
     </article>

@@ -9,6 +9,7 @@ import BienestarIcon from "../icons/BienestarIcon.astro";
 import GraduateHatIcon from "../icons/GraduateHatIcon.astro";
 import HSBCIcon from "../icons/HSBCIcon.astro";
 import ModalCurso from "../components/ModalCurso.astro";
+import Icon from "../components/Icon.astro";
 ---
 
 <Wrapper classname="grid-wrapper">
@@ -41,37 +42,87 @@ import ModalCurso from "../components/ModalCurso.astro";
     </section>
 
     <section class="grid">
+        <CardLinkRectangle
+            title="Psicología"
+            path="img/diseniomarketing.png"
+            desc="Cursos de psicología"
+            courseId="psicologia"
+        >
+            <Icon icon="psicologia" width="30" slot="icon" color="inherit" fill="currentColor"/>
+        </CardLinkRectangle>
         <CardLinkSquare
             title="Salud y Belleza"
             path="img/saludybelleza.png"
             desc="Cursos de salud y belleza"
             courseId="salud-belleza"
-        />
+        >
+            <Icon icon="cuidado_personal" width="30" slot="icon" color="inherit" fill="currentColor"/>
+        </CardLinkSquare>
         <CardLinkSquare
             title="Administración"
             path="img/administracion.png"
             desc="Cursos de administración"
             courseId="administracion"
-        />
+        >
+            <Icon icon="admin_recursos" width="30" slot="icon" color="inherit" fill="currentColor"/>
+        </CardLinkSquare>
         <CardLinkRectangle
             title="Organización de eventos"
             path="img/organizacioneventos.png"
             desc="Cursos de organización de eventos"
             courseId="organizacion-eventos"
-        />
+        >
+            <Icon icon="eventos" width="30" slot="icon" color="inherit" fill="currentColor"/>
+        </CardLinkSquare>
         <CardLinkSquare
             title="Oficios"
             path="img/oficios.png"
             desc="Cursos de oficios"
             courseId="oficios"
-        />
+        >
+            <Icon icon="oficios" width="30" slot="icon" color="inherit" fill="currentColor"/>
+        </CardLinkSquare>
         <CardLinkSquare
             title="Diseño y Marketing"
             path="img/diseniomarketing.png"
             desc="Cursos de diseño y marketing"
             className="last-card"
             courseId="disenio-marketing"
-        />
+        >
+            <Icon icon="dis_img" width="30" slot="icon" color="inherit" fill="currentColor"/>
+        </CardLinkSquare>
+        <CardLinkRectangle
+            title="Educación física y Fitness"
+            path="img/diseniomarketing.png"
+            desc="Cursos de educación física y fitness"
+            courseId="educacion-fisica-fitness"
+        >
+            <Icon icon="educ_fisica_fitness" width="30" slot="icon" color="inherit" fill="currentColor"/>
+        </CardLinkRectangle>
+        <CardLinkSquare
+            title="Desarrollo Digital"
+            path="img/diseniomarketing.png"
+            desc="Cursos de desarrollo digital"
+            courseId="desarrollo-digital"
+        >
+            <Icon icon="desarrollo_digital" width="30" slot="icon" color="inherit" fill="currentColor"/>
+        </CardLinkSquare>
+        <CardLinkSquare
+            title="Desarrollo Educativo"
+            path="img/diseniomarketing.png"
+            desc="Cursos de desarrollo educativo"
+            courseId="desarrollo-educativo"
+        >
+            <Icon icon="desarrollo_educativo" width="30" slot="icon" color="inherit" fill="currentColor"/>
+        </CardLinkSquare>
+        <CardLinkRectangle
+            title="Herramientas tecnologicas"
+            path="img/diseniomarketing.png"
+            desc="Cursos de herramientas tecnologicas"
+            courseId="herramientas-tecnologicas"
+        >
+            <Icon icon="herramientas_tecnologicas" width="30" slot="icon" color="inherit" fill="currentColor"/>
+        </CardLinkRectangle>
     </section>
 
     <section class="heading-icon h-testimonies">
