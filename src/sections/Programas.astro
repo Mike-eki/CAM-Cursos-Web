@@ -44,17 +44,17 @@ import Icon from "../components/Icon.astro";
     <section class="grid">
         <CardLinkRectangle
             title="Psicología"
-            path="img/diseniomarketing.png"
+            path="img/psicologia.png"
             desc="Cursos de psicología"
             courseId="psicologia"
         >
             <Icon icon="psicologia" width="30" slot="icon" color="inherit" fill="currentColor"/>
         </CardLinkRectangle>
         <CardLinkSquare
-            title="Salud y Belleza"
-            path="img/saludybelleza.png"
-            desc="Cursos de salud y belleza"
-            courseId="salud-belleza"
+            title="Bienestar y Cuidado personal"
+            path="img/cuidado.webp"
+            desc="Cursos de bienestar y cuidado personal"
+            courseId="cuidado"
         >
             <Icon icon="cuidado_personal" width="30" slot="icon" color="inherit" fill="currentColor"/>
         </CardLinkSquare>
@@ -67,7 +67,7 @@ import Icon from "../components/Icon.astro";
             <Icon icon="admin_recursos" width="30" slot="icon" color="inherit" fill="currentColor"/>
         </CardLinkSquare>
         <CardLinkRectangle
-            title="Organización de eventos"
+            title="Eventos sociales y Celebraciones"
             path="img/organizacioneventos.png"
             desc="Cursos de organización de eventos"
             courseId="organizacion-eventos"
@@ -86,14 +86,22 @@ import Icon from "../components/Icon.astro";
             title="Diseño y Marketing"
             path="img/diseniomarketing.png"
             desc="Cursos de diseño y marketing"
-            className="last-card"
+            
             courseId="disenio-marketing"
         >
             <Icon icon="dis_img" width="30" slot="icon" color="inherit" fill="currentColor"/>
         </CardLinkSquare>
         <CardLinkRectangle
+            title="Salud"
+            path="img/salud.png"
+            desc="Cursos de salud"
+            courseId="salud"
+        >
+            <Icon icon="salud" width="30" slot="icon" color="inherit" fill="currentColor"/>
+        </CardLinkRectangle>
+        <CardLinkRectangle
             title="Educación física y Fitness"
-            path="img/diseniomarketing.png"
+            path="img/fitness.png"
             desc="Cursos de educación física y fitness"
             courseId="educacion-fisica-fitness"
         >
@@ -101,23 +109,23 @@ import Icon from "../components/Icon.astro";
         </CardLinkRectangle>
         <CardLinkSquare
             title="Desarrollo Digital"
-            path="img/diseniomarketing.png"
+            path="img/digital.png"
             desc="Cursos de desarrollo digital"
             courseId="desarrollo-digital"
         >
             <Icon icon="desarrollo_digital" width="30" slot="icon" color="inherit" fill="currentColor"/>
         </CardLinkSquare>
         <CardLinkSquare
-            title="Desarrollo Educativo"
-            path="img/diseniomarketing.png"
-            desc="Cursos de desarrollo educativo"
-            courseId="desarrollo-educativo"
+            title="Desarrollo Personal"
+            path="img/personal.webp"
+            desc="Cursos de desarrollo personal"
+            courseId="desarrollo-personal"
         >
-            <Icon icon="desarrollo_educativo" width="30" slot="icon" color="inherit" fill="currentColor"/>
+            <Icon icon="desarrollo_personal" width="30" slot="icon" color="inherit" fill="currentColor"/>
         </CardLinkSquare>
         <CardLinkRectangle
             title="Herramientas tecnologicas"
-            path="img/diseniomarketing.png"
+            path="img/herramientas-tecnologicas.png"
             desc="Cursos de herramientas tecnologicas"
             courseId="herramientas-tecnologicas"
         >
@@ -189,6 +197,7 @@ import Icon from "../components/Icon.astro";
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 0.75rem;
+        align-items: stretch;
     }
 
     h2,
@@ -202,6 +211,12 @@ import Icon from "../components/Icon.astro";
     @media screen and (max-width: 400px) {
         .grid {
             grid-template-columns: 1fr;
+        }
+    }
+
+    @media screen and (min-width: 600px) and (max-width: 849px) {
+        .grid {
+            grid-template-columns: repeat(3, 1fr);
         }
     }
 
@@ -235,14 +250,13 @@ import Icon from "../components/Icon.astro";
             grid-row: 4;
         }
         .grid {
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            grid-auto-flow: dense;
+            grid-template-columns: repeat(5, 1fr);
+            grid-auto-rows: 1fr;
             grid-column: 1/5;
             grid-row: 5;
         }
-        .last-card {
-            grid-column: 3;
-            grid-row: 1;
+        .grid > * {
+            min-width: 0;
         }
 
         .h-testimonies {

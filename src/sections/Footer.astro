@@ -13,7 +13,7 @@ import ClockIcon from "../icons/ClockIcon.astro";
 import EmailIcon from "../icons/EmailIcon.astro";
 ---
 
-<Wrapper classname="grid-wrapper" >
+<Wrapper classname="grid-wrapper">
     <footer class="main-footer">
         <nav class="nav-links">
             <figure class="cam">
@@ -22,21 +22,23 @@ import EmailIcon from "../icons/EmailIcon.astro";
             <ul>
                 <li>
                     <a href="https://wa.me/5493412166867"
-                        ><WhatsAppIcon
-                            size={24}
-                        /></a>
+                        ><WhatsAppIcon size={24} /></a
+                    >
                 </li>
                 <li>
                     <a href="https://www.facebook.com/institutocam.medicina"
-                        ><FacebookIcon /></a>
+                        ><FacebookIcon /></a
+                    >
                 </li>
                 <li>
                     <a href="https://www.instagram.com/institutocam/?hl=es-la"
-                        ><InstagramIcon/></a>
+                        ><InstagramIcon /></a
+                    >
                 </li>
                 <li>
                     <a href="https://www.youtube.com/@caminstituto5827"
-                        ><YoutubeIcon /></a>
+                        ><YoutubeIcon /></a
+                    >
                 </li>
             </ul>
         </nav>
@@ -52,43 +54,57 @@ import EmailIcon from "../icons/EmailIcon.astro";
         <hgroup class="idiomas">
             <h4>Centro Evaluador Dele & Aplicador Siele y Cele</h4>
             <picture>
-                <img src="img/dele_LOGO_white.webp" alt="Logo de DELE" class="DELE"/>
-                <img src="img/siele_LOGO_white.webp" alt="Logo de SIELE" class="SIELE"/>
-                <img src="img/cele_LOGO_white.webp" alt="Logo de CELE" class="CELE"/>
+                <img
+                    src="img/dele_LOGO_white.webp"
+                    alt="Logo de DELE"
+                    class="DELE"
+                />
+                <img
+                    src="img/siele_LOGO_white.webp"
+                    alt="Logo de SIELE"
+                    class="SIELE"
+                />
+                <img
+                    src="img/cele_LOGO_white.webp"
+                    alt="Logo de CELE"
+                    class="CELE"
+                />
             </picture>
         </hgroup>
 
         <nav class="nav-info">
-            <hgroup>
-                <h4>Sede Lagos</h4>
-                <address>
-                    <PinIcon color="--hue-purple" />
-                    <a href="https://maps.app.goo.gl/YWyaSkCwqar3gCwc8"
-                        >Ovidio Lagos 640</a
-                    >
-                </address>
-                <address>
-                    <MapIcon color="--hue-purple" />
-                    <a href="https://maps.app.goo.gl/YWyaSkCwqar3gCwc8"
-                        >Rosario, Santa Fe</a
-                    >
-                </address>
-            </hgroup>
+            <div class="flex-two-items">
+                <hgroup>
+                    <h4>Sede Lagos</h4>
+                    <address>
+                        <PinIcon color="--hue-purple" />
+                        <a href="https://maps.app.goo.gl/YWyaSkCwqar3gCwc8"
+                            >Ovidio Lagos 640</a
+                        >
+                    </address>
+                    <address>
+                        <MapIcon color="--hue-purple" />
+                        <a href="https://maps.app.goo.gl/YWyaSkCwqar3gCwc8"
+                            >Rosario, Santa Fe</a
+                        >
+                    </address>
+                </hgroup>
 
-            <hgroup>
-                <h4>Horarios</h4>
-                <em>
-                    <ScheduleIcon color="--hue-purple" /> Lunes - Viernes
-                </em>
-                <em>
-                    <ClockIcon
-                        color="--hue-purple"
-                        lineColor="--hue-purple-dark"
-                    /> 9:00h a 16:00h
-                </em>
-            </hgroup>
+                <hgroup>
+                    <h4>Horarios</h4>
+                    <em>
+                        <ScheduleIcon color="--hue-purple" /> Lunes - Viernes
+                    </em>
+                    <em>
+                        <ClockIcon
+                            color="--hue-purple"
+                            lineColor="--hue-purple-dark"
+                        /> 9:00h a 16:00h
+                    </em>
+                </hgroup>
+            </div>
 
-            <hgroup>
+            <hgroup class="flex-one-item">
                 <h4>Contactos</h4>
                 <a href="https://wa.me/5493412166867" target="_blank">
                     <WhatsAppIcon color="--hue-purple" size={24} />
@@ -123,12 +139,15 @@ import EmailIcon from "../icons/EmailIcon.astro";
         text-decoration: none;
         color: white;
     }
-    ul, li {
+    ul,
+    li {
         list-style: none;
         padding: 0;
         margin: 0;
     }
-    figure, p, h4 {
+    figure,
+    p,
+    h4 {
         margin: 0;
     }
     h4 {
@@ -158,7 +177,6 @@ import EmailIcon from "../icons/EmailIcon.astro";
         width: 100px;
     }
 
-
     .idiomas {
         display: flex;
         flex-direction: column;
@@ -179,18 +197,29 @@ import EmailIcon from "../icons/EmailIcon.astro";
         width: 100px;
     }
 
-
-    .nav-info {
+    .flex-two-items {
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        text-align: left;
+    }
+    .flex-one-item {
+        text-align: left;
+    }
+
+    .nav-info {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
     }
     .nav-info hgroup {
         display: flex;
         flex-direction: column;
         gap: 0.75rem;
     }
-    .nav-info address, .nav-info em, .nav-info a {
+    .nav-info address,
+    .nav-info em,
+    .nav-info a {
         display: flex;
         align-items: center;
         gap: 0.5rem;
@@ -200,11 +229,16 @@ import EmailIcon from "../icons/EmailIcon.astro";
         width: 30px;
     }
 
+    @media screen and (max-width: 850px) {
+        .nav-info {
+            flex-direction: column;
+        }
+    }
+
     @media screen and (min-width: 850px) {
         .main-footer {
             grid-column: 2/4;
         }
-
 
         .nav-info {
             margin-inline: auto;
@@ -217,10 +251,6 @@ import EmailIcon from "../icons/EmailIcon.astro";
         }
         .idiomas picture {
             justify-content: center;
-        }
-
-        .nav-info hgroup {
-            align-items: center;
         }
     }
 </style>

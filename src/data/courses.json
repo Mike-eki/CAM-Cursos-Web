@@ -1,15 +1,9 @@
 {
-  "salud-belleza": {
-    "id": "salud-belleza",
-    "title": "Salud y Belleza",
-    "backgroundImage": "img/saludybelleza.png",
+  "psicologia": {
+    "id": "psicologia",
+    "title": "Psicología",
+    "backgroundImage": "img/psicologia.png",
     "sections": [
-      {
-        "id": "certification",
-        "title": "Certificación avalada por:",
-        "kind": "badge",
-        "text": "HSBC"
-      },
       {
         "id": "duration",
         "title": "Duración:",
@@ -18,43 +12,134 @@
           "4 meses",
           "180 horas en total de clases"
         ]
-      },
+      }
+    ],
+    "ctaLink": "https://wa.me/1234567890"
+  },
+  "educacion-fisica-fitness": {
+    "id": "educacion-fisica-fitness",
+    "title": "Educación Fisica y Fitness",
+    "backgroundImage": "img/fitness.png",
+    "sections": [
       {
-        "id": "topics",
-        "title": "Lo que vas a aprender:",
+        "id": "cursos-disponibles",
+        "title": "Cursos disponibles:",
         "kind": "list",
         "items": [
-          "Peluquería profesional",
-          "Estética facial y corporal",
-          "Maquillaje artístico",
-          "Manicura y pedicura"
+          "Entrenamiento funcional",
+          "Pilates",
+          "Entrenamiento prenatal",
+          "Personal trainer",
+          "Instructorado de fitness",
+          "Actividad física en adultos mayores",
+          "Localizada",
+          "Instructorado en ritmos brasileros",
+          "Instructorado en ritmos",
+          "Calistenia"
+        ]
+      }
+    ],
+    "ctaLink": "https://wa.me/1234567890"
+  },
+  "desarrollo-digital": {
+    "id": "desarrollo-digital",
+    "title": "Desarrollo Digital",
+    "backgroundImage": "img/digital.png",
+    "sections": [
+      {
+        "id": "cursos-disponibles",
+        "title": "Cursos disponibles:",
+        "kind": "list",
+        "items": [
+          "Iniciación a la Programación con JavaScript",
+          "Python"
+        ]
+      }
+    ],
+    "ctaLink": "https://wa.me/1234567890"
+  },
+  "desarrollo-personal": {
+    "id": "desarrollo-personal",
+    "title": "Desarrollo Personal",
+    "backgroundImage": "img/personal.webp",
+    "sections": [
+      {
+        "id": "cursos-disponibles",
+        "title": "Cursos disponibles:",
+        "kind": "list",
+        "items": [
+          "Liderazgo y Oratoria",
+          "Técnicas de Estudio",
+          "Coaching Ontológico y Liderazgo"
+        ]
+      }
+    ],
+    "ctaLink": "https://wa.me/1234567890"
+  },
+  "herramientas-tecnologicas": {
+    "id": "herramientas-tecnologicas",
+    "title": "Herramientas tecnologicas",
+    "backgroundImage": "img/herramientas-tecnologicas.png",
+    "sections": [
+      {
+        "id": "cursos-disponibles",
+        "title": "Cursos disponibles:",
+        "kind": "list",
+        "items": [
+          "Office",
+          "Excel Inicial"
         ]
       },
       {
-        "id": "requirements",
-        "title": "Requisitos:",
+        "id": "adultos-mayores",
+        "title": "Cursos especificos para adultos mayores:",
         "kind": "list",
         "items": [
-          "Mayor a 16 años",
-          "Con o sin experiencia previa",
-          "Mínimo de 80% de asistencia"
+          "Informática Básica para la Tercera Edad",
+          "Redes Sociales y Apps Útiles para la Tercera Edad"
         ]
-      },
+      }
+    ],
+    "ctaLink": "https://wa.me/1234567890"
+  },
+  "cuidado": {
+    "id": "cuidado",
+    "title": "Bienestar y Cuidado personal",
+    "backgroundImage": "img/cuidado.webp",
+    "sections": [
       {
-        "id": "payment-methods",
-        "title": "Forma de pago:",
+        "id": "cursos-disponibles",
+        "title": "Cursos disponibles:",
         "kind": "list",
         "items": [
-          "Mensual",
-          "Total"
+          "Maquillaje profesional",
+          "Automaquillaje",
+          "Depilación con cera",
+          "Manicura profesional",
+          "Pedicura",
+          "Barberia",
+          "Operador laser",
+          "Estetica corporal"
         ]
-      },
+      }
+    ],
+    "ctaLink": "https://wa.me/1234567890"
+  },
+  "salud": {
+    "id": "salud",
+    "title": "Salud",
+    "backgroundImage": "img/salud.png",
+    "sections": [
       {
-        "id": "modality",
-        "title": "Modalidad de cursado:",
+        "id": "cursos-disponibles",
+        "title": "Cursos disponibles:",
         "kind": "list",
         "items": [
-          "Presencial y/o virtual"
+          "Estimulación Temprana",
+          "Asistente Terapéutico",
+          "Hematología",
+          "Cuidador Profesional de Personas Mayores",
+          "Extraccionista"
         ]
       }
     ],
@@ -66,57 +151,17 @@
     "backgroundImage": "img/administracion.png",
     "sections": [
       {
-        "id": "certification",
-        "title": "Certificación avalada por:",
-        "kind": "badge",
-        "text": "HSBC"
-      },
-      {
-        "id": "duration",
-        "title": "Duración:",
+        "id": "cursos-disponibles",
+        "title": "Cursos disponibles:",
         "kind": "list",
         "items": [
-          "6 meses",
-          "240 horas en total de clases"
-        ]
-      },
-      {
-        "id": "topics",
-        "title": "Lo que vas a aprender:",
-        "kind": "list",
-        "items": [
-          "Contabilidad básica",
-          "Recursos Humanos",
-          "Gestión empresarial",
-          "Finanzas corporativas"
-        ]
-      },
-      {
-        "id": "requirements",
-        "title": "Requisitos:",
-        "kind": "list",
-        "items": [
-          "Mayor a 18 años",
-          "Secundario completo",
-          "Mínimo de 80% de asistencia"
-        ]
-      },
-      {
-        "id": "payment-methods",
-        "title": "Forma de pago:",
-        "kind": "list",
-        "items": [
-          "Mensual",
-          "Total",
-          "Becas disponibles"
-        ]
-      },
-      {
-        "id": "modality",
-        "title": "Modalidad de cursado:",
-        "kind": "list",
-        "items": [
-          "Presencial"
+          "Administrativo de laboratorio",
+          "Asistente Jurídico",
+          "Secretariado Ejecutivo",
+          "Auxiliar de Farmacia",
+          "Facturación Sanatorial",
+          "Secretariado Médico",
+          "Recepcionista Profesional"
         ]
       }
     ],
@@ -124,59 +169,17 @@
   },
   "organizacion-eventos": {
     "id": "organizacion-eventos",
-    "title": "Organización de Eventos",
+    "title": "Eventos sociales y Celebraciones",
     "backgroundImage": "img/organizacioneventos.png",
     "sections": [
       {
-        "id": "certification",
-        "title": "Certificación avalada por:",
-        "kind": "badge",
-        "text": "HSBC"
-      },
-      {
-        "id": "duration",
-        "title": "Duración:",
+        "id": "cursos-disponibles",
+        "title": "Cursos disponibles:",
         "kind": "list",
         "items": [
-          "5 meses",
-          "200 horas en total"
-        ]
-      },
-      {
-        "id": "topics",
-        "title": "Lo que vas a aprender:",
-        "kind": "list",
-        "items": [
-          "Planificación de eventos",
-          "Protocolo y ceremonial",
-          "Catering y logística",
-          "Marketing de eventos"
-        ]
-      },
-      {
-        "id": "requirements",
-        "title": "Requisitos:",
-        "kind": "list",
-        "items": [
-          "Mayor a 18 años",
-          "Experiencia deseable pero no obligatoria"
-        ]
-      },
-      {
-        "id": "payment-methods",
-        "title": "Forma de pago:",
-        "kind": "list",
-        "items": [
-          "Mensual",
-          "Total"
-        ]
-      },
-      {
-        "id": "modality",
-        "title": "Modalidad de cursado:",
-        "kind": "list",
-        "items": [
-          "Virtual"
+          "Organización de Eventos",
+          "Wedding Planner",
+          "Ceremonial y Protocolo"
         ]
       }
     ],
@@ -248,55 +251,15 @@
     "backgroundImage": "img/diseniomarketing.png",
     "sections": [
       {
-        "id": "certification",
-        "title": "Certificación avalada por:",
-        "kind": "badge",
-        "text": "HSBC"
-      },
-      {
-        "id": "duration",
-        "title": "Duración:",
+        "id": "cursos-disponibles",
+        "title": "Cursos disponibles:",
         "kind": "list",
         "items": [
-          "4 meses",
-          "160 horas en total de clases"
-        ]
-      },
-      {
-        "id": "topics",
-        "title": "Lo que vas a aprender:",
-        "kind": "list",
-        "items": [
-          "Diseño gráfico básico",
-          "Introducción a Photoshop e Illustrator",
-          "Marketing digital y redes sociales",
-          "Branding y comunicación visual"
-        ]
-      },
-      {
-        "id": "requirements",
-        "title": "Requisitos:",
-        "kind": "list",
-        "items": [
-          "Mayor a 16 años",
-          "Manejo básico de PC"
-        ]
-      },
-      {
-        "id": "payment-methods",
-        "title": "Forma de pago:",
-        "kind": "list",
-        "items": [
-          "Mensual",
-          "Total"
-        ]
-      },
-      {
-        "id": "modality",
-        "title": "Modalidad de cursado:",
-        "kind": "list",
-        "items": [
-          "Virtual y presencial"
+          "Canva",
+          "Community Manager",
+          "Illustrator",
+          "Marketing Digital desde cero",
+          "Fotografía"
         ]
       }
     ],

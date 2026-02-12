@@ -22,7 +22,7 @@ import CardCountry from "./CardCountry.astro";
         <ArrowDownIcon />
     </footer>
 
-    <div class="countries">
+    <!-- <div class="countries">
         <CardCountry>
             <ArgentinaFlagIcon slot="flag-icon" />
             <h4 slot="title">Argentina</h4>
@@ -31,7 +31,7 @@ import CardCountry from "./CardCountry.astro";
             <ParaguayFlagIcon slot="flag-icon" />
             <h4 slot="title">Paraguay</h4>
         </CardCountry>
-    </div>
+    </div> -->
 </main>
 
 <style>
@@ -110,39 +110,28 @@ import CardCountry from "./CardCountry.astro";
     @media screen and (min-width: 600px) {
         main {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, 1fr);
             aspect-ratio: auto;
             gap: 1rem;
+            height: 70vh;
         }
         header {
+            grid-row: 1;
+            grid-column: 1/2;
         }
         picture {
             position: static;
-            grid-row: span 2;
+            grid-row: 1/5;
+            grid-column: 1/2;
             height: auto;
         }
         img {
             border-radius: 1rem;
         }
         footer {
-        }
-    }
-
-    @media screen and (min-width: 850px) {
-
-        main {
-            grid-template-rows: 1fr 1fr 1fr;
-        }
-        picture {
-            grid-row: span 3;
-        }
-        .countries {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-        .countries h4 {
-            margin: 0;
+            grid-row: 4;
+            grid-column: 1/2;
         }
     }
 </style>
