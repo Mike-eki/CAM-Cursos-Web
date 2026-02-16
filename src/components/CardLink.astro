@@ -1,0 +1,161 @@
+---
+import RedirectIcon from "../icons/RedirectIcon.astro"
+
+export interface Props {
+  /** Image path for the card */
+  path: string;
+  /** Card title */
+  title: string;
+  /** Image alt text */
+  desc?: string;
+  /** Additional CSS classes */
+  className?: string;
+  /** Course identifier */
+  courseId: string;
+  /** Image aspect ratio: '1' (square) or '16/7.7' (rectangle) */
+  aspectRatio?: '1' | '16/7.7' | 'rect';
+}
+
+const { 
+  path, 
+  desc = "Imagen del curso", 
+  title, 
+  className = '', 
+  courseId,
+  aspectRatio = "1"
+} = Astro.props;
+
+const aspectRatioValue = aspectRatio === 'rect' ? '16/7.7' : aspectRatio;
+---
+
+<a 
+  href="#" 
+  class:list={['card-link', className]} 
+  data-course-id={courseId} 
+  data-aspect-ratio={aspectRatioValue}
+>
+  <article class="card-link__article">
+    <div class="card-link__image-wrapper">
+      <img 
+        src={path} 
+        alt={desc} 
+        class="card-link__image"
+        loading="lazy"
+      />
+    </div>
+    <div class="card-link__content">
+      <slot name="icon">
+        <RedirectIcon />
+      </slot>
+      <h2 class="card-link__title">{title}</h2>
+    </div>
+  </article>
+</a>
+
+<style>
+  .card-link {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .card-link__article {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-container-bg, #0f0f0f);
+    border: 1px solid var(--color-bg-card-border, #dcdcdc);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-link__image-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .card-link__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 1;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  /* Apply aspect ratio based on data attribute */
+  .card-link[data-aspect-ratio="16/7.7"] .card-link__image {
+    aspect-ratio: 16/7.7;
+  }
+
+  .card-link__content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background-color: var(--color-container-bg, #0f0f0f);
+    border-radius: 0 0 1rem 1rem;
+  }
+
+  .card-link__content :global(svg) {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    fill: currentColor;
+  }
+
+  .card-link__title {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  /* Hover effects */
+  .card-link:hover .card-link__article,
+  .card-link:focus-visible .card-link__article {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow:
+      0 16px 32px rgba(0, 0, 0, 0.12),
+      0 8px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .card-link:hover .card-link__content,
+  .card-link:focus-visible .card-link__content {
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  .card-link:hover :global(svg),
+  .card-link:focus-visible :global(svg) {
+    transform: translateX(4px);
+    transition: transform 0.25s ease;
+  }
+
+  /* Mobile styles */
+  @media (max-width: 400px) {
+    .card-link__image {
+      aspect-ratio: 16/7.7;
+    }
+  }
+
+  /* Desktop styles */
+  @media (min-width: 850px) {
+    .card-link__image {
+      aspect-ratio: 1;
+    }
+
+    .card-link[data-aspect-ratio="16/7.7"] .card-link__image {
+      aspect-ratio: 16/7.7;
+    }
+  }
+</style>

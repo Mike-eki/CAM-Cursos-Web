@@ -1,5 +1,5 @@
 ---
-import CardLinkRectangle from '../components/CardLinkRectangle.astro'
+import CardLink from '../components/CardLink.astro'
 import CTAButton from '../components/CTAButton.astro'
 import Icon from '../components/Icon.astro'
 import TestimonyCard from '../components/TestimonyCard.astro'
@@ -9,7 +9,7 @@ import CertificateIcon from '../icons/CertificateIcon.astro'
 import HeartHearIcon from '../icons/HeartHearIcon.astro'
 ---
 
-<Wrapper classname="grid-wrapper">
+<Wrapper className="grid-wrapper">
 
     <header class="heading-icon h-grid-one">
         <HeartHearIcon />
@@ -27,9 +27,9 @@ import HeartHearIcon from '../icons/HeartHearIcon.astro'
     </section>
 
     <section class="grid card-one">
-        <CardLinkRectangle title="Alumnos de Ciencias Medicas" path="img/apoyo.webp" desc="Cursado de apoyo en medicina" className="rect">
-            <Icon icon='salud' width="30" slot="icon" color="inherit" fill="currentColor"/>
-        </CardLinkRectangle>
+        <CardLink title="Alumnos de Ciencias Medicas" path="img/apoyo.webp" desc="Cursado de apoyo en medicina" className="rect" aspectRatio="16/7.7" courseId="apoyo-medicina">
+            <Icon icon='salud' width="30" slot="icon"/>
+        </CardLink>
     </section>
 
     <header class="heading-icon h-grid-two">
@@ -42,9 +42,9 @@ import HeartHearIcon from '../icons/HeartHearIcon.astro'
     </section>
 
     <section class="grid card-two">
-        <CardLinkRectangle title="Revalidación y Tramites académicos" path="img/revalida.jpg" className="rect">
-            <Icon icon='convalidacion' width="30" slot="icon" color="inherit" fill="currentColor" />
-        </CardLinkRectangle>
+        <CardLink title="Revalidación y Tramites académicos" path="img/revalida.jpg" className="rect" aspectRatio="16/7.7" courseId="revalida">
+            <Icon icon='convalidacion' width="30" slot="icon" />
+        </CardLink>
     </section>
 
     <section class="heading-icon h-grid-three">
@@ -109,15 +109,32 @@ import HeartHearIcon from '../icons/HeartHearIcon.astro'
         gap: 0.75rem;
     }
 
+    /* Rectangle cards span 2 columns by default */
+    :global(.grid > .rect) {
+        grid-column: span 2;
+    }
 
     h2, p {
         margin: 0;
     }
 
-
     @media screen and (max-width: 400px) {
         .grid {
             grid-template-columns: 1fr;
+        }
+        /* On mobile, all cards take full width */
+        :global(.grid > .rect) {
+            grid-column: span 1;
+        }
+    }
+
+    /* Tablet: cards fill 2 columns */
+    @media screen and (min-width: 401px) and (max-width: 849px) {
+        .grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        :global(.grid > .rect) {
+            grid-column: span 2;
         }
     }
 
@@ -128,7 +145,6 @@ import HeartHearIcon from '../icons/HeartHearIcon.astro'
         .mobile-wrapper {
             grid-template-columns: 1fr 1fr 1fr 1fr;
         }
-
 
         .h-grid-one {
             grid-column: 1/3;

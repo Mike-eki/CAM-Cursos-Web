@@ -1,8 +1,13 @@
 ---
-const { classname = "" } = Astro.props;
+interface Props {
+  /** Additional CSS classes to apply */
+  className?: string;
+}
+
+const { className = "" } = Astro.props;
 ---
 
-<article class={ "base " + classname }>
+<article class:list={["base", className]}>
     <slot />
 </article>
 
