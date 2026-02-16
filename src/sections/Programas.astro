@@ -220,6 +220,8 @@ import Icon from "../components/Icon.astro";
         }
     }
 
+    
+
     @media screen and (min-width: 850px) {
         .h-grid {
             grid-column: 1/5;
@@ -250,7 +252,7 @@ import Icon from "../components/Icon.astro";
             grid-row: 4;
         }
         .grid {
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             grid-auto-rows: 1fr;
             grid-column: 1/5;
             grid-row: 5;
@@ -278,6 +280,12 @@ import Icon from "../components/Icon.astro";
         .button {
             grid-column: 2/4;
             grid-row: 8;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        .grid {
+            grid-template-columns: repeat(6, 1fr);
         }
     }
 

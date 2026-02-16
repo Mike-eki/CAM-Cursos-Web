@@ -205,13 +205,17 @@ import EmailIcon from "../icons/EmailIcon.astro";
     }
     .flex-one-item {
         text-align: left;
+        /* max-width: 30ch;  */
     }
 
     .nav-info {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         justify-content: center;
-        gap: 2rem;
+        justify-items: center;
+        gap: 0.5rem;
     }
+
     .nav-info hgroup {
         display: flex;
         flex-direction: column;
@@ -229,9 +233,11 @@ import EmailIcon from "../icons/EmailIcon.astro";
         width: 30px;
     }
 
-    @media screen and (max-width: 850px) {
+    @media screen and (max-width: 500px) {
         .nav-info {
-            flex-direction: column;
+            grid-template-columns: 1fr;
+            justify-items: left;
+            gap: 2rem;
         }
     }
 
