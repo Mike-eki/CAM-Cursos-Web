@@ -302,6 +302,33 @@ const {
     font-size: 14px;
   }
 
+  /* PDF Button styles */
+  :global(.pdf-link) {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 8px;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  :global(.pdf-link:hover) {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+  }
+
+  :global(.pdf-link svg) {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
   .cta-button {
     display: flex;
     align-items: center;
@@ -455,6 +482,38 @@ const {
     return svg;
   }
 
+  function createPDFIcon() {
+    const svgNS = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(svgNS, 'svg');
+    svg.setAttribute('width', '14');
+    svg.setAttribute('height', '14');
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('stroke', 'currentColor');
+    svg.setAttribute('stroke-width', '2');
+    svg.setAttribute('stroke-linecap', 'round');
+    svg.setAttribute('stroke-linejoin', 'round');
+    
+    const path1 = document.createElementNS(svgNS, 'path');
+    path1.setAttribute('d', 'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z');
+    
+    const polyline = document.createElementNS(svgNS, 'polyline');
+    polyline.setAttribute('points', '14 2 14 8 20 8');
+    
+    const path2 = document.createElementNS(svgNS, 'path');
+    path2.setAttribute('d', 'M12 18v-6');
+    
+    const path3 = document.createElementNS(svgNS, 'path');
+    path3.setAttribute('d', 'M9 15h6');
+    
+    svg.appendChild(path1);
+    svg.appendChild(polyline);
+    svg.appendChild(path2);
+    svg.appendChild(path3);
+    
+    return svg;
+  }
+
   function renderCourseSection(section) {
     const sectionEl = document.createElement('div');
     sectionEl.className = 'info-section';
@@ -485,7 +544,33 @@ const {
 
       section.items.forEach((item) => {
         const li = document.createElement('li');
-        li.textContent = item;
+        
+        // Handle items with PDF
+        if (typeof item === 'object' && item.text) {
+          const textSpan = document.createElement('span');
+          textSpan.textContent = item.text;
+          li.appendChild(textSpan);
+          
+          // Add PDF link if available
+          if (item.pdfUrl) {
+            const pdfLink = document.createElement('a');
+            pdfLink.href = item.pdfUrl;
+            pdfLink.className = 'pdf-link';
+            pdfLink.setAttribute('target', '_blank');
+            pdfLink.setAttribute('rel', 'noopener noreferrer');
+            pdfLink.appendChild(createPDFIcon());
+            
+            const linkText = document.createElement('span');
+            linkText.textContent = 'Ver temario (PDF)';
+            pdfLink.appendChild(linkText);
+            
+            li.appendChild(pdfLink);
+          }
+        } else {
+          // Simple string item
+          li.textContent = item;
+        }
+        
         ul.appendChild(li);
       });
 
