@@ -4,7 +4,6 @@ import CTAButton from "../components/CTAButton.astro";
 import TestimonyCard from "../components/TestimonyCard.astro";
 import TrustNumbers from "../components/TrustNumbers.astro";
 import Wrapper from "../components/Wrapper.astro";
-import BienestarIcon from "../icons/BienestarIcon.astro";
 import GraduateHatIcon from "../icons/GraduateHatIcon.astro";
 import HSBCIcon from "../icons/HSBCIcon.astro";
 import ModalCurso from "../components/ModalCurso.astro";
@@ -36,100 +35,96 @@ import Icon from "../components/Icon.astro";
             <HSBCIcon />
             <HSBCIcon />
             <HSBCIcon />
-            
         </div>
     </section>
 
-    <section class="grid">
-        <CardLink
-            title="Psicología"
-            path="img/psicologia.png"
-            desc="Cursos de psicología"
-            courseId="psicologia"
-        >
-            <Icon icon="psicologia" width="30" slot="icon" color="inherit" fill="currentColor"/>
-        </CardLink>
-        <CardLink
-            title="Bienestar y Cuidado personal"
-            path="img/cuidado.webp"
-            desc="Cursos de bienestar y cuidado personal"
-            courseId="cuidado"
-        >
-            <Icon icon="cuidado_personal" width="30" slot="icon" color="inherit" fill="currentColor"/>
-        </CardLink>
-        <CardLink
-            title="Administración"
-            path="img/administracion.png"
-            desc="Cursos de administración"
-            courseId="administracion"
-        >
-            <Icon icon="admin_recursos" width="30" slot="icon" color="inherit" fill="currentColor"/>
-        </CardLink>
-        <CardLink
-            title="Eventos sociales y Celebraciones"
-            path="img/organizacioneventos.png"
-            desc="Cursos de organización de eventos"
-            courseId="organizacion-eventos"
-        >
-            <Icon icon="eventos" width="30" slot="icon" color="inherit" fill="currentColor"/>
-        </CardLink>
-        <CardLink
-            title="Oficios"
-            path="img/oficios.png"
-            desc="Cursos de oficios"
-            courseId="oficios"
-        >
-            <Icon icon="oficios" width="30" slot="icon" color="inherit" fill="currentColor"/>
-        </CardLink>
-        <CardLink
-            title="Diseño y Marketing"
-            path="img/diseniomarketing.png"
-            desc="Cursos de diseño y marketing"
-            
-            courseId="disenio-marketing"
-        >
-            <Icon icon="dis_img" width="30" slot="icon" color="inherit" fill="currentColor"/>
-        </CardLink>
-        <CardLink
-            title="Salud"
-            path="img/salud.png"
-            desc="Cursos de salud"
-            courseId="salud"
-        >
-            <Icon icon="salud" width="30" slot="icon" color="inherit" fill="currentColor"/>
-        </CardLink>
-        <CardLink
-            title="Educación física y Fitness"
-            path="img/fitness.png"
-            desc="Cursos de educación física y fitness"
-            courseId="educacion-fisica-fitness"
-        >
-            <Icon icon="educ_fisica_fitness" width="30" slot="icon" color="inherit" fill="currentColor"/>
-        </CardLink>
-        <CardLink
-            title="Desarrollo Digital"
-            path="img/digital.png"
-            desc="Cursos de desarrollo digital"
-            courseId="desarrollo-digital"
-        >
-            <Icon icon="desarrollo_digital" width="30" slot="icon" color="inherit" fill="currentColor"/>
-        </CardLink>
-        <CardLink
-            title="Desarrollo Personal"
-            path="img/personal.webp"
-            desc="Cursos de desarrollo personal"
-            courseId="desarrollo-personal"
-        >
-            <Icon icon="desarrollo_personal" width="30" slot="icon" color="inherit" fill="currentColor"/>
-        </CardLink>
-        <CardLink
-            title="Herramientas tecnologicas"
-            path="img/herramientas-tecnologicas.png"
-            desc="Cursos de herramientas tecnologicas"
-            courseId="herramientas-tecnologicas"
-        >
-            <Icon icon="herramientas_tecnologicas" width="30" slot="icon" color="inherit" fill="currentColor"/>
-        </CardLink>
+    <section class="card-wrapper">
+        <hgroup>
+            <h4>Cursos con salida laboral</h4>
+        </hgroup>
+        <section class="grid">
+            <!-- Main course cards -->
+            <CardLink
+                title="Psicología"
+                path="img/psicologia.png"
+                desc="Cursos de psicología"
+                courseId="psicologia"
+            >
+                <Icon icon="psicologia" width="30" slot="icon" />
+            </CardLink>
+            <CardLink
+                title="Bienestar y Cuidado personal"
+                path="img/cuidado.webp"
+                desc="Cursos de bienestar y cuidado personal"
+                courseId="cuidado"
+            >
+                <Icon icon="cuidado_personal" width="30" slot="icon" />
+            </CardLink>
+            <CardLink
+                title="Administración"
+                path="img/administracion.png"
+                desc="Cursos de administración"
+                courseId="administracion"
+            >
+                <Icon icon="admin_recursos" width="30" slot="icon" />
+            </CardLink>
+            <CardLink
+                title="Eventos sociales y Celebraciones"
+                path="img/organizacioneventos.png"
+                desc="Cursos de organización de eventos"
+                courseId="organizacion-eventos"
+            >
+                <Icon icon="eventos" width="30" slot="icon" />
+            </CardLink>
+            <CardLink
+                title="Diseño y Marketing"
+                path="img/diseniomarketing.png"
+                desc="Cursos de diseño y marketing"
+                courseId="disenio-marketing"
+            >
+                <Icon icon="dis_img" width="30" slot="icon" />
+            </CardLink>
+            <CardLink
+                title="Salud"
+                path="img/salud.png"
+                desc="Cursos de salud"
+                courseId="salud"
+            >
+                <Icon icon="salud" width="30" slot="icon" />
+            </CardLink>
+            <CardLink
+                title="Educación física y Fitness"
+                path="img/fitness.png"
+                desc="Cursos de educación física y fitness"
+                courseId="educacion-fisica-fitness"
+            >
+                <Icon icon="educ_fisica_fitness" width="30" slot="icon" />
+            </CardLink>
+            <CardLink
+                title="Desarrollo Digital"
+                path="img/digital.png"
+                desc="Cursos de desarrollo digital"
+                courseId="desarrollo-digital"
+            >
+                <Icon icon="desarrollo_digital" width="30" slot="icon" />
+            </CardLink>
+            <CardLink
+                title="Desarrollo Personal"
+                path="img/personal.webp"
+                desc="Cursos de desarrollo personal"
+                courseId="desarrollo-personal"
+            >
+                <Icon icon="desarrollo_personal" width="30" slot="icon" />
+            </CardLink>
+            <CardLink
+                title="Herramientas tecnologicas"
+                path="img/herramientas-tecnologicas.png"
+                desc="Cursos de herramientas tecnologicas"
+                courseId="herramientas-tecnologicas"
+            >
+                <Icon icon="herramientas_tecnologicas" width="30" slot="icon" />
+            </CardLink>
+        </section>
     </section>
 
     <section class="heading-icon h-testimonies">
@@ -165,6 +160,7 @@ import Icon from "../components/Icon.astro";
         display: flex;
         justify-content: center;
         gap: 0.5rem;
+        margin-bottom: 1rem;
     }
 
     .description {
@@ -185,6 +181,33 @@ import Icon from "../components/Icon.astro";
         display: flex;
         justify-content: center;
         gap: 1.25rem;
+    }
+
+    .card-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        grid-column: 1/5;
+        grid-row: 5;
+
+        padding: 0.5rem;
+        background: #141414;
+        background: linear-gradient(
+            45deg,
+            rgba(20, 20, 20, 1) 0%,
+            rgba(30, 30, 30, 1) 35%
+        );
+        border-radius: 1rem;
+    }
+    .card-wrapper hgroup h4 {
+        font-size: 1.25rem;
+        margin: 0;
+        padding: 0.5rem;
+        text-align: center;
+        background-color: #141414;
+        border: 1px solid white;
+        border-radius: 1rem;
     }
 
     .row {
@@ -219,8 +242,6 @@ import Icon from "../components/Icon.astro";
         }
     }
 
-    
-
     @media screen and (min-width: 850px) {
         .h-grid {
             grid-column: 1/5;
@@ -250,20 +271,20 @@ import Icon from "../components/Icon.astro";
             grid-column: 2/4;
             grid-row: 4;
         }
+        .card-wrapper {
+        }
         .grid {
             grid-template-columns: repeat(4, 1fr);
             grid-auto-rows: 1fr;
-            grid-column: 1/5;
-            grid-row: 5;
+            /* grid-column: 1/5;
+            grid-row: 5; */
         }
         .grid > * {
             min-width: 0;
         }
 
         .h-testimonies {
-
             font-size: 1.5rem;
-
             grid-column: 2/4;
             grid-row: 6;
 
@@ -287,5 +308,4 @@ import Icon from "../components/Icon.astro";
             grid-template-columns: repeat(6, 1fr);
         }
     }
-
 </style>

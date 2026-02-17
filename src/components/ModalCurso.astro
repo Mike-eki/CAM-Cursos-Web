@@ -189,7 +189,7 @@ const {
     bottom: 0;
     left: 0;
     width: 75%;
-    background: #FF5C67;
+    background: #0077ff;
     padding: 18px 20px;
     border-radius: 1rem;
     z-index: 10;
@@ -210,9 +210,9 @@ const {
     overflow-y: auto;
     border-radius: 1rem;
     padding-bottom: 24px;
-    background-color: #FF5C67;
+    background-color: #0077ff;
     scrollbar-width: thin;
-    scrollbar-color: #FF5C67 rgba(255, 255, 255, 0.05);
+    scrollbar-color: #0077ff rgba(255, 255, 255, 0.05);
   }
 
   .modal-body::-webkit-scrollbar {
@@ -225,7 +225,7 @@ const {
   }
 
   .modal-body::-webkit-scrollbar-thumb {
-    background: #FF5C67;
+    background: #0077ff;
     border-radius: 10px;
   }
 
@@ -234,13 +234,13 @@ const {
   }
 
   :global(.info-section) {
-    background: #FF5C67;
+    background: #0077ff;
     padding: 14px 18px;
   }
 
   :global(.section-label) {
     background-color: #FFFFFF;
-    color: #FF5C67;
+    color: #0077ff;
     border-radius: 1rem;
     padding: 0.25rem;
     padding-inline: 0.75rem;
@@ -280,24 +280,26 @@ const {
 
   :global(.info-list li) {
     position: relative;
-    padding-left: 18px;
+    margin-left: 0.25rem;
+    padding-left: 1rem;
     margin-bottom: 6px;
     font-size: 14px;
     line-height: 1.5;
     color: #FFFFFF;
   }
 
-  .info-list li:last-child {
+  :global(.info-list li:last-child) {
     margin-bottom: 0;
   }
 
-  .info-list li::before {
+  :global(.info-list li::before) {
     content: "•";
     position: absolute;
-    left: 4px;
+    left: 0;
+    top: 0;
     color: #FFFFFF;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .cta-button {
@@ -308,7 +310,7 @@ const {
     /* width: 100%; */
     padding: 15px 20px;
     background: #FFFFFF;
-    color: #FF5C67;
+    color: #0077ff;
     border: none;
     border-radius: 12px;
     font-size: 15px;

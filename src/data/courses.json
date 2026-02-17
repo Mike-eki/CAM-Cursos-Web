@@ -185,66 +185,6 @@
     ],
     "ctaLink": "https://wa.me/1234567890"
   },
-  "oficios": {
-    "id": "oficios",
-    "title": "Oficios",
-    "backgroundImage": "img/oficios.png",
-    "sections": [
-      {
-        "id": "certification",
-        "title": "Certificación avalada por:",
-        "kind": "badge",
-        "text": "HSBC"
-      },
-      {
-        "id": "duration",
-        "title": "Duración:",
-        "kind": "list",
-        "items": [
-          "3 meses",
-          "120 horas en total de clases"
-        ]
-      },
-      {
-        "id": "topics",
-        "title": "Lo que vas a aprender:",
-        "kind": "list",
-        "items": [
-          "Electricidad básica",
-          "Carpintería",
-          "Plomería",
-          "Reparaciones del hogar"
-        ]
-      },
-      {
-        "id": "requirements",
-        "title": "Requisitos:",
-        "kind": "list",
-        "items": [
-          "Mayor a 16 años",
-          "Ganas de aprender un oficio práctico"
-        ]
-      },
-      {
-        "id": "payment-methods",
-        "title": "Forma de pago:",
-        "kind": "list",
-        "items": [
-          "Mensual",
-          "Total"
-        ]
-      },
-      {
-        "id": "modality",
-        "title": "Modalidad de cursado:",
-        "kind": "list",
-        "items": [
-          "Presencial"
-        ]
-      }
-    ],
-    "ctaLink": "https://wa.me/1234567890"
-  },
   "disenio-marketing": {
     "id": "disenio-marketing",
     "title": "Diseño y Marketing",
