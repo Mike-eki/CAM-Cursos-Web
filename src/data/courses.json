@@ -51,7 +51,7 @@
         "title": "Cursos disponibles:",
         "kind": "list",
         "items": [
-          {"text": "Iniciación a la Programación con JavaScript", "pdfUrl": "/pdf/inicio-javascript2026.pdf"},
+          {"text": "Iniciación a la Programación con JavaScript", "pdfUrl": "pdf/inicio-javascript2026.pdf"},
           "Python"
         ]
       }
