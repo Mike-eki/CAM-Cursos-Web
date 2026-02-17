@@ -11,6 +11,8 @@ import MapIcon from "../icons/MapIcon.astro";
 import ScheduleIcon from "../icons/ScheduleIcon.astro";
 import ClockIcon from "../icons/ClockIcon.astro";
 import EmailIcon from "../icons/EmailIcon.astro";
+import ArgentinaFlagIcon from "../icons/ArgentinaFlagIcon.astro";
+import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
 ---
 
 <Wrapper className="grid-wrapper">
@@ -75,7 +77,7 @@ import EmailIcon from "../icons/EmailIcon.astro";
         <nav class="nav-info">
             <div class="flex-two-items">
                 <hgroup>
-                    <h4>Sede Lagos</h4>
+                    <h4><ArgentinaFlagIcon /> Argentina</h4>
                     <address>
                         <PinIcon color="--hue-purple" />
                         <a href="https://maps.app.goo.gl/YWyaSkCwqar3gCwc8"
@@ -102,6 +104,24 @@ import EmailIcon from "../icons/EmailIcon.astro";
                         /> 9:00h a 16:00h
                     </em>
                 </hgroup>
+
+                <hgroup>
+                    <h4><ParaguayFlagIcon /> Paraguay</h4>
+                    <address>
+                        <PinIcon color="--hue-purple" />
+                        <a href="https://maps.app.goo.gl/gB5FdjtSvNrniHrz9"
+                            >4 de Mayo & Avenida Rogelio Benitez</a
+                        >
+                    </address>
+                    <address>
+                        <MapIcon color="--hue-purple" />
+                        <a href="https://maps.app.goo.gl/gB5FdjtSvNrniHrz9"
+                            >Ciudad del Este, Alto Paraná</a
+                        >
+                    </address>
+                </hgroup>
+
+                
             </div>
 
             <hgroup class="flex-one-item">
@@ -219,7 +239,13 @@ import EmailIcon from "../icons/EmailIcon.astro";
     .nav-info hgroup {
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 0.75rem;
+    }
+    .nav-info hgroup h4 {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
     }
     .nav-info address,
     .nav-info em,
@@ -238,6 +264,9 @@ import EmailIcon from "../icons/EmailIcon.astro";
             grid-template-columns: 1fr;
             justify-items: left;
             gap: 2rem;
+        }
+        .nav-info hgroup {
+            align-items: flex-start;
         }
     }
 

@@ -1,16 +1,16 @@
 {
-  "psicologia": {
-    "id": "psicologia",
-    "title": "Psicología",
-    "backgroundImage": "img/psicologia.png",
+  "adultos-mayores": {
+    "id": "adultos-mayores",
+    "title": "Adultos mayores",
+    "backgroundImage": "img/mayores.jpg",
     "sections": [
       {
-        "id": "duration",
-        "title": "Duración:",
+        "id": "cursos-disponibles",
+        "title": "Cursos disponibles:",
         "kind": "list",
         "items": [
-          "4 meses",
-          "180 horas en total de clases"
+          "Informática Básica para la Tercera Edad",
+          "Redes Sociales y Apps Útiles para la Tercera Edad"
         ]
       }
     ],
@@ -88,15 +88,6 @@
         "items": [
           "Office",
           "Excel Inicial"
-        ]
-      },
-      {
-        "id": "adultos-mayores",
-        "title": "Cursos especificos para adultos mayores:",
-        "kind": "list",
-        "items": [
-          "Informática Básica para la Tercera Edad",
-          "Redes Sociales y Apps Útiles para la Tercera Edad"
         ]
       }
     ],
