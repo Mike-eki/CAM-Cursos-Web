@@ -130,7 +130,9 @@ import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
                     <WhatsAppIcon color="--hue-purple" size={24} />
                     +54 9 341 216-6867
                 </a>
-                <em> Atenção para ingressantes em português </em>
+                <em class="em-port">
+                    Atenção para ingressantes em português
+                </em>
                 <a href="https://wa.me/5493415469738" target="_blank">
                     <WhatsAppIcon color="--hue-purple" size={24} />
                     +54 9 341 546-9738
@@ -216,6 +218,7 @@ import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
     .CELE {
         width: 100px;
     }
+    
 
     .flex-two-items {
         display: flex;
@@ -259,6 +262,8 @@ import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
         width: 30px;
     }
 
+    
+
     @media screen and (max-width: 500px) {
         .nav-info {
             grid-template-columns: 1fr;
@@ -268,6 +273,7 @@ import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
         .nav-info hgroup {
             align-items: flex-start;
         }
+        
     }
 
     @media screen and (min-width: 850px) {
@@ -287,5 +293,14 @@ import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
         .idiomas picture {
             justify-content: center;
         }
+
+        
+    }
+
+    @media screen and (max-width: 500px) { 
+        .em-port { text-align: left }        
+    }
+    @media screen and (min-width: 500px) { 
+        .em-port { text-align: center }        
     }
 </style>

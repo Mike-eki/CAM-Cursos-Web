@@ -27,7 +27,13 @@ import HeartHearIcon from '../icons/HeartHearIcon.astro'
     </section>
 
     <section class="grid card-one">
-        <CardLink title="Alumnos de Ciencias Medicas" path="img/apoyo.webp" desc="Cursado de apoyo en medicina" className="rect" aspectRatio="16/7.7" courseId="apoyo-medicina">
+        <CardLink 
+         title="Alumnos de Ciencias Medicas"
+         path="img/apoyo.webp"
+         desc="Cursado de apoyo en medicina"
+         className="rect"
+         aspectRatio="16/7.7"
+         courseId="clases-apoyo-medicina">
             <Icon icon='salud' width="30" slot="icon"/>
         </CardLink>
     </section>
@@ -42,7 +48,12 @@ import HeartHearIcon from '../icons/HeartHearIcon.astro'
     </section>
 
     <section class="grid card-two">
-        <CardLink title="Revalidación y Tramites académicos" path="img/revalida.jpg" className="rect" aspectRatio="16/7.7" courseId="revalida">
+        <CardLink 
+        title="Revalidación y Tramites académicos" 
+        path="img/revalida.jpg" 
+        className="rect" 
+        aspectRatio="16/7.7" 
+        courseId="revalidacion-tramites">
             <Icon icon='convalidacion' width="30" slot="icon" />
         </CardLink>
     </section>
@@ -66,7 +77,9 @@ import HeartHearIcon from '../icons/HeartHearIcon.astro'
     </section>
 
     <footer class="button">
-        <CTAButton text="Quiero acelerar mi carrera"/>
+        <CTAButton 
+        text="Quiero acelerar mi carrera de medicina"
+        waMessage="¡Hola! Les escribo desde su web porque quiero acelerar mi carrera de medicina en CAM." />
     </footer>
 
 </Wrapper>

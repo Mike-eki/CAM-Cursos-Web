@@ -14,7 +14,7 @@
         ]
       }
     ],
-    "ctaLink": "https://wa.me/1234567890"
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa saber mas sobre los cursos para adultos mayores."
   },
   "educacion-fisica-fitness": {
     "id": "educacion-fisica-fitness",
@@ -39,7 +39,7 @@
         ]
       }
     ],
-    "ctaLink": "https://wa.me/1234567890"
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa saber mas sobre los cursos de educación física y fitness."
   },
   "desarrollo-digital": {
     "id": "desarrollo-digital",
@@ -56,7 +56,7 @@
         ]
       }
     ],
-    "ctaLink": "https://wa.me/1234567890"
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa saber mas sobre los cursos de desarrollo digital."
   },
   "desarrollo-personal": {
     "id": "desarrollo-personal",
@@ -74,7 +74,7 @@
         ]
       }
     ],
-    "ctaLink": "https://wa.me/1234567890"
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa saber mas sobre los cursos de desarrollo personal."
   },
   "herramientas-tecnologicas": {
     "id": "herramientas-tecnologicas",
@@ -91,7 +91,7 @@
         ]
       }
     ],
-    "ctaLink": "https://wa.me/1234567890"
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa saber mas sobre los cursos de herramientas tecnologicas."
   },
   "cuidado": {
     "id": "cuidado",
@@ -114,7 +114,7 @@
         ]
       }
     ],
-    "ctaLink": "https://wa.me/1234567890"
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa saber mas sobre los cursos de bienestar y cuidado personal."
   },
   "salud": {
     "id": "salud",
@@ -134,11 +134,11 @@
         ]
       }
     ],
-    "ctaLink": "https://wa.me/1234567890"
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa saber mas sobre los cursos de salud."
   },
   "administracion": {
     "id": "administracion",
-    "title": "Administración Empresarial",
+    "title": "Administración",
     "backgroundImage": "img/administracion.png",
     "sections": [
       {
@@ -156,7 +156,7 @@
         ]
       }
     ],
-    "ctaLink": "https://wa.me/1234567890"
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa saber mas sobre los cursos de administración."
   },
   "organizacion-eventos": {
     "id": "organizacion-eventos",
@@ -174,7 +174,7 @@
         ]
       }
     ],
-    "ctaLink": "https://wa.me/1234567890"
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa saber mas sobre los cursos de organización de eventos."
   },
   "disenio-marketing": {
     "id": "disenio-marketing",
@@ -194,97 +194,50 @@
         ]
       }
     ],
-    "ctaLink": "https://wa.me/1234567890"
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa saber mas sobre los cursos de marketing y diseño."
   },
   "clases-apoyo-medicina": {
     "id": "clases-apoyo-medicina",
-    "title": "Clases de apoyo en Medicina",
+    "title": "Alumnos de Ciencias Medicas",
     "backgroundImage": "img/apoyo.webp",
     "sections": [
       {
-        "id": "certification",
-        "title": "Certificación avalada por:",
-        "kind": "badge",
-        "text": "HSBC"
-      },
-      {
-        "id": "duration",
-        "title": "Duración:",
+        "id": "cursos-ingreso",
+        "title": "Cursos de ingreso a Medicina:",
         "kind": "list",
         "items": [
-          "Acompañamiento anual",
-          "Carga horaria flexible según necesidades"
+          "CYD",
+          "Sexualidad",
+          "Injuria",
+          "Preparación de Finales"
         ]
       },
       {
-        "id": "topics",
-        "title": "Lo que vas a aprender:",
+        "id": "capacitacion",
+        "title": "Cursos de capacitación:",
         "kind": "list",
         "items": [
-          "Repaso de contenido teórico",
-          "Resolución de casos clínicos",
-          "Preparación para parciales y finales"
-        ]
-      },
-      {
-        "id": "requirements",
-        "title": "Requisitos:",
-        "kind": "list",
-        "items": [
-          "Ser estudiante de medicina o carreras afines"
-        ]
-      },
-      {
-        "id": "payment-methods",
-        "title": "Forma de pago:",
-        "kind": "list",
-        "items": [
-          "Mensual",
-          "Pack de clases"
-        ]
-      },
-      {
-        "id": "modality",
-        "title": "Modalidad de cursado:",
-        "kind": "list",
-        "items": [
-          "Presencial y/o virtual"
+          "Básico de sutura",
+          "Extraccionista",
+          "Primeros auxilios y soporte vital extrahospitalario",
+          "RCP y DEA",
+          "Cálculo de goteo",
+          "Colocación de sonda vesical y nasogástrica",
+          "Farmacología",
+          "Colocación de férulas y yesos",
+          "Curso Básico de Sutura",
+          "Electrocardiograma",
+          "Temas de guardia"
         ]
       }
     ],
-    "ctaLink": "https://wa.me/1234567890"
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa saber más acerca de las clases de apoyo en medicina."
   },
   "revalidacion-tramites": {
     "id": "revalidacion-tramites",
     "title": "Revalidación y Trámites Académicos",
     "backgroundImage": "img/revalida.jpg",
     "sections": [
-      {
-        "id": "certification",
-        "title": "Certificación avalada por:",
-        "kind": "badge",
-        "text": "HSBC"
-      },
-      {
-        "id": "duration",
-        "title": "Duración:",
-        "kind": "list",
-        "items": [
-          "1 a 2 meses (según caso)",
-          "Acompañamiento en todo el proceso"
-        ]
-      },
-      {
-        "id": "topics",
-        "title": "Lo que vas a aprender:",
-        "kind": "list",
-        "items": [
-          "Gestión de reválidas",
-          "Orientación en trámites académicos",
-          "Organización de documentación",
-          "Seguimiento de fechas importantes"
-        ]
-      },
       {
         "id": "requirements",
         "title": "Requisitos:",
@@ -293,26 +246,9 @@
           "Ser estudiante activo",
           "Contar con documentación académica básica"
         ]
-      },
-      {
-        "id": "payment-methods",
-        "title": "Forma de pago:",
-        "kind": "list",
-        "items": [
-          "Pago único",
-          "Por trámite"
-        ]
-      },
-      {
-        "id": "modality",
-        "title": "Modalidad de cursado:",
-        "kind": "list",
-        "items": [
-          "Virtual"
-        ]
       }
     ],
-    "ctaLink": "https://wa.me/1234567890"
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, quiero información sobre los tramites academicos y la revalidación."
   },
   "idiomas": {
     "id": "idiomas",
@@ -320,58 +256,17 @@
     "backgroundImage": "img/idioma.jpg",
     "sections": [
       {
-        "id": "certification",
-        "title": "Certificación avalada por:",
-        "kind": "badge",
-        "text": "HSBC"
-      },
-      {
-        "id": "duration",
-        "title": "Duración:",
+        "id": "cursos-disponibles",
+        "title": "Idiomas que puedes aprender:",
         "kind": "list",
         "items": [
-          "6 meses",
-          "180 horas en total de clases"
-        ]
-      },
-      {
-        "id": "topics",
-        "title": "Lo que vas a aprender:",
-        "kind": "list",
-        "items": [
-          "Inglés general",
-          "Conversación práctica",
-          "Preparación para exámenes internacionales",
-          "Práctica de comprensión auditiva y lectura"
-        ]
-      },
-      {
-        "id": "requirements",
-        "title": "Requisitos:",
-        "kind": "list",
-        "items": [
-          "Mayor a 16 años",
-          "Nivel inicial o intermedio (según grupo)"
-        ]
-      },
-      {
-        "id": "payment-methods",
-        "title": "Forma de pago:",
-        "kind": "list",
-        "items": [
-          "Mensual",
-          "Total"
-        ]
-      },
-      {
-        "id": "modality",
-        "title": "Modalidad de cursado:",
-        "kind": "list",
-        "items": [
-          "Presencial y virtual"
+          "Español como lengua extranjera",
+          "Inglés",
+          "Italiano",
+          "Portugués"
         ]
       }
     ],
-    "ctaLink": "https://wa.me/1234567890"
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa saber más acerca de los cursos de idiomas."
   }
 }

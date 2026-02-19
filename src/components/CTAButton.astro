@@ -1,10 +1,10 @@
 ---
 import WhatsAppIcon from "../icons/WhatsAppIcon.astro"
 
-const { text = "Button" } = Astro.props
+const { text = "Button", waMessage = "" } = Astro.props
 ---
 
-<a href="#" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+<a href=`https://wa.me/5493412166867?text=${encodeURIComponent(waMessage)}` target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
     <WhatsAppIcon />
     { text }
 </a>
@@ -23,15 +23,12 @@ const { text = "Button" } = Astro.props
     padding-inline: 0.75rem;
     padding-block: 0.5rem;
     border-radius: 1rem;
+    text-wrap: pretty;
     
 /* Glow base muy sutil */
     box-shadow: 
       0 0 8px 1px #25d36640,
       0 0 14px 1px #25d36620;
-
-    /* box-shadow: 
-      0 0 8px 1px #aaaaaa40,
-      0 0 14px 1px #88888820; */
     
     /* Animación neón suave y discreta */
     animation: subtle-neon 5s ease-in-out infinite alternate;
@@ -41,12 +38,9 @@ const { text = "Button" } = Astro.props
       scale 0.25s ease;
   }
 
+
 @keyframes subtle-neon {
     from {
-      /* box-shadow: 
-        0 0 8px  1px #25d36630,
-        0 0 14px 1px #25d36618,
-        0 0 22px 0px #25d3660d; */
 
       box-shadow: 
         0 0 8px  1px #aaaaaa30,
