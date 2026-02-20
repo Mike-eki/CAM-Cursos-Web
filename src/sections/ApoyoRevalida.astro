@@ -2,11 +2,28 @@
 import CardLink from '../components/CardLink.astro'
 import CTAButton from '../components/CTAButton.astro'
 import Icon from '../components/Icon.astro'
-import TestimonyCard from '../components/TestimonyCard.astro'
+import TestimoniesCarousel from '../components/TestimoniesCarousel.astro'
 import TrustNumbers from '../components/TrustNumbers.astro'
 import Wrapper from '../components/Wrapper.astro'
 import CertificateIcon from '../icons/CertificateIcon.astro'
 import HeartHearIcon from '../icons/HeartHearIcon.astro'
+
+const testimonies = [
+    {
+        quote: "Muy buena experiencia, te ayudan en todo lo referido al cursado y también los cursos intensivos para preparar mesas te salvan la vida, son cortos, las clases son integradoras y participativas, lo que te ayuda un montón ya que todos los finales son orales. Lo súper recomiendo 10/10.",
+        author: "Lorena Escobar",
+        role: "Estudiante de medicina",
+        img: "img/authors/lorena_escobar.png",
+        alt: "Foto de Lorena Escobar"
+    },
+    {
+        quote: "Excelente lugar y profes. ¡La atención un 10, súper recomendados!",
+        author: "Priscila Gómez",
+        role: "Estudiante de medicina",
+        img: "img/authors/prisci_gomez.png",
+        alt: "Foto de Priscila Gómez"
+    }
+];
 ---
 
 <Wrapper className="grid-wrapper">
@@ -63,17 +80,7 @@ import HeartHearIcon from '../icons/HeartHearIcon.astro'
     </section>
 
     <section class="testimonies">
-        <TestimonyCard path="img/autor1.png">
-            <Fragment slot="quote">
-                Las clases son excelentes a nivel profesional al igual que los docentes, super cálidos, amables y dispuestos a enseñarte hasta que aprendas de verdad
-            </Fragment>
-            <Fragment slot="author">
-                María G.
-            </Fragment>
-            <Fragment slot="role">
-                Egresada en Marketing
-            </Fragment>
-        </TestimonyCard>
+        <TestimoniesCarousel testimonies={testimonies} />
     </section>
 
     <footer class="button">

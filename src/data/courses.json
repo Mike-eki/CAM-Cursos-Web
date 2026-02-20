@@ -51,7 +51,15 @@
         "title": "Cursos disponibles:",
         "kind": "list",
         "items": [
-          {"text": "Iniciación a la Programación con JavaScript", "pdfUrl": "pdf/inicio-javascript2026.pdf"},
+          {
+            "text": "Iniciación a la Programación con JavaScript",
+            "buttons": [
+              {
+                "label": "Ver temario",
+                "url": "pdf/inicio-javascript2026.pdf"
+              }
+            ]
+          },
           "Python"
         ]
       }
@@ -202,14 +210,53 @@
     "backgroundImage": "img/apoyo.webp",
     "sections": [
       {
-        "id": "cursos-ingreso",
-        "title": "Cursos de ingreso a Medicina:",
+        "id": "ingreso-medicina",
+        "title": "Cursos de ingreso, apoyo académico y preparación de finales:",
         "kind": "list",
         "items": [
-          "CYD",
-          "Sexualidad",
+          {
+            "text": "Crecimiento y Desarrollo",
+            "buttons": [
+              {
+                "label": "Ver temario (Acompaña)",
+                "url": "pdf/TEMARIO-DE-CYD-ACOMPANA.pdf"
+              },
+              {
+                "label": "Ver temario (Final)",
+                "url": "pdf/TEMARIO-DE-CYD-FINAL.pdf"
+              }
+            ]
+          },
+          {
+            "text": "Nutrición",
+            "buttons": [
+              {
+                "label": "Ver temario (Acompaña)",
+                "url": "pdf/TEMARIO-DE-NUTRI-ACOMPANA.pdf"
+              },
+              {
+                "label": "Ver temario (Final)",
+                "url": "pdf/TEMARIO-DE-NUTRI-FINAL.pdf"
+              }
+            ]
+          },
+          {
+            "text": "Sexualidad",
+            "buttons": [
+              {
+                "label": "Ver temario (Acompaña)",
+                "url": "pdf/TEMARIO-DE-SGYR-ACOMPANA.pdf"
+              },
+              {
+                "label": "Ver temario (Final)",
+                "url": "pdf/TEMARIO-DE-SGYR-FINAL.pdf"
+              }
+            ]
+          },
+          "Trabajo y Tiempo libre",
+          "El Ser",
           "Injuria",
-          "Preparación de Finales"
+          "Defensa"
         ]
       },
       {
@@ -217,7 +264,7 @@
         "title": "Cursos de capacitación:",
         "kind": "list",
         "items": [
-          "Básico de sutura",
+          "Sutura Básica",
           "Extraccionista",
           "Primeros auxilios y soporte vital extrahospitalario",
           "RCP y DEA",
@@ -225,7 +272,6 @@
           "Colocación de sonda vesical y nasogástrica",
           "Farmacología",
           "Colocación de férulas y yesos",
-          "Curso Básico de Sutura",
           "Electrocardiograma",
           "Temas de guardia"
         ]

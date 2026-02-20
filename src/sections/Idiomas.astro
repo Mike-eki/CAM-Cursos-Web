@@ -2,11 +2,28 @@
 import CardLink from '../components/CardLink.astro'
 import CTAButton from '../components/CTAButton.astro'
 import Icon from '../components/Icon.astro'
-import TestimonyCard from '../components/TestimonyCard.astro'
+import TestimoniesCarousel from '../components/TestimoniesCarousel.astro'
 import TrustNumbers from '../components/TrustNumbers.astro'
 import Wrapper from '../components/Wrapper.astro'
 import HSBCIcon from '../icons/HSBCIcon.astro'
 import LanguageIcon from '../icons/LanguageIcon.astro'
+
+const testimonies = [
+    {
+        quote: "Excelente la atención. Es integral, se ocupan no solo de lo académico sino de sostener a los chicos emocionalmente. Como experiencia de una hija estudiando afuera, estamos muy agradecidos.",
+        author: "Claudia Centurion",
+        role: "Madre de estudiante",
+        img: "img/authors/claudia_centurion.png",
+        alt: "Foto de Claudia Centurion"
+    },
+    {
+        quote: "Son super rápidos y eficientes. Nada que quejarme, todo lo contrario, son muy buenos.",
+        author: "Dellanyra Claudia Pariguana Bernal",
+        role: "Estudiante de idiomas",
+        img: "img/authors/dellanyra_claudia_pariguana_bernal.png",
+        alt: "Foto de Dellanyra Claudia Pariguana Bernal"
+    }
+];
 ---
 
 <Wrapper className="grid-wrapper">
@@ -37,17 +54,7 @@ import LanguageIcon from '../icons/LanguageIcon.astro'
     </section>
 
     <section class="testimonies">
-        <TestimonyCard path="img/autor1.png">
-            <Fragment slot="quote">
-                Las clases son excelentes a nivel profesional al igual que los docentes, super cálidos, amables y dispuestos a enseñarte hasta que aprendas de verdad
-            </Fragment>
-            <Fragment slot="author">
-                María G.
-            </Fragment>
-            <Fragment slot="role">
-                Egresada en Marketing
-            </Fragment>
-        </TestimonyCard>
+        <TestimoniesCarousel testimonies={testimonies} />
     </section>
 
     <footer class="button">

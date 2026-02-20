@@ -1,13 +1,30 @@
 ---
 import CardLink from "../components/CardLink.astro";
 import CTAButton from "../components/CTAButton.astro";
-import TestimonyCard from "../components/TestimonyCard.astro";
+import TestimoniesCarousel from "../components/TestimoniesCarousel.astro";
 import TrustNumbers from "../components/TrustNumbers.astro";
 import Wrapper from "../components/Wrapper.astro";
 import GraduateHatIcon from "../icons/GraduateHatIcon.astro";
 import HSBCIcon from "../icons/HSBCIcon.astro";
 import ModalCurso from "../components/ModalCurso.astro";
 import Icon from "../components/Icon.astro";
+
+const testimonies = [
+    {
+        quote: "Inicie con la formación y es mi primer contacto con la página. Las chicas telefónicamente han sido muy atentas.",
+        author: "Sonia Francisca Aramendi",
+        role: "Estudiante",
+        img: "img/authors/sonia_francisca_aramendi.png",
+        alt: "Foto de Sonia Francisca Aramendi"
+    },
+    {
+        quote: "El lugar, el cursado, los profes, las personas que trabajan allá son todos muy buenos. Además hacen un trabajo espectacular con los cursos, la plataforma virtual y la enseñanza. ¡Siempre lo recomiendo a todos que me preguntan!",
+        author: "Lily",
+        role: "Estudiante",
+        img: "img/authors/lily.png", 
+        alt: "Foto de Lily"
+    }
+];
 ---
 
 <Wrapper className="grid-wrapper">
@@ -134,15 +151,7 @@ import Icon from "../components/Icon.astro";
     </section>
 
     <section class="testimonies">
-        <TestimonyCard path="img/autor1.png">
-            <span slot="quote">
-                Las clases son excelentes a nivel profesional al igual que los
-                docentes, super cálidos, amables y dispuestos a enseñarte hasta
-                que aprendas de verdad
-            </span>
-            <span slot="author"> María G. </span>
-            <span slot="role"> Egresada en Marketing </span>
-        </TestimonyCard>
+        <TestimoniesCarousel testimonies={testimonies} />
     </section>
 
     <footer class="button">

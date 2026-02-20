@@ -1,0 +1,227 @@
+---
+import TestimonyCard from "./TestimonyCard.astro";
+
+interface Props {
+    testimonies: {
+        quote: string;
+        author: string;
+        role: string;
+        img: string;
+        alt: string;
+    }[];
+}
+
+const { testimonies } = Astro.props;
+---
+
+<div class="carousel-component">
+    <div class="carousel-container">
+        <button class="carousel-btn prev" aria-label="Anterior testimonio">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        
+        <div class="carousel-viewport">
+            <div class="carousel-track">
+                {testimonies.map((t) => (
+                    <div class="carousel-slide">
+                        <TestimonyCard path={t.img} desc={t.alt}>
+                            <span slot="quote">{t.quote}</span>
+                            <span slot="author">{t.author}</span>
+                            <span slot="role">{t.role}</span>
+                        </TestimonyCard>
+                    </div>
+                ))}
+            </div>
+        </div>
+    
+        <button class="carousel-btn next" aria-label="Siguiente testimonio">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+    </div>
+    
+    <div class="carousel-dots">
+        {testimonies.map((_, index) => (
+            <button class:list={["dot", { active: index === 0 }]} aria-label={`Ir al testimonio ${index + 1}`}></button>
+        ))}
+    </div>
+</div>
+
+<style>
+    .carousel-component {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .carousel-container {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        position: relative;
+    }
+
+    .carousel-viewport {
+        overflow: hidden;
+        width: 100%;
+        border-radius: 1rem;
+    }
+
+    .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+    }
+
+    .carousel-slide {
+        min-width: 100%;
+        flex: 0 0 100%;
+        box-sizing: border-box;
+        padding: 0; 
+    }
+
+    .carousel-btn {
+        background: #000000;
+        border: 1px solid #ffffff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: #ffffff;
+        transition: background-color 0.2s, color 0.2s;
+        flex-shrink: 0;
+        z-index: 2;
+    }
+
+    .carousel-btn:hover {
+        background-color: #ffffff;
+        color: #000000;
+        border: 1px solid #000000;
+    }
+    
+    .carousel-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--color-bg-card-border, #dcdcdc);
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        transition: background-color 0.2s, transform 0.2s, border 0.2s;
+        box-sizing: border-box; /* Ensure border doesn't increase size if we added one, though here we swap bg */
+    }
+
+    .dot:hover {
+        transform: scale(1.1);
+    }
+
+    .dot.active {
+        background-color: #000000;
+        border: 2px solid #ffffff;
+        box-shadow: 0 0 0 1px #000000; /* Optional: adds a black ring outside the white border to make it pop against light backgrounds */
+    }
+
+    @media (max-width: 600px) {
+        .carousel-btn {
+            display: none;
+        }
+    }
+</style>
+
+<script>
+    class TestimonyCarousel {
+        component: HTMLElement;
+        track: HTMLElement;
+        slides: NodeListOf<HTMLElement>;
+        prevBtn: HTMLButtonElement | null;
+        nextBtn: HTMLButtonElement | null;
+        dots: NodeListOf<HTMLButtonElement>;
+        currentIndex: number;
+
+        touchStartX: number = 0;
+        touchEndX: number = 0;
+
+        constructor(component: HTMLElement) {
+            this.component = component;
+            this.track = component.querySelector('.carousel-track') as HTMLElement;
+            this.slides = component.querySelectorAll('.carousel-slide');
+            this.prevBtn = component.querySelector('.prev');
+            this.nextBtn = component.querySelector('.next');
+            this.dots = component.querySelectorAll('.dot');
+            this.currentIndex = 0;
+
+            if (this.component.dataset.initialized === "true") return;
+            this.component.dataset.initialized = "true";
+
+            this.init();
+        }
+
+        init() {
+            if (this.prevBtn) this.prevBtn.addEventListener('click', () => this.prev());
+            if (this.nextBtn) this.nextBtn.addEventListener('click', () => this.next());
+            
+            this.dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => this.goTo(index));
+            });
+
+            this.track.addEventListener('touchstart', (e) => {
+                this.touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            this.track.addEventListener('touchend', (e) => {
+                this.touchEndX = e.changedTouches[0].screenX;
+                this.handleSwipe();
+            }, { passive: true });
+        }
+
+        handleSwipe() {
+            if (this.touchEndX < this.touchStartX - 50) this.next();
+            if (this.touchEndX > this.touchStartX + 50) this.prev();
+        }
+
+        update() {
+            this.track.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+
+            this.dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === this.currentIndex);
+            });
+        }
+
+        next() {
+            this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+            this.update();
+        }
+
+        prev() {
+            this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+            this.update();
+        }
+        
+        goTo(index: number) {
+            this.currentIndex = index;
+            this.update();
+        }
+    }
+
+    function initCarousels() {
+        const components = document.querySelectorAll('.carousel-component');
+        components.forEach(component => new TestimonyCarousel(component as HTMLElement));
+    }
+
+    document.addEventListener('astro:page-load', initCarousels);
+    document.addEventListener('DOMContentLoaded', initCarousels);
+</script>

@@ -552,7 +552,27 @@ const {
           li.appendChild(textSpan);
           
           // Add PDF link if available
-          if (item.pdfUrl) {
+          // Add Buttons if available
+          if (Array.isArray(item.buttons)) {
+            item.buttons.forEach(btn => {
+              const buttonLink = document.createElement('a');
+              buttonLink.href = btn.url;
+              buttonLink.className = 'pdf-link';
+              buttonLink.setAttribute('target', '_blank');
+              buttonLink.setAttribute('rel', 'noopener noreferrer');
+              
+              // Only add icon if it looks like a PDF or if we want icons everywhere
+              // For now, let's keep the PDF icon as it matches the style
+              buttonLink.appendChild(createPDFIcon());
+              
+              const linkText = document.createElement('span');
+              linkText.textContent = btn.label || 'Ver archivo';
+              buttonLink.appendChild(linkText);
+              
+              li.appendChild(buttonLink);
+            });
+          } else if (item.pdfUrl) {
+            // Backward compatibility
             const pdfLink = document.createElement('a');
             pdfLink.href = item.pdfUrl;
             pdfLink.className = 'pdf-link';
