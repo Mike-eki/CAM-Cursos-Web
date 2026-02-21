@@ -299,7 +299,7 @@
   "idiomas": {
     "id": "idiomas",
     "title": "Idiomas",
-    "backgroundImage": "img/idioma.jpg",
+    "backgroundImage": "img/idioma.png",
     "sections": [
       {
         "id": "cursos-disponibles",
