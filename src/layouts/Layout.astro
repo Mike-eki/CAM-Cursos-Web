@@ -1,16 +1,65 @@
 ---
 import { Font } from "astro:assets";
+
+const {
+	title = "Instituto CAM | Cursos con Salida Laboral, Idiomas y Apoyo para Medicina",
+	description = "Más de 15 años transformando vidas. En Instituto CAM ofrecemos cursos con rápida salida laboral, idiomas (español, portugués, inglés, italiano) y apoyo universitario para medicina. Clases presenciales en Argentina y Paraguay, o virtuales desde cualquier lugar. ¡Tu futuro empieza acá!",
+	image = "seo/og.png",
+	canonicalURL = new URL(Astro.url.pathname, Astro.site),
+	keywords = "cursos salida laboral, aprender idiomas, apoyo medicina argentina, apoyo medicina paraguay, instituto cam",
+} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<Font cssVariable="--font-clash-display" />
-		<title>CAM Cursos</title>
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- Primary Meta Tags -->
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(image, Astro.url)} />
+
+		<!-- X (Twitter) -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+		<!-- Favicon -->
+		<link rel="apple-touch-icon" sizes="180x180" href={new URL("/apple-touch-icon.png", Astro.url)}>
+		<link rel="icon" type="image/png" sizes="32x32" href={new URL("/favicon-32x32.png", Astro.url)}>
+		<link rel="icon" type="image/png" sizes="16x16" href={new URL("/favicon-16x16.png", Astro.url)}>
+		<link rel="manifest" href={new URL("/seo/site.webmanifest", Astro.url)}>
+		<meta name="keywords" content={keywords} />
+
+		<!-- Structured Data (JSON-LD) -->
+		<script type="application/ld+json" is:inline set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "EducationalOrganization",
+			"name": "Instituto CAM",
+			"url": Astro.site?.toString(),
+			"logo": new URL("seo/logo-og.png", Astro.site).toString(),
+			"description": "Más de 15 años transformando vidas con cursos con rápida salida laboral, idiomas y apoyo para medicina.",
+			"address": {
+				"@type": "PostalAddress",
+				"addressCountry": ["Argentina", "Paraguay"]
+			}
+		})} />
 	</head>
 	<body>
 		<slot />

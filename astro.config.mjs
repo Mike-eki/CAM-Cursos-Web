@@ -1,11 +1,13 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
+    integrations: [sitemap()],
 
     site: "https://mike-eki.github.io",
-    base: "/CAM-Cursos-Web",
+    base: process.env.GITHUB_ACTIONS ? "/CAM-Cursos-Web" : undefined,
     trailingSlash: "never",
     experimental: {
         svgo: true,

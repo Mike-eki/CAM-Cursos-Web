@@ -4,7 +4,7 @@ import WhatsAppIcon from "../icons/WhatsAppIcon.astro"
 const { text = "Button", waMessage = "" } = Astro.props
 ---
 
-<a href=`https://wa.me/5493412166867?text=${encodeURIComponent(waMessage)}` target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+<a href=`https://wa.me/5493412166867?text=${encodeURIComponent(waMessage)}` target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label={`Contactar por WhatsApp para ${text}`}>
     <WhatsAppIcon />
     { text }
 </a>
