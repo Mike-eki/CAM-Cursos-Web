@@ -75,78 +75,82 @@ import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
         </hgroup>
 
         <nav class="nav-info">
-            <div class="flex-two-items">
-                <hgroup>
-                    <h4><ArgentinaFlagIcon /> Argentina</h4>
-                    <address>
-                        <PinIcon color="--hue-purple" />
-                        <a href="https://maps.app.goo.gl/YWyaSkCwqar3gCwc8"
-                            >Ovidio Lagos 640</a
-                        >
-                    </address>
-                    <address>
-                        <MapIcon color="--hue-purple" />
-                        <a href="https://maps.app.goo.gl/YWyaSkCwqar3gCwc8"
-                            >Rosario, Santa Fe</a
-                        >
-                    </address>
-                </hgroup>
-
-                <hgroup>
-                    <h4>Horarios</h4>
-                    <em>
-                        <ScheduleIcon color="--hue-purple" /> Lunes - Viernes
-                    </em>
-                    <em>
-                        <ClockIcon
-                            color="--hue-purple"
-                            lineColor="--hue-purple-dark"
-                        /> 9:00h a 16:00h
-                    </em>
-                </hgroup>
-
-                <hgroup>
-                    <h4><ParaguayFlagIcon /> Paraguay</h4>
-                    <address>
-                        <PinIcon color="--hue-purple" />
-                        <a href="https://maps.app.goo.gl/gB5FdjtSvNrniHrz9"
-                            >4 de Mayo & Avenida Rogelio Benitez</a
-                        >
-                    </address>
-                    <address>
-                        <MapIcon color="--hue-purple" />
-                        <a href="https://maps.app.goo.gl/gB5FdjtSvNrniHrz9"
-                            >Ciudad del Este, Alto Paraná</a
-                        >
-                    </address>
-                </hgroup>
-
-                
-            </div>
-
-            <hgroup class="flex-one-item">
-                <h4>Contactos</h4>
-                <a href="#contacto">
-                    <EmailIcon color="--hue-purple" size={24} />
+            <!-- General Contact Section -->
+            <div class="general-contact">
+                <h4>Contacto general</h4>
+                <a href="mailto:contacto@caminstituto.com">
+                    <EmailIcon color="--hue-purple" size={20} />
                     contacto@caminstituto.com
                 </a>
-                <a href="https://wa.me/5493412166867" target="_blank">
-                    <WhatsAppIcon color="--hue-purple" size={24} />
-                    +54 9 341 216-6867
-                </a>
-                <em class="em-port">
-                    Atenção para ingressantes em português
-                </em>
-                <a href="https://wa.me/5493415469738" target="_blank">
-                    <WhatsAppIcon color="--hue-purple" size={24} />
-                    +54 9 341 546-9738
-                </a>
-                <em>Atencion al cliente Paraguay</em>
-                <a href="https://wa.me/595991870719" target="_blank">
-                    <WhatsAppIcon color="--hue-purple" size={24} />
-                    +595 991 870719
-                </a>
-            </hgroup>
+            </div>
+
+            <!-- Argentina Section -->
+            <div class="country-section">
+                <h4><ArgentinaFlagIcon /> Argentina</h4>
+                <div class="country-grid">
+                    <div class="info-col">
+                        <address>
+                            <span class="icon-wrap"><MapIcon color="--hue-purple" /></span>
+                            <a href="https://maps.app.goo.gl/YWyaSkCwqar3gCwc8" target="_blank"
+                                >Ovidio Lagos 640, Rosario, Santa Fe</a
+                            >
+                        </address>
+                        <div class="info-row v-stack">
+                            <div class="row-label">
+                                <span class="icon-wrap"><ScheduleIcon color="--hue-purple" /></span>
+                                <strong>Horarios:</strong>
+                            </div>
+                            <div class="row-content">
+                                <em>Lunes a Viernes de 9:00 a 16:00 hs</em>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-col">
+                        <div class="wa-item">
+                            <em>Atención en portugués (ingresantes):</em>
+                            <a href="https://wa.me/5493412166867" target="_blank">
+                                <span class="icon-wrap"><WhatsAppIcon color="--hue-purple" size={20} /></span>
+                                +54 9 341 216-6867
+                            </a>
+                        </div>
+                        <div class="wa-item">
+                            <em>Atención al cliente:</em>
+                            <a href="https://wa.me/5493415469738" target="_blank">
+                                <span class="icon-wrap"><WhatsAppIcon color="--hue-purple" size={20} /></span>
+                                +54 9 341 546-9738
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Paraguay Section -->
+            <div class="country-section">
+                <h4><ParaguayFlagIcon /> Paraguay</h4>
+                <div class="country-grid">
+                    <div class="info-col">
+                        <address>
+                            <span class="icon-wrap"><MapIcon color="--hue-purple" /></span>
+                            <a href="https://maps.app.goo.gl/gB5FdjtSvNrniHrz9" target="_blank"
+                                >4 de Mayo & Avenida Rogelio Benítez, Ciudad del Este, Alto Paraná</a
+                            >
+                        </address>
+                    </div>
+
+                    <div class="contact-col">
+                        <div class="wa-item">
+                            <em>Atención al cliente:</em>
+                            <a href="https://wa.me/595991870719" target="_blank">
+                                <span class="icon-wrap"><WhatsAppIcon color="--hue-purple" size={20} /></span>
+                                +595 991 870719
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </nav>
     </footer>
 </Wrapper>
@@ -239,43 +243,96 @@ import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
     .CELE { width: 105px; }
 
     .nav-info {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-content: center;
-        gap: 2.5rem 1rem;
-    }
-
-    .flex-two-items {
         display: flex;
         flex-direction: column;
         gap: 2.5rem;
-        text-align: left;
+        width: 100%;
+        max-width: 1000px;
+        margin-inline: auto;
     }
 
-    .nav-info hgroup {
+    .general-contact {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 0.85rem;
+        gap: 0.75rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 0.5rem;
+    }
+
+    .general-contact h4 {
+        margin-bottom: 0 !important;
+        font-size: 1.1rem !important;
+        color: #FFF;
+        opacity: 1;
+    }
+
+    .divider {
+        height: 1px;
+        background: rgba(255, 255, 255, 0.1);
+        width: 100%;
+        margin-block: 0.5rem;
+    }
+
+    .country-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .country-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+        align-items: start;
+    }
+
+    .info-col, .contact-col {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
     }
 
     .nav-info h4 {
         display: flex;
         align-items: center;
         gap: 0.75rem;
-        font-size: 1.2rem;
-        margin-bottom: 0.25rem;
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        color: var(--color-heading-text, #fcfcfc);
+    }
+
+    .icon-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 24px;
     }
 
     .nav-info address,
-    .nav-info em,
-    .nav-info a {
+    .nav-info a,
+    .row-label {
         display: flex;
-        align-items: center;
-        gap: 0.75rem;
+        align-items: center; /* Center-aligned as requested */
+        gap: 1rem;
         font-size: 0.95rem;
         color: var(--color-text-body);
+        text-wrap: balance;
         transition: all 0.2s ease;
+    }
+
+    .info-row.v-stack {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+    }
+
+    .row-content {
+        padding-left: calc(24px + 1rem); /* Matches icon width + gap */
+        font-size: 0.95rem;
+        opacity: 0.85;
     }
 
     .nav-info a:hover {
@@ -284,29 +341,31 @@ import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
     }
 
     .nav-info address {
-        font-style: italic;
+        font-style: normal;
         opacity: 0.9;
     }
 
     .nav-info em {
-        font-style: italic;
-        opacity: 0.7;
-        font-size: 0.9rem;
+        font-style: normal;
     }
 
-    .em-port {
-        margin-top: -0.25rem;
-        /* padding-left: 2rem; */
-        text-wrap: pretty;
+    .wa-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .wa-item em {
+        font-size: 0.85rem;
+        opacity: 0.7;
+    }
+
+    .wa-item a {
+        font-weight: 500;
+        font-size: 1.05rem;
     }
 
     /* Tablet and Desktop specific adjustments */
-    @media screen and (min-width: 600px) {
-        .nav-info {
-            gap: 3rem 2rem;
-        }
-    }
-
     @media screen and (min-width: 850px) {
         .main-footer {
             grid-column: 2/4;
@@ -314,13 +373,6 @@ import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
 
         footer {
             padding-block: 4rem;
-        }
-
-        .nav-info {
-            margin-inline: auto;
-            width: 100%;
-            max-width: 900px;
-            gap: 4rem 5rem;
         }
 
         .idiomas h4 {
@@ -332,26 +384,14 @@ import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
         }
     }
 
-    /* Mobile overrides (keeping mobile as it was) */
-    @media screen and (max-width: 500px) {
-        .nav-info {
+    /* Mobile overrides */
+    @media screen and (max-width: 650px) {
+        .country-grid {
             grid-template-columns: 1fr;
-            justify-items: left;
-            gap: 2.5rem;
+            gap: 2rem;
         }
-        .nav-info hgroup {
-            align-items: flex-start;
-        }
-        .em-port {
-            text-align: left;
-            padding-left: 0; /* Align with phone on mobile if that was the case */
-        }
-    }
-
-    /* Ensure em-port is left aligned and looks good on larger screens */
-    @media screen and (min-width: 501px) {
-        .em-port {
-            text-align: left;
+        .nav-info {
+            gap: 4rem;
         }
     }
 

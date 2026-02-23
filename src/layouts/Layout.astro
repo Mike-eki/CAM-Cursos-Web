@@ -8,6 +8,10 @@ const {
 	canonicalURL = new URL(Astro.url.pathname, Astro.site),
 	keywords = "cursos salida laboral, aprender idiomas, apoyo medicina argentina, apoyo medicina paraguay, instituto cam",
 } = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const resolvePath = (path: string) => `${base}/${path.replace(/^\//, "")}`;
+const resolveUrl = (path: string) => new URL(resolvePath(path), Astro.site);
 ---
 
 <!doctype html>
@@ -31,20 +35,20 @@ const {
 		<meta property="og:url" content={Astro.url} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content={new URL(image, Astro.url)} />
+		<meta property="og:image" content={resolveUrl(image)} />
 
 		<!-- X (Twitter) -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content={Astro.url} />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content={new URL(image, Astro.url)} />
+		<meta property="twitter:image" content={resolveUrl(image)} />
 
 		<!-- Favicon -->
-		<link rel="apple-touch-icon" sizes="180x180" href={new URL("/apple-touch-icon.png", Astro.url)}>
-		<link rel="icon" type="image/png" sizes="32x32" href={new URL("/favicon-32x32.png", Astro.url)}>
-		<link rel="icon" type="image/png" sizes="16x16" href={new URL("/favicon-16x16.png", Astro.url)}>
-		<link rel="manifest" href={new URL("/seo/site.webmanifest", Astro.url)}>
+		<link rel="apple-touch-icon" sizes="180x180" href={resolvePath("apple-touch-icon.png")}>
+		<link rel="icon" type="image/png" sizes="32x32" href={resolvePath("favicon-32x32.png")}>
+		<link rel="icon" type="image/png" sizes="16x16" href={resolvePath("favicon-16x16.png")}>
+		<link rel="manifest" href={resolvePath("seo/site.webmanifest")}>
 		<meta name="keywords" content={keywords} />
 
 		<!-- Structured Data (JSON-LD) -->
@@ -53,7 +57,7 @@ const {
 			"@type": "EducationalOrganization",
 			"name": "Instituto CAM",
 			"url": Astro.site?.toString(),
-			"logo": new URL("seo/logo-og.png", Astro.site).toString(),
+			"logo": new URL(resolvePath("seo/logo-og.png"), Astro.site).toString(),
 			"description": "Más de 15 años transformando vidas con cursos con rápida salida laboral, idiomas y apoyo para medicina.",
 			"address": {
 				"@type": "PostalAddress",
