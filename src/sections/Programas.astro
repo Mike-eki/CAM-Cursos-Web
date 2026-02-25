@@ -8,6 +8,7 @@ import GraduateHatIcon from "../icons/GraduateHatIcon.astro";
 import HSBCIcon from "../icons/HSBCIcon.astro";
 import ModalCurso from "../components/ModalCurso.astro";
 import Icon from "../components/Icon.astro";
+import programs from "../data/programs.json";
 
 const testimonies = [
     {
@@ -64,86 +65,16 @@ const testimonies = [
         </hgroup>
         <section class="grid">
             <!-- Main course cards -->
-            <CardLink
-                title="Adultos Mayores"
-                path="img/mayores.jpg"
-                desc="Curso profesional de Cuidado de Adultos Mayores con certificación en Instituto CAM"
-                courseId="adultos-mayores"
-            >
-                <Icon icon="psicologia" width="30" slot="icon" />
-            </CardLink>
-            <CardLink
-                title="Bienestar y Cuidado personal"
-                path="img/cuidado.webp"
-                desc="Cursos de bienestar y cuidado personal"
-                courseId="cuidado"
-            >
-                <Icon icon="cuidado_personal" width="30" slot="icon" />
-            </CardLink>
-            <CardLink
-                title="Administración"
-                path="img/administracion.png"
-                desc="Cursos de administración"
-                courseId="administracion"
-            >
-                <Icon icon="admin_recursos" width="30" slot="icon" />
-            </CardLink>
-            <CardLink
-                title="Eventos sociales y Celebraciones"
-                path="img/organizacioneventos.png"
-                desc="Cursos de organización de eventos"
-                courseId="organizacion-eventos"
-            >
-                <Icon icon="eventos" width="30" slot="icon" />
-            </CardLink>
-            <CardLink
-                title="Diseño y Marketing"
-                path="img/diseniomarketing.png"
-                desc="Cursos de diseño y marketing"
-                courseId="disenio-marketing"
-            >
-                <Icon icon="dis_img" width="30" slot="icon" />
-            </CardLink>
-            <CardLink
-                title="Salud"
-                path="img/salud.png"
-                desc="Cursos de salud"
-                courseId="salud"
-            >
-                <Icon icon="salud" width="30" slot="icon" />
-            </CardLink>
-            <CardLink
-                title="Educación física y Fitness"
-                path="img/fitness.png"
-                desc="Cursos de educación física y fitness"
-                courseId="educacion-fisica-fitness"
-            >
-                <Icon icon="educ_fisica_fitness" width="30" slot="icon" />
-            </CardLink>
-            <CardLink
-                title="Desarrollo Digital"
-                path="img/digital.png"
-                desc="Cursos de desarrollo digital"
-                courseId="desarrollo-digital"
-            >
-                <Icon icon="desarrollo_digital" width="30" slot="icon" />
-            </CardLink>
-            <CardLink
-                title="Desarrollo Personal"
-                path="img/personal.webp"
-                desc="Cursos de desarrollo personal"
-                courseId="desarrollo-personal"
-            >
-                <Icon icon="desarrollo_personal" width="30" slot="icon" />
-            </CardLink>
-            <CardLink
-                title="Herramientas tecnologicas"
-                path="img/herramientas-tecnologicas.png"
-                desc="Capacitación en Herramientas Tecnológicas y Office en Instituto CAM"
-                courseId="herramientas-tecnologicas"
-            >
-                <Icon icon="herramientas_tecnologicas" width="30" slot="icon" />
-            </CardLink>
+            {programs.map((program) => (
+                <CardLink
+                    title={program.title}
+                    path={program.path}
+                    desc={program.desc}
+                    courseId={program.courseId}
+                >
+                    <Icon icon={program.icon} width="30" slot="icon" />
+                </CardLink>
+            ))}
         </section>
     </section>
 

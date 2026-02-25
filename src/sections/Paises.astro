@@ -2,18 +2,26 @@
 import CardCountry from "../components/CardCountry.astro";
 import ArgentinaFlagIcon from "../icons/ArgentinaFlagIcon.astro";
 import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
+import ModalGrid from "../components/ModalGrid.astro";
+import ModalCurso from "../components/ModalCurso.astro";
 ---
 
 <section>
-    <CardCountry>
+    <CardCountry modalId="modal-programas-argentina">
         <ArgentinaFlagIcon slot="flag-icon" />
         <h4 slot="title">Argentina</h4>
     </CardCountry>
-    <CardCountry>
+    <CardCountry modalId="modal-programas-paraguay">
         <ParaguayFlagIcon slot="flag-icon" />
         <h4 slot="title">Paraguay</h4>
     </CardCountry>
 </section>
+
+<ModalGrid id="modal-programas-argentina" title="Cursos en Argentina" />
+<ModalGrid id="modal-programas-paraguay" title="Cursos en Paraguay" />
+
+<!-- ModalCurso is needed because CardLink inside ModalGrid will trigger it -->
+<ModalCurso />
 
 <style>
     section {

@@ -1,0 +1,72 @@
+[
+    {
+        "title": "Adultos Mayores",
+        "path": "img/mayores.jpg",
+        "desc": "Curso profesional de Cuidado de Adultos Mayores con certificación en Instituto CAM",
+        "courseId": "adultos-mayores",
+        "icon": "psicologia"
+    },
+    {
+        "title": "Bienestar y Cuidado personal",
+        "path": "img/cuidado.webp",
+        "desc": "Cursos de bienestar y cuidado personal",
+        "courseId": "cuidado",
+        "icon": "cuidado_personal"
+    },
+    {
+        "title": "Administración",
+        "path": "img/administracion.png",
+        "desc": "Cursos de administración",
+        "courseId": "administracion",
+        "icon": "admin_recursos"
+    },
+    {
+        "title": "Eventos sociales y Celebraciones",
+        "path": "img/organizacioneventos.png",
+        "desc": "Cursos de organización de eventos",
+        "courseId": "organizacion-eventos",
+        "icon": "eventos"
+    },
+    {
+        "title": "Diseño y Marketing",
+        "path": "img/diseniomarketing.png",
+        "desc": "Cursos de diseño y marketing",
+        "courseId": "disenio-marketing",
+        "icon": "dis_img"
+    },
+    {
+        "title": "Salud",
+        "path": "img/salud.png",
+        "desc": "Cursos de salud",
+        "courseId": "salud",
+        "icon": "salud"
+    },
+    {
+        "title": "Educación física y Fitness",
+        "path": "img/fitness.png",
+        "desc": "Cursos de educación física y fitness",
+        "courseId": "educacion-fisica-fitness",
+        "icon": "educ_fisica_fitness"
+    },
+    {
+        "title": "Desarrollo Digital",
+        "path": "img/digital.png",
+        "desc": "Cursos de desarrollo digital",
+        "courseId": "desarrollo-digital",
+        "icon": "desarrollo_digital"
+    },
+    {
+        "title": "Desarrollo Personal",
+        "path": "img/personal.webp",
+        "desc": "Cursos de desarrollo personal",
+        "courseId": "desarrollo-personal",
+        "icon": "desarrollo_personal"
+    },
+    {
+        "title": "Herramientas tecnologicas",
+        "path": "img/herramientas-tecnologicas.png",
+        "desc": "Capacitación en Herramientas Tecnológicas y Office en Instituto CAM",
+        "courseId": "herramientas-tecnologicas",
+        "icon": "herramientas_tecnologicas"
+    }
+]

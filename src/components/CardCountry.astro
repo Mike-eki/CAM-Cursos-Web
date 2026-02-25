@@ -1,3 +1,7 @@
+---
+const { link = "#", modalId } = Astro.props;
+---
+
 
 <hgroup>
     <header>
@@ -5,7 +9,7 @@
         <slot name="flag-icon" />
         <!-- Argentina/Paraguay -->
     </header>
-    <a href="#">Ver más</a>
+    <a href={link} data-open-modal-grid-id={modalId}>Ver más</a>
 </hgroup>
 
 <style>
