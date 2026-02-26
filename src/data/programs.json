@@ -4,69 +4,103 @@
         "path": "img/mayores.jpg",
         "desc": "Curso profesional de Cuidado de Adultos Mayores con certificación en Instituto CAM",
         "courseId": "adultos-mayores",
-        "icon": "psicologia"
+        "icon": "psicologia",
+        "category": "salida-laboral"
     },
     {
         "title": "Bienestar y Cuidado personal",
         "path": "img/cuidado.webp",
         "desc": "Cursos de bienestar y cuidado personal",
         "courseId": "cuidado",
-        "icon": "cuidado_personal"
+        "icon": "cuidado_personal",
+        "category": "salida-laboral"
     },
     {
         "title": "Administración",
         "path": "img/administracion.png",
         "desc": "Cursos de administración",
         "courseId": "administracion",
-        "icon": "admin_recursos"
+        "icon": "admin_recursos",
+        "category": "salida-laboral"
     },
     {
         "title": "Eventos sociales y Celebraciones",
         "path": "img/organizacioneventos.png",
         "desc": "Cursos de organización de eventos",
         "courseId": "organizacion-eventos",
-        "icon": "eventos"
+        "icon": "eventos",
+        "category": "salida-laboral"
     },
     {
         "title": "Diseño y Marketing",
         "path": "img/diseniomarketing.png",
         "desc": "Cursos de diseño y marketing",
         "courseId": "disenio-marketing",
-        "icon": "dis_img"
+        "icon": "dis_img",
+        "category": "salida-laboral"
     },
     {
         "title": "Salud",
         "path": "img/salud.png",
         "desc": "Cursos de salud",
         "courseId": "salud",
-        "icon": "salud"
+        "icon": "salud",
+        "category": "salida-laboral"
     },
     {
         "title": "Educación física y Fitness",
         "path": "img/fitness.png",
         "desc": "Cursos de educación física y fitness",
         "courseId": "educacion-fisica-fitness",
-        "icon": "educ_fisica_fitness"
+        "icon": "educ_fisica_fitness",
+        "category": "salida-laboral"
     },
     {
         "title": "Desarrollo Digital",
         "path": "img/digital.png",
         "desc": "Cursos de desarrollo digital",
         "courseId": "desarrollo-digital",
-        "icon": "desarrollo_digital"
+        "icon": "desarrollo_digital",
+        "category": "salida-laboral"
     },
     {
         "title": "Desarrollo Personal",
         "path": "img/personal.webp",
         "desc": "Cursos de desarrollo personal",
         "courseId": "desarrollo-personal",
-        "icon": "desarrollo_personal"
+        "icon": "desarrollo_personal",
+        "category": "salida-laboral"
     },
     {
         "title": "Herramientas tecnologicas",
         "path": "img/herramientas-tecnologicas.png",
         "desc": "Capacitación en Herramientas Tecnológicas y Office en Instituto CAM",
         "courseId": "herramientas-tecnologicas",
-        "icon": "herramientas_tecnologicas"
+        "icon": "herramientas_tecnologicas",
+        "category": "salida-laboral"
+    },
+    {
+        "title": "Idiomas",
+        "path": "img/idioma.png",
+        "desc": "Aprender idiomas: Español, Inglés, Portugués e Italiano en Instituto CAM",
+        "courseId": "idiomas",
+        "icon": "idiomas",
+        "category": "idiomas"
+    },
+    {
+        "title": "Alumnos de Ciencias Medicas",
+        "path": "img/apoyo.png",
+        "desc": "Clases de apoyo universitario para estudiantes de medicina - Instituto CAM",
+        "courseId": "clases-apoyo-medicina",
+        "icon": "salud",
+        "category": "medicina"
+    },
+    {
+        "title": "Revalidación y Tramites académicos",
+        "path": "img/revalida.jpg",
+        "desc": "Gestión de trámites de revalidación académica para medicina en Argentina y Paraguay",
+        "courseId": "revalidacion-tramites",
+        "icon": "convalidacion",
+        "category": "medicina"
     }
 ]

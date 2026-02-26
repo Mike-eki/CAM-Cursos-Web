@@ -7,12 +7,18 @@ import Icon from "./Icon.astro";
 export interface Props {
   id?: string;
   title?: string;
+  filterCategory?: string;
 }
 
 const { 
   id = "modalGrid", 
-  title = "Nuestros Programas" 
+  title = "Nuestros Programas",
+  filterCategory
 } = Astro.props;
+
+const filteredPrograms = filterCategory 
+  ? programs.filter(p => p.category === filterCategory)
+  : programs;
 ---
 
 <div class="modal-grid" id={id}>
@@ -33,12 +39,14 @@ const {
 
     <div class="modal-body">
       <div class="programs-grid">
-        {programs.map((program) => (
+        {filteredPrograms.map((program) => (
           <CardLink
             title={program.title}
             path={program.path}
             desc={program.desc}
             courseId={program.courseId}
+            className={program.className}
+            aspectRatio={program.aspectRatio as any}
           >
             <Icon icon={program.icon} width="30" slot="icon" />
           </CardLink>
@@ -208,7 +216,16 @@ const {
 
   @media (max-width: 480px) {
     .programs-grid {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    
+    .modal-header {
+      padding: 25px 15px 5px;
+    }
+
+    .modal-title {
+      font-size: 1.6rem;
     }
   }
 </style>

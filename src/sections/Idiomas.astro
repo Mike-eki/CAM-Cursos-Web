@@ -7,6 +7,7 @@ import TrustNumbers from '../components/TrustNumbers.astro'
 import Wrapper from '../components/Wrapper.astro'
 import HSBCIcon from '../icons/HSBCIcon.astro'
 import LanguageIcon from '../icons/LanguageIcon.astro'
+import programs from "../data/programs.json";
 
 const testimonies = [
     {
@@ -44,9 +45,18 @@ const testimonies = [
     </section>
 
     <section class="grid card-one">
-        <CardLink title="Idiomas" path="img/idioma.png" desc="Aprender idiomas: Español, Inglés, Portugués e Italiano en Instituto CAM" className="rect" aspectRatio="16/7.7" courseId="idiomas">
-            <Icon icon='idiomas' width="30" slot="icon"/>
-        </CardLink>
+        {programs.filter(p => p.category === 'idiomas').map((program) => (
+            <CardLink 
+                title={program.title} 
+                path={program.path} 
+                desc={program.desc} 
+                className="rect" 
+                aspectRatio="16/7.7" 
+                courseId={program.courseId}
+            >
+                <Icon icon={program.icon} width="30" slot="icon"/>
+            </CardLink>
+        ))}
     </section>
 
     <section class="heading-icon h-grid-two">

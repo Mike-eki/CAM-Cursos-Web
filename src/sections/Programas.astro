@@ -65,7 +65,7 @@ const testimonies = [
         </hgroup>
         <section class="grid">
             <!-- Main course cards -->
-            {programs.map((program) => (
+            {programs.filter(p => p.category === 'salida-laboral').map((program) => (
                 <CardLink
                     title={program.title}
                     path={program.path}

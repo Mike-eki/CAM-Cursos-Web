@@ -7,6 +7,7 @@ import TrustNumbers from '../components/TrustNumbers.astro'
 import Wrapper from '../components/Wrapper.astro'
 import CertificateIcon from '../icons/CertificateIcon.astro'
 import HeartHearIcon from '../icons/HeartHearIcon.astro'
+import programs from "../data/programs.json";
 
 const testimonies = [
     {
@@ -44,15 +45,17 @@ const testimonies = [
     </section>
 
     <section class="grid card-one">
-        <CardLink 
-         title="Alumnos de Ciencias Medicas"
-         path="img/apoyo.png"
-         desc="Clases de apoyo universitario para estudiantes de medicina - Instituto CAM"
-         className="rect"
-         aspectRatio="16/7.7"
-         courseId="clases-apoyo-medicina">
-            <Icon icon='salud' width="30" slot="icon"/>
-        </CardLink>
+        {programs.filter(p => p.courseId === 'clases-apoyo-medicina').map((program) => (
+            <CardLink 
+                title={program.title}
+                path={program.path}
+                desc={program.desc}
+                className="rect"
+                aspectRatio="16/7.7"
+                courseId={program.courseId}>
+                <Icon icon={program.icon} width="30" slot="icon"/>
+            </CardLink>
+        ))}
     </section>
 
     <header class="heading-icon h-grid-two">
@@ -65,15 +68,17 @@ const testimonies = [
     </section>
 
     <section class="grid card-two">
-        <CardLink 
-        title="Revalidación y Tramites académicos" 
-        path="img/revalida.jpg" 
-        desc="Gestión de trámites de revalidación académica para medicina en Argentina y Paraguay"
-        className="rect" 
-        aspectRatio="16/7.7" 
-        courseId="revalidacion-tramites">
-            <Icon icon='convalidacion' width="30" slot="icon" />
-        </CardLink>
+        {programs.filter(p => p.courseId === 'revalidacion-tramites').map((program) => (
+            <CardLink 
+                title={program.title} 
+                path={program.path} 
+                desc={program.desc}
+                className="rect" 
+                aspectRatio="16/7.7" 
+                courseId={program.courseId}>
+                <Icon icon={program.icon} width="30" slot="icon" />
+            </CardLink>
+        ))}
     </section>
 
     <section class="heading-icon h-grid-three">
