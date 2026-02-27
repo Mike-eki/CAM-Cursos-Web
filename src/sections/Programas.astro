@@ -10,6 +10,12 @@ import ModalCurso from "../components/ModalCurso.astro";
 import Icon from "../components/Icon.astro";
 import programs from "../data/programs.json";
 
+export interface Props {
+    isModal?: boolean;
+}
+
+const { isModal = false } = Astro.props;
+
 const testimonies = [
     {
         quote: "Inicie con la formación y es mi primer contacto con la página. Las chicas telefónicamente han sido muy atentas.",
@@ -93,7 +99,7 @@ const testimonies = [
     </footer>
 
     <!-- Modal de cursos global para esta sección -->
-    <ModalCurso />
+    {!isModal && <ModalCurso />}
 </Wrapper>
 
 <style>

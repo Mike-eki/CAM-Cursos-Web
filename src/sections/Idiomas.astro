@@ -9,6 +9,12 @@ import HSBCIcon from '../icons/HSBCIcon.astro'
 import LanguageIcon from '../icons/LanguageIcon.astro'
 import programs from "../data/programs.json";
 
+export interface Props {
+    isModal?: boolean;
+}
+
+const { isModal = false } = Astro.props;
+
 const testimonies = [
     {
         quote: "Excelente la atención. Es integral, se ocupan no solo de lo académico sino de sostener a los chicos emocionalmente. Como experiencia de una hija estudiando afuera, estamos muy agradecidos.",

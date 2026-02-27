@@ -1,19 +1,23 @@
 ---
-// ModalGrid.astro
 import programs from "../data/programs.json";
 import CardLink from "./CardLink.astro";
 import Icon from "./Icon.astro";
+import Programas from "../sections/Programas.astro";
+import ApoyoRevalida from "../sections/ApoyoRevalida.astro";
+import Idiomas from "../sections/Idiomas.astro";
 
 export interface Props {
   id?: string;
   title?: string;
   filterCategory?: string;
+  country?: string;
 }
 
 const { 
   id = "modalGrid", 
   title = "Nuestros Programas",
-  filterCategory
+  filterCategory,
+  country
 } = Astro.props;
 
 const filteredPrograms = filterCategory 
@@ -38,20 +42,30 @@ const filteredPrograms = filterCategory
     </div>
 
     <div class="modal-body">
-      <div class="programs-grid">
-        {filteredPrograms.map((program) => (
-          <CardLink
-            title={program.title}
-            path={program.path}
-            desc={program.desc}
-            courseId={program.courseId}
-            className={program.className}
-            aspectRatio={program.aspectRatio as any}
-          >
-            <Icon icon={program.icon} width="30" slot="icon" />
-          </CardLink>
-        ))}
-      </div>
+      {country === "Argentina" ? (
+        <div class="country-sections">
+          <Programas isModal={true} />
+          <div class="section-divider"></div>
+          <ApoyoRevalida isModal={true} />
+          <div class="section-divider"></div>
+          <Idiomas isModal={true} />
+        </div>
+      ) : (
+        <div class="programs-grid">
+          {filteredPrograms.map((program) => (
+            <CardLink
+              title={program.title}
+              path={program.path}
+              desc={program.desc}
+              courseId={program.courseId}
+              className={program.className}
+              aspectRatio={program.aspectRatio as any}
+            >
+              <Icon icon={program.icon} width="30" slot="icon" />
+            </CardLink>
+          ))}
+        </div>
+      )}
     </div>
   </div>
 </div>
@@ -181,6 +195,25 @@ const filteredPrograms = filterCategory
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 24px;
     padding-top: 20px;
+  }
+
+  .country-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding: 20px 0;
+  }
+
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    width: 100%;
+  }
+
+  /* Ensure nested wrappers don't look weird in modal */
+  .country-sections :global(.grid-wrapper) {
+    background: transparent !important;
+    padding: 0 !important;
   }
 
   @media (max-width: 768px) {

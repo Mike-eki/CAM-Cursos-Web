@@ -9,6 +9,12 @@ import CertificateIcon from '../icons/CertificateIcon.astro'
 import HeartHearIcon from '../icons/HeartHearIcon.astro'
 import programs from "../data/programs.json";
 
+export interface Props {
+    isModal?: boolean;
+}
+
+const { isModal = false } = Astro.props;
+
 const testimonies = [
     {
         quote: "Muy buena experiencia, te ayudan en todo lo referido al cursado y también los cursos intensivos para preparar mesas te salvan la vida, son cortos, las clases son integradoras y participativas, lo que te ayuda un montón ya que todos los finales son orales. Lo súper recomiendo 10/10.",
