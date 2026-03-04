@@ -18,7 +18,7 @@ const { text = "Button", waMessage = "" } = Astro.props
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    background-color: var(--color-button);        /* ej: #25D366 */
+    background-color: var(--color-button);        /* ej: var(--color-whatsapp) */
     color: var(--color-button-text);              /* ej: white */
     padding-inline: 0.75rem;
     padding-block: 0.5rem;
@@ -27,8 +27,8 @@ const { text = "Button", waMessage = "" } = Astro.props
     
 /* Glow base muy sutil */
     box-shadow: 
-      0 0 8px 1px #25d36640,
-      0 0 14px 1px #25d36620;
+      0 0 8px 1px var(--color-whatsapp)40,
+      0 0 14px 1px var(--color-whatsapp)20;
     
     /* Animación neón suave y discreta */
     animation: subtle-neon 5s ease-in-out infinite alternate;
@@ -43,14 +43,14 @@ const { text = "Button", waMessage = "" } = Astro.props
     from {
 
       box-shadow: 
-        0 0 8px  1px #aaaaaa30,
-        0 0 14px 1px #aaaaaa18,
-        0 0 22px 0px #aaaaaa0d;
+        0 0 8px  1px var(--color-text-muted)30,
+        0 0 14px 1px var(--color-text-muted)18,
+        0 0 22px 0px var(--color-text-muted)0d;
     }
     to {
         box-shadow: 
         0 0 12px  3px #bbbbbb55,
-        0 0 20px  2px #aaaaaa35,
+        0 0 20px  2px var(--color-text-muted)35,
         0 0 30px  1px #88888818;
     }
   }
@@ -62,8 +62,8 @@ const { text = "Button", waMessage = "" } = Astro.props
     /*animation-duration: 3.2s;    acelera un toque al interactuar */
     scale: 1.03;
     box-shadow: 
-      0 0 14px  4px #25d36670,
-      0 0 24px  5px #25d36640;
+      0 0 14px  4px var(--color-whatsapp)70,
+      0 0 24px  5px var(--color-whatsapp)40;
     transition: all 0.3s ease;
   }
 
@@ -76,15 +76,15 @@ const { text = "Button", waMessage = "" } = Astro.props
   @keyframes subtle-neon-green {
     from {
       box-shadow: 
-        0 0 10px  2px #25d36650,
-        0 0 18px  3px #25d36630,
-        0 0 28px  1px #25d36615;
+        0 0 10px  2px var(--color-whatsapp)50,
+        0 0 18px  3px var(--color-whatsapp)30,
+        0 0 28px  1px var(--color-whatsapp)15;
     }
     to {
       box-shadow: 
-        0 0 16px  6px #25d36680,
-        0 0 28px  8px #25d36650,
-        0 0 40px  4px #25d36625;
+        0 0 16px  6px var(--color-whatsapp)80,
+        0 0 28px  8px var(--color-whatsapp)50,
+        0 0 40px  4px var(--color-whatsapp)25;
     }
   }
 </style>

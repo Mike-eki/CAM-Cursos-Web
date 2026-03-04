@@ -16,6 +16,11 @@ export interface Props {
   ctaText?: string;
   ctaLink?: string;
   isOpen?: boolean;
+  /* Customization */
+  accentColor?: string;
+  accentTextColor?: string;
+  ctaBgColor?: string;
+  ctaTextColor?: string;
 }
 
 const {
@@ -35,12 +40,27 @@ const {
   backgroundImage = "",
   ctaText = "Quiero inscribirme y/o reservar",
   ctaLink = "#",
-  isOpen = false
+  isOpen = false,
+  accentColor = "var(--color-primary)",
+  accentTextColor = "var(--color-white)",
+  ctaBgColor = "var(--color-white)",
+  ctaTextColor = "var(--color-primary)"
 } = Astro.props;
 
+const styles = {
+  '--modal-accent': accentColor,
+  '--modal-accent-text': accentTextColor,
+  '--modal-cta-bg': ctaBgColor,
+  '--modal-cta-text': ctaTextColor,
+};
 ---
 
-<div class={`course-modal ${isOpen ? 'is-open' : ''}`} id="courseModal" data-courses={JSON.stringify(courses)}>
+<div 
+  class={`course-modal ${isOpen ? 'is-open' : ''}`} 
+  id="courseModal" 
+  data-courses={JSON.stringify(courses)}
+  style={styles}
+>
   <div class="modal-overlay" data-close-modal></div>
   
     <div class="modal-content">
@@ -189,20 +209,22 @@ const {
     bottom: 0;
     left: 0;
     width: 75%;
-    background: #0077ff;
+    background: var(--modal-accent, var(--color-primary));
     padding: 18px 20px;
     border-radius: 1rem;
     z-index: 10;
+    transition: background-color 0.3s ease;
   }
 
   .course-title {
-    color: #FFFFFF;
+    color: var(--modal-accent-text, var(--color-white));
     font-size: 26px;
     font-weight: 700;
     text-align: center;
     margin: 0;
     line-height: 1.2;
     letter-spacing: -0.3px;
+    transition: color 0.3s ease;
   }
 
   .modal-body {
@@ -210,9 +232,10 @@ const {
     overflow-y: auto;
     border-radius: 1rem;
     padding-bottom: 24px;
-    background-color: #0077ff;
+    background-color: var(--modal-accent, var(--color-primary));
     scrollbar-width: thin;
-    scrollbar-color: #0077ff rgba(255, 255, 255, 0.05);
+    scrollbar-color: var(--modal-accent, var(--color-primary)) rgba(255, 255, 255, 0.05);
+    transition: background-color 0.3s ease;
   }
 
   .modal-body::-webkit-scrollbar {
@@ -225,22 +248,23 @@ const {
   }
 
   .modal-body::-webkit-scrollbar-thumb {
-    background: #0077ff;
+    background: var(--modal-accent, var(--color-primary));
     border-radius: 10px;
   }
 
   .modal-body::-webkit-scrollbar-thumb:hover {
-    background: #FF4D59;
+    background: var(--color-red-accent);
   }
 
   :global(.info-section) {
-    background: #0077ff;
+    background: var(--modal-accent, var(--color-primary));
     padding: 14px 18px;
+    transition: background-color 0.3s ease;
   }
 
   :global(.section-label) {
-    background-color: #FFFFFF;
-    color: #0077ff;
+    background-color: var(--modal-accent-text, var(--color-white));
+    color: var(--modal-accent, var(--color-primary));
     border-radius: 1rem;
     padding: 0.25rem;
     padding-inline: 0.75rem;
@@ -248,25 +272,26 @@ const {
     font-weight: 600;
     margin: 0 0 10px 0;
     letter-spacing: 0.2px;
+    transition: all 0.3s ease;
   }
 
   :global(.certification-badge) {
     display: flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(var(--color-white-rgb), 0.15);
     padding: 8px 12px;
     border-radius: 8px;
     width: fit-content;
   }
 
   :global(.certification-badge svg) {
-    color: #FFFFFF;
+    color: var(--modal-accent-text, var(--color-white));
     flex-shrink: 0;
   }
 
   .certification-badge span {
-    color: #FFFFFF;
+    color: var(--modal-accent-text, var(--color-white));
     font-size: 14px;
     font-weight: 600;
     letter-spacing: 0.3px;
@@ -285,7 +310,8 @@ const {
     margin-bottom: 6px;
     font-size: 14px;
     line-height: 1.5;
-    color: #FFFFFF;
+    color: var(--modal-accent-text, var(--color-white));
+    transition: color 0.3s ease;
   }
 
   :global(.info-list li:last-child) {
@@ -297,9 +323,10 @@ const {
     position: absolute;
     left: 0;
     top: 0;
-    color: #FFFFFF;
+    color: var(--modal-accent-text, var(--color-white));
     font-weight: bold;
     font-size: 14px;
+    transition: color 0.3s ease;
   }
 
   /* PDF Button styles */
@@ -309,8 +336,8 @@ const {
     gap: 6px;
     margin-left: 8px;
     padding: 4px 10px;
-    background: rgba(255, 255, 255, 0.2);
-    color: #FFFFFF;
+    background: rgba(var(--color-white-rgb), 0.2);
+    color: var(--modal-accent-text, var(--color-white));
     text-decoration: none;
     border-radius: 6px;
     font-size: 12px;
@@ -319,7 +346,7 @@ const {
   }
 
   :global(.pdf-link:hover) {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(var(--color-white-rgb), 0.3);
     transform: translateY(-1px);
   }
 
@@ -336,8 +363,8 @@ const {
     gap: 10px;
     /* width: 100%; */
     padding: 15px 20px;
-    background: #FFFFFF;
-    color: #0077ff;
+    background: var(--modal-cta-bg, var(--color-white));
+    color: var(--modal-cta-text, var(--color-primary));
     border: none;
     border-radius: 12px;
     font-size: 15px;
@@ -346,13 +373,14 @@ const {
     text-decoration: none;
     transition: all 0.2s ease;
     margin-top: 12px;
-    box-shadow: 0 4px 12px rgba(255, 92, 103, 0.2);
+    box-shadow: 0 4px 12px rgba(var(--color-whatsapp-rgb), 0.2);
   }
 
   .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(255, 92, 103, 0.3);
-    background: #FFFFFF;
+    box-shadow: 0 6px 16px rgba(var(--color-whatsapp-rgb), 0.3);
+    background: var(--modal-cta-bg);
+    filter: brightness(1.05);
   }
 
   .cta-button:active {
@@ -386,7 +414,7 @@ const {
 
   /* Scrollbar más visible - versión clara */
 .modal-body {
-  scrollbar-color: #ffffff80 #ffffff1a;   /* thumb    track */
+  scrollbar-color: rgba(var(--color-white-rgb), 0.5) rgba(var(--color-white-rgb), 0.1);   /* thumb    track */
   scrollbar-width: thin;
 }
 
@@ -395,19 +423,19 @@ const {
 }
 
 .modal-body::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.08);   /* fondo del track */
+  background: rgba(var(--color-white-rgb), 0.08);   /* fondo del track */
   border-radius: 10px;
   margin: 4px 2px;
 }
 
 .modal-body::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.75);   /* color principal thumb */
+  background: rgba(var(--color-white-rgb), 0.75);   /* color principal thumb */
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.15); /* borde sutil para contraste */
+  border: 1px solid rgba(var(--color-white-rgb), 0.15); /* borde sutil para contraste */
 }
 
 .modal-body::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(var(--color-white-rgb), 0.95);
 }
 </style>
 
@@ -612,6 +640,31 @@ const {
     const imageContainer = modal.querySelector('[data-course-image-container]');
     const sectionsContainer = modal.querySelector('[data-course-sections-container]');
     const ctaButton = modal.querySelector('[data-cta-button]');
+
+    // Apply custom colors if defined in course data
+    if (course.accentColor) {
+      modal.style.setProperty('--modal-accent', course.accentColor);
+    } else {
+      modal.style.removeProperty('--modal-accent');
+    }
+
+    if (course.accentTextColor) {
+      modal.style.setProperty('--modal-accent-text', course.accentTextColor);
+    } else {
+      modal.style.removeProperty('--modal-accent-text');
+    }
+
+    if (course.ctaBgColor) {
+      modal.style.setProperty('--modal-cta-bg', course.ctaBgColor);
+    } else {
+      modal.style.removeProperty('--modal-cta-bg');
+    }
+
+    if (course.ctaTextColor) {
+      modal.style.setProperty('--modal-cta-text', course.ctaTextColor);
+    } else {
+      modal.style.removeProperty('--modal-cta-text');
+    }
 
     if (titleEl) {
       titleEl.textContent = course.title || course.courseName || titleEl.textContent;

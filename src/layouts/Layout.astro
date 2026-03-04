@@ -101,28 +101,57 @@ const resolveUrl = (path: string) => new URL(resolvePath(path), Astro.site);
 
 
 	:root {
-		/* Text */
+		/* Colors - Brand */
+		--color-primary: #0077ff;
+		--color-primary-rgb: 0, 119, 255;
+		--color-whatsapp: #25d366;
+		--color-whatsapp-dark: #128c7e;
+		--color-whatsapp-rgb: 37, 211, 102;
+		
+		/* Colors - Base */
+		--color-black: #000000;
+		--color-white: #ffffff;
+		--color-white-rgb: 255, 255, 255;
+		
+		/* Text Colors */
 		--color-text-body: #EDF0F4;
 		--color-text-bold: #f1f1f1;
 		--color-text-heading: #fcfcfc;
+		--color-text-muted: #aaaaaa;
 
-		/* Container/Wrapper */
+		/* Surface & Backgrounds */
+		--color-bg-main: #000000;
 		--color-container-bg: #0f0f0f;
-
-		/* Backgrounds */
+		--color-surface-dark: #141414;
+		--color-surface-soft: #1e1e1e;
 		--color-bg-wrapper: #f4f4f9;
 		--color-bg-card: #ffffff;
 		--color-bg-card-border: #dcdcdc;
 
-		/* Icons & Buttons */
+		/* UI Elements */
 		--color-icon: #eeeeee;
 		--color-button: #fcfcfc;
 		--color-button-text: #000;
 		--color-button-hover: #111111;
 		--color-button-text-hover: #f0f0f0;
-
-		/* SVG Logos */
+		--color-border-light: rgba(var(--color-white-rgb), 0.1);
+		
+		/* Brand Logos & SVGs */
 		--color-logo: #000;
+		
+		/* Accent / Special */
+		--color-gold: #FCBF49;
+		--color-brown: #843511;
+		--color-red-accent: #FF4D59;
+		
+		/* Flag Colors (for reference or dynamic use) */
+		--color-flag-ar-blue: #75AADB;
+		--color-flag-ar-sun: #FCBF49;
+		--color-flag-py-red: #D52B1E;
+		--color-flag-py-blue: #0038A8;
+		--color-flag-py-green: #007127;
+		--color-flag-py-yellow: #FFAC33;
+		--color-flag-py-gray: #99AAB5;
 	}   
 
 	html,
@@ -130,7 +159,7 @@ const resolveUrl = (path: string) => new URL(resolvePath(path), Astro.site);
 		padding: 8px;
 		margin: 0;
 		
-		background-color: #000;
+		background-color: var(--color-bg-main);
 
 		font-family: var(--font-clash-display), sans-serif;
 		color: var(--color-text-body);

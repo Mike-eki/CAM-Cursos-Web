@@ -11,7 +11,7 @@ const paraguayPhone = "595981234567";  // Reemplaza con tu número de Paraguay
 
 <div class="whatsapp-container">
     <button class="whatsapp-button" id="whatsappBtn">
-        <WhatsAppIcon color="#FFF"/>
+        <WhatsAppIcon color="var(--color-white)"/>
     </button>
     
     <div class="country-options" id="countryOptions">
@@ -41,12 +41,12 @@ const paraguayPhone = "595981234567";  // Reemplaza con tu número de Paraguay
     .whatsapp-button {
         width: 60px;
         height: 60px;
-        background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+        background: linear-gradient(135deg, var(--color-whatsapp) 0%, var(--color-whatsapp-dark) 100%);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        box-shadow: 0 4px 20px rgba(var(--color-whatsapp-rgb), 0.4);
         cursor: pointer;
         transition: all 0.3s ease;
         border: none;
@@ -55,7 +55,7 @@ const paraguayPhone = "595981234567";  // Reemplaza con tu número de Paraguay
 
     .whatsapp-button:hover {
         transform: scale(1.1);
-        box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        box-shadow: 0 6px 30px rgba(var(--color-whatsapp-rgb), 0.6);
     }
 
     .whatsapp-button:active {
@@ -93,13 +93,13 @@ const paraguayPhone = "595981234567";  // Reemplaza con tu número de Paraguay
     /* Animación de pulso */
     @keyframes pulse {
         0% {
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 4px 20px rgba(var(--color-whatsapp-rgb), 0.4);
         }
         50% {
-            box-shadow: 0 4px 30px rgba(37, 211, 102, 0.7);
+            box-shadow: 0 4px 30px rgba(var(--color-whatsapp-rgb), 0.7);
         }
         100% {
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 4px 20px rgba(var(--color-whatsapp-rgb), 0.4);
         }
     }
 

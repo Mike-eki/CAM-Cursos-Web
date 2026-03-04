@@ -3,6 +3,10 @@
     "id": "adultos-mayores",
     "title": "Adultos mayores",
     "backgroundImage": "img/mayores.jpg",
+    "accentColor": "var(--color-primary)",
+    "accentTextColor": "var(--color-white)",
+    "ctaBgColor": "var(--color-white)",
+    "ctaTextColor": "var(--color-primary)",
     "sections": [
       {
         "id": "cursos-disponibles",
@@ -20,6 +24,10 @@
     "id": "educacion-fisica-fitness",
     "title": "Educación Fisica y Fitness",
     "backgroundImage": "img/fitness.png",
+    "accentColor": "#292354",
+    "accentTextColor": "#e2a9f1",
+    "ctaBgColor": "#e2a9f1",
+    "ctaTextColor": "#292354",
     "sections": [
       {
         "id": "cursos-disponibles",
@@ -45,6 +53,10 @@
     "id": "desarrollo-digital",
     "title": "Desarrollo Digital",
     "backgroundImage": "img/digital.png",
+    "accentColor": "var(--color-black)",
+    "accentTextColor": "var(--color-white)",
+    "ctaBgColor": "var(--color-white)",
+    "ctaTextColor": "var(--color-black)",
     "sections": [
       {
         "id": "cursos-disponibles",
@@ -60,7 +72,15 @@
               }
             ]
           },
-          "Python"
+          {
+            "text": "Iniciación a la Programación con Python",
+            "buttons": [
+              {
+                "label": "Ver temario",
+                "url": "pdf/inicio-python2026.pdf"
+              }
+            ]
+          }
         ]
       }
     ],
@@ -70,6 +90,10 @@
     "id": "desarrollo-personal",
     "title": "Desarrollo Personal",
     "backgroundImage": "img/personal.webp",
+    "accentColor": "var(--color-black)",
+    "accentTextColor": "var(--color-white)",
+    "ctaBgColor": "var(--color-white)",
+    "ctaTextColor": "var(--color-black)",
     "sections": [
       {
         "id": "cursos-disponibles",
@@ -88,6 +112,10 @@
     "id": "herramientas-tecnologicas",
     "title": "Herramientas tecnologicas",
     "backgroundImage": "img/herramientas-tecnologicas.png",
+    "accentColor": "var(--color-primary)",
+    "accentTextColor": "var(--color-white)",
+    "ctaBgColor": "var(--color-white)",
+    "ctaTextColor": "var(--color-primary)",
     "sections": [
       {
         "id": "cursos-disponibles",
@@ -105,6 +133,10 @@
     "id": "cuidado",
     "title": "Bienestar y Cuidado personal",
     "backgroundImage": "img/cuidado.webp",
+    "accentColor": "#292354",
+    "accentTextColor": "#e2a9f1",
+    "ctaBgColor": "#e2a9f1",
+    "ctaTextColor": "#292354",
     "sections": [
       {
         "id": "cursos-disponibles",
@@ -115,7 +147,15 @@
           "Automaquillaje",
           "Depilación con cera",
           "Manicura profesional",
-          "Pedicura",
+          {
+            "text": "Pedicuría profesional",
+            "buttons": [
+              {
+                "label": "Ver temario",
+                "url": "pdf/temario-pedicuria2026.pdf"
+              }
+            ]
+          },
           "Barberia",
           "Operador laser",
           "Estetica corporal"
@@ -128,6 +168,10 @@
     "id": "salud",
     "title": "Salud",
     "backgroundImage": "img/salud.png",
+    "accentColor": "#292354",
+    "accentTextColor": "#e2a9f1",
+    "ctaBgColor": "#e2a9f1",
+    "ctaTextColor": "#292354",
     "sections": [
       {
         "id": "cursos-disponibles",
@@ -148,6 +192,10 @@
     "id": "administracion",
     "title": "Administración",
     "backgroundImage": "img/administracion.png",
+    "accentColor": "var(--color-primary)",
+    "accentTextColor": "var(--color-white)",
+    "ctaBgColor": "var(--color-white)",
+    "ctaTextColor": "var(--color-primary)",
     "sections": [
       {
         "id": "cursos-disponibles",
@@ -170,6 +218,10 @@
     "id": "organizacion-eventos",
     "title": "Eventos sociales y Celebraciones",
     "backgroundImage": "img/organizacioneventos.png",
+    "accentColor": "var(--color-black)",
+    "accentTextColor": "var(--color-white)",
+    "ctaBgColor": "var(--color-white)",
+    "ctaTextColor": "var(--color-black)",
     "sections": [
       {
         "id": "cursos-disponibles",
@@ -188,6 +240,10 @@
     "id": "disenio-marketing",
     "title": "Diseño y Marketing",
     "backgroundImage": "img/diseniomarketing.png",
+    "accentColor": "var(--color-black)",
+    "accentTextColor": "var(--color-white)",
+    "ctaBgColor": "var(--color-white)",
+    "ctaTextColor": "var(--color-black)",
     "sections": [
       {
         "id": "cursos-disponibles",

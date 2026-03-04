@@ -14,6 +14,18 @@ export interface Props {
   courseId: string;
   /** Image aspect ratio: '1' (square) or '16/7.7' (rectangle) */
   aspectRatio?: '1' | '16/7.7' | 'rect';
+  /** Custom background color */
+  bgColor?: string;
+  /** Custom text color */
+  textColor?: string;
+  /** Custom hover background color */
+  hoverBgColor?: string;
+  /** Custom hover text color */
+  hoverTextColor?: string;
+  /** Custom lift amount on hover (e.g. -8px) */
+  hoverLift?: string;
+  /** Custom scale amount on hover (e.g. 1.03) */
+  hoverScale?: string;
 }
 
 const { 
@@ -22,10 +34,25 @@ const {
   title, 
   className = '', 
   courseId,
-  aspectRatio = "1"
+  aspectRatio = "1",
+  bgColor = "var(--color-container-bg)",
+  textColor = "var(--color-white)",
+  hoverBgColor = "var(--color-white)",
+  hoverTextColor = "var(--color-black)",
+  hoverLift = "-8px",
+  hoverScale = "1.03"
 } = Astro.props;
 
 const aspectRatioValue = aspectRatio === 'rect' ? '16/7.7' : aspectRatio;
+
+const styles = {
+  '--card-bg': bgColor,
+  '--card-text': textColor,
+  '--card-hover-bg': hoverBgColor,
+  '--card-hover-text': hoverTextColor,
+  '--card-hover-lift': hoverLift,
+  '--card-hover-scale': hoverScale,
+};
 ---
 
 <a 
@@ -33,6 +60,7 @@ const aspectRatioValue = aspectRatio === 'rect' ? '16/7.7' : aspectRatio;
   class:list={['card-link', className]} 
   data-course-id={courseId} 
   data-aspect-ratio={aspectRatioValue}
+  style={styles}
 >
   <article class="card-link__article">
     <div class="card-link__image-wrapper">
@@ -55,7 +83,7 @@ const aspectRatioValue = aspectRatio === 'rect' ? '16/7.7' : aspectRatio;
 <style>
   .card-link {
     display: block;
-    color: #ffffff;
+    color: var(--card-text, var(--color-white));
     text-decoration: none;
     transition: 
       transform 0.25s ease,
@@ -67,7 +95,7 @@ const aspectRatioValue = aspectRatio === 'rect' ? '16/7.7' : aspectRatio;
     flex-direction: column;
     width: 100%;
     height: 100%;
-    background-color: var(--color-container-bg, #0f0f0f);
+    background-color: var(--card-bg, var(--color-container-bg, #0f0f0f));
     border: 1px solid var(--color-bg-card-border, #dcdcdc);
     border-radius: 1rem;
     overflow: hidden;
@@ -102,8 +130,9 @@ const aspectRatioValue = aspectRatio === 'rect' ? '16/7.7' : aspectRatio;
     justify-content: center;
     gap: 0.5rem;
     padding: 0.75rem;
-    background-color: var(--color-container-bg, #0f0f0f);
+    background-color: var(--card-bg, var(--color-container-bg, #0f0f0f));
     border-radius: 0 0 1rem 1rem;
+    transition: background-color 0.28s ease, color 0.28s ease;
   }
 
   .card-link__content :global(svg) {
@@ -124,7 +153,7 @@ const aspectRatioValue = aspectRatio === 'rect' ? '16/7.7' : aspectRatio;
   /* Hover effects */
   .card-link:hover .card-link__article,
   .card-link:focus-visible .card-link__article {
-    transform: translateY(-8px) scale(1.03);
+    transform: translateY(var(--card-hover-lift, -8px)) scale(var(--card-hover-scale, 1.03));
     box-shadow:
       0 16px 32px rgba(0, 0, 0, 0.12),
       0 8px 16px rgba(0, 0, 0, 0.08);
@@ -132,8 +161,8 @@ const aspectRatioValue = aspectRatio === 'rect' ? '16/7.7' : aspectRatio;
 
   .card-link:hover .card-link__content,
   .card-link:focus-visible .card-link__content {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--card-hover-bg, var(--color-white));
+    color: var(--card-hover-text, var(--color-black));
   }
 
   .card-link:hover :global(svg),

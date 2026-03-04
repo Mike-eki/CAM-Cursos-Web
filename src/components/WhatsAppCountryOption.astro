@@ -27,10 +27,10 @@ const whatsappUrl = `https://wa.me/${phone}`;
         align-items: center;
         gap: 12px;
         padding: 12px 20px;
-        background: #191919;
+        background: var(--color-surface-dark);
         border-radius: 1rem;
         text-decoration: none;
-        color: #EDF0F4;
+        color: var(--color-text-body);
         font-weight: 500;
         font-size: 15px;
         transition: all 0.3s ease;
@@ -40,10 +40,10 @@ const whatsappUrl = `https://wa.me/${phone}`;
     }
 
     .country-option:hover {
-        background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+        background: linear-gradient(135deg, var(--color-whatsapp) 0%, var(--color-whatsapp-dark) 100%);
         color: white;
         transform: translateX(-5px);
-        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        box-shadow: 0 4px 15px rgba(var(--color-whatsapp-rgb), 0.4);
     }
 
     .flag-icon {

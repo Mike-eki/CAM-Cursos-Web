@@ -80,8 +80,8 @@ const { testimonies } = Astro.props;
     }
 
     .carousel-btn {
-        background: #000000;
-        border: 1px solid #ffffff;
+        background: var(--color-black);
+        border: 1px solid var(--color-white);
         border-radius: 50%;
         width: 40px;
         height: 40px;
@@ -89,16 +89,16 @@ const { testimonies } = Astro.props;
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        color: #ffffff;
+        color: var(--color-white);
         transition: background-color 0.2s, color 0.2s;
         flex-shrink: 0;
         z-index: 2;
     }
 
     .carousel-btn:hover {
-        background-color: #ffffff;
-        color: #000000;
-        border: 1px solid #000000;
+        background-color: var(--color-white);
+        color: var(--color-black);
+        border: 1px solid var(--color-black);
     }
     
     .carousel-btn:disabled {
@@ -130,9 +130,9 @@ const { testimonies } = Astro.props;
     }
 
     .dot.active {
-        background-color: #000000;
-        border: 2px solid #ffffff;
-        box-shadow: 0 0 0 1px #000000; /* Optional: adds a black ring outside the white border to make it pop against light backgrounds */
+        background-color: var(--color-black);
+        border: 2px solid var(--color-white);
+        box-shadow: 0 0 0 1px var(--color-black); /* Optional: adds a black ring outside the white border to make it pop against light backgrounds */
     }
 
     @media (max-width: 600px) {
