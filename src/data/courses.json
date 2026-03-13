@@ -320,7 +320,15 @@
         "title": "Cursos de capacitación:",
         "kind": "list",
         "items": [
-          "Sutura Básica",
+          {
+            "text": "Sutura Básica",
+            "buttons": [
+              {
+                "label": "Ver temario",
+                "url": "pdf/temario-sutura-basica2026.pdf"
+              }
+            ]
+          },
           "Extraccionista",
           "Primeros auxilios y soporte vital extrahospitalario",
           "RCP y DEA",
