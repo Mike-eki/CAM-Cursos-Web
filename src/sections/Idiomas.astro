@@ -1,12 +1,12 @@
 ---
-import CardLink from '../components/CardLink.astro'
-import CTAButton from '../components/CTAButton.astro'
-import Icon from '../components/Icon.astro'
-import TestimoniesCarousel from '../components/TestimoniesCarousel.astro'
-import TrustNumbers from '../components/TrustNumbers.astro'
-import Wrapper from '../components/Wrapper.astro'
-import HSBCIcon from '../icons/HSBCIcon.astro'
-import LanguageIcon from '../icons/LanguageIcon.astro'
+import CardLink from "../components/CardLink.astro";
+import CTAButton from "../components/CTAButton.astro";
+import Icon from "../components/Icon.astro";
+import TestimoniesCarousel from "../components/TestimoniesCarousel.astro";
+import TrustNumbers from "../components/TrustNumbers.astro";
+import Wrapper from "../components/Wrapper.astro";
+import HSBCIcon from "../icons/HSBCIcon.astro";
+import LanguageIcon from "../icons/LanguageIcon.astro";
 import programs from "../data/programs.json";
 
 export interface Props {
@@ -21,48 +21,54 @@ const testimonies = [
         author: "Claudia Centurion",
         role: "Madre de estudiante",
         img: "img/authors/claudia_centurion.png",
-        alt: "Foto de Claudia Centurion"
+        alt: "Foto de Claudia Centurion",
     },
     {
         quote: "Son super rápidos y eficientes. Nada que quejarme, todo lo contrario, son muy buenos.",
         author: "Dellanyra Claudia Pariguana Bernal",
         role: "Estudiante de idiomas",
         img: "img/authors/dellanyra_claudia_pariguana_bernal.png",
-        alt: "Foto de Dellanyra Claudia Pariguana Bernal"
-    }
+        alt: "Foto de Dellanyra Claudia Pariguana Bernal",
+    },
 ];
 ---
 
 <Wrapper className="grid-wrapper">
-
     <header class="heading-icon h-grid-one">
         <LanguageIcon />
         <h2>¡Aprende un nuevo idioma!</h2>
     </header>
 
     <section class="trust-container">
-        <TrustNumbers num="1000" title="Experiencias" />
+        <!-- <TrustNumbers num="1000" title="Experiencias" />
         <TrustNumbers num="900" title="Clases" />
-        <TrustNumbers num="15" title="Trayectoria" />
+        <TrustNumbers num="15" title="Trayectoria" /> -->
     </section>
 
     <section class="companies description-one">
-        <p>Con un enfoque cultural y totalmente personalizado, aprende a comunicarte de forma profesional y nativa con otra lengua.</p>
+        <p>
+            Con un enfoque cultural y totalmente personalizado, aprende a
+            comunicarte de forma profesional y nativa con otra lengua.
+        </p>
     </section>
 
     <section class="grid card-one">
-        {programs.filter(p => p.category === 'idiomas').map((program) => (
-            <CardLink 
-                title={program.title} 
-                path={program.path} 
-                desc={program.desc} 
-                className="rect" 
-                aspectRatio="16/7.7" 
-                courseId={program.courseId}
-            >
-                <Icon icon={program.icon} width="30" slot="icon"/>
-            </CardLink>
-        ))}
+        {
+            programs
+                .filter((p) => p.category === "idiomas")
+                .map((program) => (
+                    <CardLink
+                        title={program.title}
+                        path={program.path}
+                        desc={program.desc}
+                        className="rect"
+                        aspectRatio="16/7.7"
+                        courseId={program.courseId}
+                    >
+                        <Icon icon={program.icon} width="30" slot="icon" />
+                    </CardLink>
+                ))
+        }
     </section>
 
     <section class="heading-icon h-grid-two">
@@ -74,11 +80,11 @@ const testimonies = [
     </section>
 
     <footer class="button">
-        <CTAButton 
+        <CTAButton
             text="Quiero aprender un nuevo idioma"
-            waMessage="¡Hola! Les escribo desde su web porque quiero aprender un nuevo idioma en CAM." />
+            waMessage="¡Hola! Les escribo desde su web porque quiero aprender un nuevo idioma en CAM."
+        />
     </footer>
-
 </Wrapper>
 
 <style>
@@ -125,7 +131,8 @@ const testimonies = [
         grid-column: span 2;
     }
 
-    h2, p {
+    h2,
+    p {
         margin: 0;
     }
 
@@ -149,7 +156,7 @@ const testimonies = [
         }
     }
 
-     @media screen and (min-width: 850px) {
+    @media screen and (min-width: 850px) {
         .grid {
             grid-template-columns: auto;
         }
@@ -207,5 +214,4 @@ const testimonies = [
             grid-row: 7;
         }
     }
-
 </style>

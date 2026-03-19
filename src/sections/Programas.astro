@@ -22,15 +22,15 @@ const testimonies = [
         author: "Sonia Francisca Aramendi",
         role: "Estudiante",
         img: "img/authors/sonia_francisca_aramendi.png",
-        alt: "Foto de Sonia Francisca Aramendi"
+        alt: "Foto de Sonia Francisca Aramendi",
     },
     {
         quote: "El lugar, el cursado, los profes, las personas que trabajan allá son todos muy buenos. Además hacen un trabajo espectacular con los cursos, la plataforma virtual y la enseñanza. ¡Siempre lo recomiendo a todos que me preguntan!",
         author: "Lily",
         role: "Estudiante",
-        img: "img/authors/lily.png", 
-        alt: "Foto de Lily"
-    }
+        img: "img/authors/lily.png",
+        alt: "Foto de Lily",
+    },
 ];
 ---
 
@@ -41,9 +41,9 @@ const testimonies = [
     </header>
 
     <section class="trust-container">
-        <TrustNumbers num="300" title="Egresados" />
-        <TrustNumbers num="1200" title="Clases impartidas" />
-        <TrustNumbers num="15" title="Trayectoria" />
+        <TrustNumbers num="45" title="Programas" />
+        <TrustNumbers num="46000" title="Clases impartidas" />
+        <TrustNumbers num="15" title="Años de trayectoria" />
     </section>
     <section class="description">
         <p>
@@ -57,10 +57,10 @@ const testimonies = [
 
         <div class="logos">
             <img
-                    src="img/ministerio-educ-paraguay-white.webp"
-                    alt="Logo de Ministerio de Educación y Ciencias de Paraguay"
-                    class="MinEducParaguay"
-                />
+                src="img/ministerio-educ-paraguay-white.webp"
+                alt="Logo de Ministerio de Educación y Ciencias de Paraguay"
+                class="MinEducParaguay"
+            />
             <Icon icon="CAM-Res" width="80" height="55" />
         </div>
     </section>
@@ -71,16 +71,20 @@ const testimonies = [
         </hgroup>
         <section class="grid">
             <!-- Main course cards -->
-            {programs.filter(p => p.category === 'salida-laboral').map((program) => (
-                <CardLink
-                    title={program.title}
-                    path={program.path}
-                    desc={program.desc}
-                    courseId={program.courseId}
-                >
-                    <Icon icon={program.icon} width="30" slot="icon" />
-                </CardLink>
-            ))}
+            {
+                programs
+                    .filter((p) => p.category === "salida-laboral")
+                    .map((program) => (
+                        <CardLink
+                            title={program.title}
+                            path={program.path}
+                            desc={program.desc}
+                            courseId={program.courseId}
+                        >
+                            <Icon icon={program.icon} width="30" slot="icon" />
+                        </CardLink>
+                    ))
+            }
         </section>
     </section>
 
@@ -93,9 +97,10 @@ const testimonies = [
     </section>
 
     <footer class="button">
-        <CTAButton 
-            text="Quiero encontrar mi curso ideal" 
-            waMessage="¡Hola! Les escribo desde su web porque quiero encontrar mi curso ideal en CAM." />
+        <CTAButton
+            text="Quiero encontrar mi curso ideal"
+            waMessage="¡Hola! Les escribo desde su web porque quiero encontrar mi curso ideal en CAM."
+        />
     </footer>
 
     <!-- Modal de cursos global para esta sección -->

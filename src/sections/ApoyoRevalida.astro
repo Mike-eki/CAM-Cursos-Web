@@ -1,12 +1,12 @@
 ---
-import CardLink from '../components/CardLink.astro'
-import CTAButton from '../components/CTAButton.astro'
-import Icon from '../components/Icon.astro'
-import TestimoniesCarousel from '../components/TestimoniesCarousel.astro'
-import TrustNumbers from '../components/TrustNumbers.astro'
-import Wrapper from '../components/Wrapper.astro'
-import CertificateIcon from '../icons/CertificateIcon.astro'
-import HeartHearIcon from '../icons/HeartHearIcon.astro'
+import CardLink from "../components/CardLink.astro";
+import CTAButton from "../components/CTAButton.astro";
+import Icon from "../components/Icon.astro";
+import TestimoniesCarousel from "../components/TestimoniesCarousel.astro";
+import TrustNumbers from "../components/TrustNumbers.astro";
+import Wrapper from "../components/Wrapper.astro";
+import CertificateIcon from "../icons/CertificateIcon.astro";
+import HeartHearIcon from "../icons/HeartHearIcon.astro";
 import programs from "../data/programs.json";
 
 export interface Props {
@@ -21,47 +21,54 @@ const testimonies = [
         author: "Lorena Escobar",
         role: "Estudiante de medicina",
         img: "img/authors/lorena_escobar.png",
-        alt: "Foto de Lorena Escobar"
+        alt: "Foto de Lorena Escobar",
     },
     {
         quote: "Excelente lugar y profes. ¡La atención un 10, súper recomendados!",
         author: "Priscila Gómez",
         role: "Estudiante de medicina",
         img: "img/authors/prisci_gomez.png",
-        alt: "Foto de Priscila Gómez"
-    }
+        alt: "Foto de Priscila Gómez",
+    },
 ];
 ---
 
 <Wrapper className="grid-wrapper">
-
     <header class="heading-icon h-grid-one">
         <HeartHearIcon />
         <h2>¡Acelera tu carrera de medicina!</h2>
     </header>
 
     <section class="trust-container">
-        <TrustNumbers num="600" title="Clases impartidas" />
+        <!-- <TrustNumbers num="600" title="Clases impartidas" />
         <TrustNumbers num="36" title="Medicos" />
-        <TrustNumbers num="90" title="Simulacros" />
+        <TrustNumbers num="90" title="Simulacros" /> -->
     </section>
 
     <section class="companies description-one">
-        <p>Creemos firmemente que el acompañamiento es clave para el éxito de tu carrera académica.</p>
+        <p>
+            Creemos firmemente que el acompañamiento es clave para el éxito de
+            tu carrera académica.
+        </p>
     </section>
 
     <section class="grid card-one">
-        {programs.filter(p => p.courseId === 'clases-apoyo-medicina').map((program) => (
-            <CardLink 
-                title={program.title}
-                path={program.path}
-                desc={program.desc}
-                className="rect"
-                aspectRatio="16/7.7"
-                courseId={program.courseId}>
-                <Icon icon={program.icon} width="30" slot="icon"/>
-            </CardLink>
-        ))}
+        {
+            programs
+                .filter((p) => p.courseId === "clases-apoyo-medicina")
+                .map((program) => (
+                    <CardLink
+                        title={program.title}
+                        path={program.path}
+                        desc={program.desc}
+                        className="rect"
+                        aspectRatio="16/7.7"
+                        courseId={program.courseId}
+                    >
+                        <Icon icon={program.icon} width="30" slot="icon" />
+                    </CardLink>
+                ))
+        }
     </section>
 
     <header class="heading-icon h-grid-two">
@@ -70,21 +77,29 @@ const testimonies = [
     </header>
 
     <section class="companies description-two">
-        <p>Solicita la reválida y mantén viva tu oportunidad de rendir el final. Gestiona tus trámites académicos  y mantenete en camino.</p>
+        <p>
+            Solicita la reválida y mantén viva tu oportunidad de rendir el
+            final. Gestiona tus trámites académicos y mantenete en camino.
+        </p>
     </section>
 
     <section class="grid card-two">
-        {programs.filter(p => p.courseId === 'revalidacion-tramites').map((program) => (
-            <CardLink 
-                title={program.title} 
-                path={program.path} 
-                desc={program.desc}
-                className="rect" 
-                aspectRatio="16/7.7" 
-                courseId={program.courseId}>
-                <Icon icon={program.icon} width="30" slot="icon" />
-            </CardLink>
-        ))}
+        {
+            programs
+                .filter((p) => p.courseId === "revalidacion-tramites")
+                .map((program) => (
+                    <CardLink
+                        title={program.title}
+                        path={program.path}
+                        desc={program.desc}
+                        className="rect"
+                        aspectRatio="16/7.7"
+                        courseId={program.courseId}
+                    >
+                        <Icon icon={program.icon} width="30" slot="icon" />
+                    </CardLink>
+                ))
+        }
     </section>
 
     <section class="heading-icon h-grid-three">
@@ -96,11 +111,11 @@ const testimonies = [
     </section>
 
     <footer class="button">
-        <CTAButton 
-        text="Quiero acelerar mi carrera de medicina"
-        waMessage="¡Hola! Les escribo desde su web porque quiero acelerar mi carrera de medicina en CAM." />
+        <CTAButton
+            text="Quiero acelerar mi carrera de medicina"
+            waMessage="¡Hola! Les escribo desde su web porque quiero acelerar mi carrera de medicina en CAM."
+        />
     </footer>
-
 </Wrapper>
 
 <style>
@@ -147,7 +162,8 @@ const testimonies = [
         grid-column: span 2;
     }
 
-    h2, p {
+    h2,
+    p {
         margin: 0;
     }
 
@@ -211,7 +227,6 @@ const testimonies = [
             align-items: center;
 
             font-size: 1.5rem;
-
         }
         .trust-container {
             grid-column: 1/5;
@@ -224,7 +239,8 @@ const testimonies = [
         .description-two {
             grid-column: 3/5;
         }
-        .description-one p, .description-two p {
+        .description-one p,
+        .description-two p {
             max-width: 42ch;
             font-size: 1.5rem;
             margin-inline: auto;
@@ -248,5 +264,4 @@ const testimonies = [
             grid-column: 2/4;
         }
     }
-
 </style>
