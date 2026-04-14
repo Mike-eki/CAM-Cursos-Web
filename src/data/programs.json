@@ -1,7 +1,7 @@
 [
     {
         "title": "Adultos Mayores",
-        "path": "img/mayores.jpg",
+        "path": "landingpage-src/img/mayores.jpg",
         "desc": "Curso profesional de Cuidado de Adultos Mayores con certificación en Instituto CAM",
         "courseId": "adultos-mayores",
         "icon": "psicologia",
@@ -9,7 +9,7 @@
     },
     {
         "title": "Bienestar y Cuidado personal",
-        "path": "img/cuidado.webp",
+        "path": "landingpage-src/img/cuidado.webp",
         "desc": "Cursos de bienestar y cuidado personal",
         "courseId": "cuidado",
         "icon": "cuidado_personal",
@@ -17,7 +17,7 @@
     },
     {
         "title": "Administración",
-        "path": "img/administracion.png",
+        "path": "landingpage-src/img/administracion.png",
         "desc": "Cursos de administración",
         "courseId": "administracion",
         "icon": "admin_recursos",
@@ -25,7 +25,7 @@
     },
     {
         "title": "Eventos sociales y Celebraciones",
-        "path": "img/organizacioneventos.png",
+        "path": "landingpage-src/img/organizacioneventos.png",
         "desc": "Cursos de organización de eventos",
         "courseId": "organizacion-eventos",
         "icon": "eventos",
@@ -33,7 +33,7 @@
     },
     {
         "title": "Diseño y Marketing",
-        "path": "img/diseniomarketing.png",
+        "path": "landingpage-src/img/diseniomarketing.png",
         "desc": "Cursos de diseño y marketing",
         "courseId": "disenio-marketing",
         "icon": "dis_img",
@@ -41,7 +41,7 @@
     },
     {
         "title": "Salud",
-        "path": "img/salud.png",
+        "path": "landingpage-src/img/salud.png",
         "desc": "Cursos de salud",
         "courseId": "salud",
         "icon": "salud",
@@ -49,7 +49,7 @@
     },
     {
         "title": "Educación física y Fitness",
-        "path": "img/fitness.png",
+        "path": "landingpage-src/img/fitness.png",
         "desc": "Cursos de educación física y fitness",
         "courseId": "educacion-fisica-fitness",
         "icon": "educ_fisica_fitness",
@@ -57,7 +57,7 @@
     },
     {
         "title": "Desarrollo Digital",
-        "path": "img/digital.png",
+        "path": "landingpage-src/img/digital.png",
         "desc": "Cursos de desarrollo digital",
         "courseId": "desarrollo-digital",
         "icon": "desarrollo_digital",
@@ -65,7 +65,7 @@
     },
     {
         "title": "Desarrollo Personal",
-        "path": "img/personal.webp",
+        "path": "landingpage-src/img/personal.webp",
         "desc": "Cursos de desarrollo personal",
         "courseId": "desarrollo-personal",
         "icon": "desarrollo_personal",
@@ -73,7 +73,7 @@
     },
     {
         "title": "Herramientas tecnologicas",
-        "path": "img/herramientas-tecnologicas.png",
+        "path": "landingpage-src/img/herramientas-tecnologicas.png",
         "desc": "Capacitación en Herramientas Tecnológicas y Office en Instituto CAM",
         "courseId": "herramientas-tecnologicas",
         "icon": "herramientas_tecnologicas",
@@ -81,23 +81,47 @@
     },
     {
         "title": "Idiomas",
-        "path": "img/idioma.png",
+        "path": "landingpage-src/img/idioma.png",
         "desc": "Aprender idiomas: Español, Inglés, Portugués e Italiano en Instituto CAM",
         "courseId": "idiomas",
         "icon": "idiomas",
         "category": "idiomas"
     },
     {
-        "title": "Alumnos de Ciencias Medicas",
-        "path": "img/apoyo.png",
-        "desc": "Clases de apoyo universitario para estudiantes de medicina - Instituto CAM",
-        "courseId": "clases-apoyo-medicina",
+        "title": "Ingreso a Medicina",
+        "path": "landingpage-src/img/ingreso-medicina.webp",
+        "desc": "Ingreso a la carrera de medicina",
+        "courseId": "ingreso-medicina",
         "icon": "salud",
         "category": "medicina"
     },
     {
-        "title": "Revalidación y Tramites académicos",
-        "path": "img/revalida.jpg",
+        "title": "Acompaña tu cursado",
+        "path": "landingpage-src/img/acomp.webp",
+        "desc": "Clases de apoyo para acompañar tu cursado",
+        "courseId": "acompanamiento-cursado",
+        "icon": "salud",
+        "category": "medicina"
+    },
+    {
+        "title": "Finales",
+        "path": "landingpage-src/img/finales.webp",
+        "desc": "Preparación intensiva para exámenes finales",
+        "courseId": "finales-medicina",
+        "icon": "salud",
+        "category": "medicina"
+    },
+    {
+        "title": "Capacitación",
+        "path": "landingpage-src/img/apoyo.png",
+        "desc": "Cursos de capacitación médica",
+        "courseId": "capacitacion-medicina",
+        "icon": "salud",
+        "category": "medicina"
+    },
+    {
+        "title": "Revalida",
+        "path": "landingpage-src/img/revalida.jpg",
         "desc": "Gestión de trámites de revalidación académica para medicina en Argentina y Paraguay",
         "courseId": "revalidacion-tramites",
         "icon": "convalidacion",

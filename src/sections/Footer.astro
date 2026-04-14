@@ -13,6 +13,7 @@ import ClockIcon from "../icons/ClockIcon.astro";
 import EmailIcon from "../icons/EmailIcon.astro";
 import ArgentinaFlagIcon from "../icons/ArgentinaFlagIcon.astro";
 import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
+import Icon from "../components/Icon.astro";
 ---
 
 <Wrapper className="grid-wrapper">
@@ -46,28 +47,46 @@ import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
         </nav>
 
         <p>
-            Contamos con más de 15 años de experiencia brindando cursos
-            personalizados de Clases de Apoyo, Medicina e Idiomas. Te preparamos
-            con profesionales altamente capacitados para acompañar tu carrera y
-            rendir los exámenes de la facultad de medicina en todas las
-            materias.
+            Contamos con más de 15 años de trayectoria brindando cursos
+            personalizados de <b>Clases de Apoyo, Medicina e Idiomas</b>.
+            Además, impulsamos tu crecimiento con cursos de <b
+                >capacitación con rápida salida laboral</b
+            >, respaldados por profesionales altamente calificados que te
+            acompañarán en cada paso de tu formación para asegurar tu éxito
+            profesional.
         </p>
 
         <hgroup class="idiomas">
-            <h4>Centro Evaluador Dele & Aplicador Siele y Cele</h4>
+            <!-- <h4>Centro Evaluador Dele & Aplicador Siele y Cele</h4> -->
             <picture>
+                <Icon icon="CAM-Res" width="80" height="55" />
                 <img
-                    src="img/dele_LOGO_white.webp"
+                    src="landingpage-src/img/ministerio-educ-paraguay-white.webp"
+                    alt="Logo de DELE"
+                    class="MEC"
+                />
+                <img
+                    src="landingpage-src/img/uai_LOGO_white.webp"
+                    alt="Logo de DELE"
+                    class="UAI"
+                />
+                <img
+                    src="landingpage-src/img/HAIZEA_logo.svg"
+                    alt="Logo de DELE"
+                    class="HAIZEA"
+                />
+                <img
+                    src="landingpage-src/img/dele_LOGO_white.webp"
                     alt="Logo de DELE"
                     class="DELE"
                 />
                 <img
-                    src="img/siele_LOGO_white.webp"
+                    src="landingpage-src/img/siele_LOGO_white.webp"
                     alt="Logo de SIELE"
                     class="SIELE"
                 />
                 <img
-                    src="img/cele_LOGO_white.webp"
+                    src="landingpage-src/img/cele_LOGO_white.webp"
                     alt="Logo de CELE"
                     class="CELE"
                 />
@@ -90,14 +109,20 @@ import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
                 <div class="country-grid">
                     <div class="info-col">
                         <address>
-                            <span class="icon-wrap"><MapIcon color="--hue-purple" /></span>
-                            <a href="https://maps.app.goo.gl/YWyaSkCwqar3gCwc8" target="_blank"
+                            <span class="icon-wrap"
+                                ><MapIcon color="--hue-purple" /></span
+                            >
+                            <a
+                                href="https://maps.app.goo.gl/YWyaSkCwqar3gCwc8"
+                                target="_blank"
                                 >Ovidio Lagos 640, Rosario, Santa Fe</a
                             >
                         </address>
                         <div class="info-row v-stack">
                             <div class="row-label">
-                                <span class="icon-wrap"><ScheduleIcon color="--hue-purple" /></span>
+                                <span class="icon-wrap"
+                                    ><ScheduleIcon color="--hue-purple" /></span
+                                >
                                 <strong>Horarios:</strong>
                             </div>
                             <div class="row-content">
@@ -108,19 +133,35 @@ import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
 
                     <div class="contact-col">
                         <div class="wa-item">
-                            <em>Atención en portugués (ingresantes):</em>
-                            <a href="https://wa.me/5493412166867" target="_blank">
-                                <span class="icon-wrap"><WhatsAppIcon color="--hue-purple" size={20} /></span>
+                            <em>Atención al cliente:</em>
+                            <a
+                                href="https://wa.me/5493412166867"
+                                target="_blank"
+                            >
+                                <span class="icon-wrap"
+                                    ><WhatsAppIcon
+                                        color="--hue-purple"
+                                        size={20}
+                                    /></span
+                                >
                                 +54 9 341 216-6867
                             </a>
                         </div>
-                        <div class="wa-item">
+                        <!-- <div class="wa-item">
                             <em>Atención al cliente:</em>
-                            <a href="https://wa.me/5493415469738" target="_blank">
-                                <span class="icon-wrap"><WhatsAppIcon color="--hue-purple" size={20} /></span>
+                            <a
+                                href="https://wa.me/5493415469738"
+                                target="_blank"
+                            >
+                                <span class="icon-wrap"
+                                    ><WhatsAppIcon
+                                        color="--hue-purple"
+                                        size={20}
+                                    /></span
+                                >
                                 +54 9 341 546-9738
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -133,9 +174,14 @@ import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
                 <div class="country-grid">
                     <div class="info-col">
                         <address>
-                            <span class="icon-wrap"><MapIcon color="--hue-purple" /></span>
-                            <a href="https://maps.app.goo.gl/gB5FdjtSvNrniHrz9" target="_blank"
-                                >4 de Mayo & Avenida Rogelio Benítez, Ciudad del Este, Alto Paraná</a
+                            <span class="icon-wrap"
+                                ><MapIcon color="--hue-purple" /></span
+                            >
+                            <a
+                                href="https://maps.app.goo.gl/gB5FdjtSvNrniHrz9"
+                                target="_blank"
+                                >Av. Rogelio Benitez con 4 de mayo. Ciudad del
+                                este, Alto Paraná.</a
                             >
                         </address>
                     </div>
@@ -143,9 +189,17 @@ import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
                     <div class="contact-col">
                         <div class="wa-item">
                             <em>Atención al cliente:</em>
-                            <a href="https://wa.me/595991870719" target="_blank">
-                                <span class="icon-wrap"><WhatsAppIcon color="--hue-purple" size={20} /></span>
-                                +595 991 870719
+                            <a
+                                href="https://wa.me/595993015661"
+                                target="_blank"
+                            >
+                                <span class="icon-wrap"
+                                    ><WhatsAppIcon
+                                        color="--hue-purple"
+                                        size={20}
+                                    /></span
+                                >
+                                +595 993 015661
                             </a>
                         </div>
                     </div>
@@ -201,7 +255,9 @@ import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
         gap: 1.25rem;
     }
     .nav-links ul li a {
-        transition: transform 0.2s ease, opacity 0.2s ease;
+        transition:
+            transform 0.2s ease,
+            opacity 0.2s ease;
         display: flex;
         opacity: 0.8;
     }
@@ -238,9 +294,24 @@ import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
         gap: 2rem;
         align-items: center;
     }
-    .DELE { width: 85px; }
-    .SIELE { width: 125px; }
-    .CELE { width: 105px; }
+    .UAI {
+        width: 140px;
+    }
+    .MEC {
+        width: 120px;
+    }
+    .HAIZEA {
+        width: 150px;
+    }
+    .DELE {
+        width: 85px;
+    }
+    .SIELE {
+        width: 125px;
+    }
+    .CELE {
+        width: 105px;
+    }
 
     .nav-info {
         display: flex;
@@ -287,7 +358,8 @@ import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
         align-items: start;
     }
 
-    .info-col, .contact-col {
+    .info-col,
+    .contact-col {
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
@@ -394,5 +466,4 @@ import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
             gap: 4rem;
         }
     }
-
 </style>

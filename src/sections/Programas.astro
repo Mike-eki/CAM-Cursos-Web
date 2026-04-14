@@ -1,7 +1,6 @@
 ---
 import CardLink from "../components/CardLink.astro";
 import CTAButton from "../components/CTAButton.astro";
-import TestimoniesCarousel from "../components/TestimoniesCarousel.astro";
 import TrustNumbers from "../components/TrustNumbers.astro";
 import Wrapper from "../components/Wrapper.astro";
 import GraduateHatIcon from "../icons/GraduateHatIcon.astro";
@@ -15,23 +14,6 @@ export interface Props {
 }
 
 const { isModal = false } = Astro.props;
-
-const testimonies = [
-    {
-        quote: "Inicie con la formación y es mi primer contacto con la página. Las chicas telefónicamente han sido muy atentas.",
-        author: "Sonia Francisca Aramendi",
-        role: "Estudiante",
-        img: "img/authors/sonia_francisca_aramendi.png",
-        alt: "Foto de Sonia Francisca Aramendi",
-    },
-    {
-        quote: "El lugar, el cursado, los profes, las personas que trabajan allá son todos muy buenos. Además hacen un trabajo espectacular con los cursos, la plataforma virtual y la enseñanza. ¡Siempre lo recomiendo a todos que me preguntan!",
-        author: "Lily",
-        role: "Estudiante",
-        img: "img/authors/lily.png",
-        alt: "Foto de Lily",
-    },
-];
 ---
 
 <Wrapper className="grid-wrapper">
@@ -53,21 +35,21 @@ const testimonies = [
     </section>
 
     <section class="companies">
-        <small>Avalados y certificados por:</small>
+        <small>Certificación Internacional:</small>
 
         <div class="logos">
+            <Icon icon="CAM-Res" width="80" height="55" />
             <img
-                src="img/ministerio-educ-paraguay-white.webp"
+                src="landingpage-src/img/ministerio-educ-paraguay-white.webp"
                 alt="Logo de Ministerio de Educación y Ciencias de Paraguay"
                 class="MinEducParaguay"
             />
-            <Icon icon="CAM-Res" width="80" height="55" />
         </div>
     </section>
 
     <section class="card-wrapper">
         <hgroup>
-            <h4>Cursos con salida laboral</h4>
+            <h4>Cursos con rápida salida laboral</h4>
         </hgroup>
         <section class="grid">
             <!-- Main course cards -->
@@ -86,14 +68,6 @@ const testimonies = [
                     ))
             }
         </section>
-    </section>
-
-    <section class="heading-icon h-testimonies">
-        <h2>Experiencias de estudiantes</h2>
-    </section>
-
-    <section class="testimonies">
-        <TestimoniesCarousel testimonies={testimonies} />
     </section>
 
     <footer class="button">
@@ -243,23 +217,8 @@ const testimonies = [
             min-width: 0;
         }
 
-        .h-testimonies {
-            font-size: 1.5rem;
-            grid-column: 2/4;
-            grid-row: 6;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .testimonies {
-            grid-column: 2/4;
-            grid-row: 7;
-        }
         .button {
             grid-column: 2/4;
-            grid-row: 8;
         }
     }
 

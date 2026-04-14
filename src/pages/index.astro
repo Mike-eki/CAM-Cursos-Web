@@ -1,33 +1,28 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ApoyoRevalida from '../sections/ApoyoRevalida.astro';
-import Programas from '../sections/Programas.astro';
-import Hero from '../sections/Hero.astro';
-import Idiomas from '../sections/Idiomas.astro';
-import Footer from '../sections/Footer.astro';
-import Paises from '../sections/Paises.astro';
-import WhatsAppFixed from '../components/WhatsAppFixed.astro';
-import WhatsAppButton from '../components/WhatsAppButton.astro';
+import Layout from "../layouts/Layout.astro";
+import ApoyoRevalida from "../sections/ApoyoRevalida.astro";
+import Programas from "../sections/Programas.astro";
+import Hero from "../sections/Hero.astro";
+import Idiomas from "../sections/Idiomas.astro";
+import Footer from "../sections/Footer.astro";
+import Paises from "../sections/Paises.astro";
+import WhatsAppFixed from "../components/WhatsAppFixed.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
 ---
 
 <Layout>
 	<!-- <WhatsAppFixed /> -->
-	 <WhatsAppButton />
-	<h1 class="sr-only">Instituto CAM - Cursos con Salida Laboral, Idiomas y Apoyo Universitario para Medicina</h1>
+	<WhatsAppButton />
+	<h1 class="sr-only">
+		Instituto CAM - Cursos con Salida Laboral, Idiomas y Apoyo Universitario
+		para Medicina
+	</h1>
 	<div>
-
-		 <Hero />
+		<Hero />
 		<Paises />
-		<!--
-		<Programas />
-		<ApoyoRevalida />
-		<Idiomas />
-		-->
 		<Footer />
 	</div>
-
 </Layout>
-
 
 <style>
 	div {

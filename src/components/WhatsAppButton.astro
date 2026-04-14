@@ -5,22 +5,22 @@ import ArgentinaFlagIcon from "../icons/ArgentinaFlagIcon.astro";
 import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
 
 // Configuración de números de WhatsApp
-const argentPhone = "5491123456789"; // Reemplaza con tu número de Argentina
-const paraguayPhone = "595981234567";  // Reemplaza con tu número de Paraguay
+const argentPhone = "5493412166867"; // Reemplaza con tu número de Argentina
+const paraguayPhone = "595993015661"; // Reemplaza con tu número de Paraguay
 ---
 
 <div class="whatsapp-container">
     <button class="whatsapp-button" id="whatsappBtn">
-        <WhatsAppIcon color="var(--color-white)"/>
+        <WhatsAppIcon color="var(--color-white)" />
     </button>
-    
+
     <div class="country-options" id="countryOptions">
-        <WhatsAppCountryOption 
+        <WhatsAppCountryOption
             country="Argentina"
             phone={argentPhone}
             FlagIcon={ArgentinaFlagIcon}
         />
-        <WhatsAppCountryOption 
+        <WhatsAppCountryOption
             country="Paraguay"
             phone={paraguayPhone}
             FlagIcon={ParaguayFlagIcon}
@@ -41,7 +41,11 @@ const paraguayPhone = "595981234567";  // Reemplaza con tu número de Paraguay
     .whatsapp-button {
         width: 60px;
         height: 60px;
-        background: linear-gradient(135deg, var(--color-whatsapp) 0%, var(--color-whatsapp-dark) 100%);
+        background: linear-gradient(
+            135deg,
+            var(--color-whatsapp) 0%,
+            var(--color-whatsapp-dark) 100%
+        );
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -136,32 +140,32 @@ const paraguayPhone = "595981234567";  // Reemplaza con tu número de Paraguay
 </style>
 
 <script>
-    const btn = document.getElementById('whatsappBtn');
-    const options = document.getElementById('countryOptions');
+    const btn = document.getElementById("whatsappBtn");
+    const options = document.getElementById("countryOptions");
     let isOpen = false;
 
     // Toggle del menú al hacer clic
-    btn?.addEventListener('click', (e) => {
+    btn?.addEventListener("click", (e) => {
         e.stopPropagation();
         isOpen = !isOpen;
-        options?.classList.toggle('active', isOpen);
+        options?.classList.toggle("active", isOpen);
     });
 
     // Cerrar al hacer clic fuera
-    document.addEventListener('click', (e) => {
+    document.addEventListener("click", (e) => {
         const target = e.target as HTMLElement;
-        const container = document.querySelector('.whatsapp-container');
+        const container = document.querySelector(".whatsapp-container");
         if (!container?.contains(target)) {
             isOpen = false;
-            options?.classList.remove('active');
+            options?.classList.remove("active");
         }
     });
 
     // Cerrar al hacer clic en una opción
-    options?.querySelectorAll('.country-option').forEach(option => {
-        option.addEventListener('click', () => {
+    options?.querySelectorAll(".country-option").forEach((option) => {
+        option.addEventListener("click", () => {
             isOpen = false;
-            options?.classList.remove('active');
+            options?.classList.remove("active");
         });
     });
 </script>

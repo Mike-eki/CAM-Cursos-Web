@@ -2,7 +2,7 @@
 import { Font } from "astro:assets";
 
 const {
-	title = "Instituto CAM | Cursos con Salida Laboral, Idiomas y Apoyo para Medicina",
+	title = "Instituto CAM | Cursos con rápida Salida Laboral, Idiomas y Apoyo para Medicina",
 	description = "Más de 15 años transformando vidas. En Instituto CAM ofrecemos cursos con rápida salida laboral, idiomas (español, portugués, inglés, italiano) y apoyo universitario para medicina. Clases presenciales en Argentina y Paraguay, o virtuales desde cualquier lugar. ¡Tu futuro empieza acá!",
 	image = "seo/og.png",
 	canonicalURL = new URL(Astro.url.pathname, Astro.site),
@@ -21,7 +21,7 @@ const resolveUrl = (path: string) => new URL(resolvePath(path), Astro.site);
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<Font cssVariable="--font-clash-display" />
-		
+
 		<!-- Canonical URL -->
 		<link rel="canonical" href={canonicalURL} />
 
@@ -49,44 +49,81 @@ const resolveUrl = (path: string) => new URL(resolvePath(path), Astro.site);
 		<meta property="twitter:image" content={resolveUrl(image)} />
 
 		<!-- Favicon -->
-		<link rel="apple-touch-icon" sizes="180x180" href={resolvePath("apple-touch-icon.png")}>
-		<link rel="icon" type="image/png" sizes="32x32" href={resolvePath("favicon-32x32.png")}>
-		<link rel="icon" type="image/png" sizes="16x16" href={resolvePath("favicon-16x16.png")}>
-		<link rel="manifest" href={resolvePath("seo/site.webmanifest")}>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href={resolvePath("apple-touch-icon.png")}
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href={resolvePath("favicon-32x32.png")}
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href={resolvePath("favicon-16x16.png")}
+		/>
+		<link rel="manifest" href={resolvePath("seo/site.webmanifest")} />
 		<meta name="keywords" content={keywords} />
 
 		<!-- Structured Data (JSON-LD) -->
-		<script type="application/ld+json" is:inline set:html={JSON.stringify({
-			"@context": "https://schema.org",
-			"@type": "EducationalOrganization",
-			"name": "Instituto CAM",
-			"url": Astro.site?.toString(),
-			"logo": new URL(resolvePath("seo/logo-og.png"), Astro.site).toString(),
-			"description": "Más de 15 años transformando vidas con cursos con rápida salida laboral, idiomas y apoyo para medicina.",
-			"address": {
-				"@type": "PostalAddress",
-				"addressCountry": ["Argentina", "Paraguay"]
-			}
-		})} />
+		<script
+			type="application/ld+json"
+			is:inline
+			set:html={JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "EducationalOrganization",
+				name: "Instituto CAM",
+				url: Astro.site?.toString(),
+				logo: new URL(
+					resolvePath("seo/logo-og.png"),
+					Astro.site,
+				).toString(),
+				description:
+					"Más de 15 años transformando vidas con cursos con rápida salida laboral, idiomas y apoyo para medicina.",
+				address: {
+					"@type": "PostalAddress",
+					addressCountry: ["Argentina", "Paraguay"],
+				},
+			})}
+		/>
 
 		<!-- Meta Pixel Code -->
 		<script is:inline>
-			!function (f, b, e, v, n, t, s) {
-				if (f.fbq) return; n = f.fbq = function () {
-					n.callMethod ?
-					n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+			!(function (f, b, e, v, n, t, s) {
+				if (f.fbq) return;
+				n = f.fbq = function () {
+					n.callMethod
+						? n.callMethod.apply(n, arguments)
+						: n.queue.push(arguments);
 				};
-				if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-				n.queue = []; t = b.createElement(e); t.async = !0;
-				t.src = v; s = b.getElementsByTagName(e)[0];
-				s.parentNode.insertBefore(t, s)
-			}(window, document, 'script',
-				'https://connect.facebook.net/en_US/fbevents.js');
-			fbq('init', '2026830631201738');
-			fbq('track', 'PageView');
+				if (!f._fbq) f._fbq = n;
+				n.push = n;
+				n.loaded = !0;
+				n.version = "2.0";
+				n.queue = [];
+				t = b.createElement(e);
+				t.async = !0;
+				t.src = v;
+				s = b.getElementsByTagName(e)[0];
+				s.parentNode.insertBefore(t, s);
+			})(
+				window,
+				document,
+				"script",
+				"https://connect.facebook.net/en_US/fbevents.js",
+			);
+			fbq("init", "2026830631201738");
+			fbq("track", "PageView");
 		</script>
 		<noscript>
-			<img height="1" width="1" style="display:none"
+			<img
+				height="1"
+				width="1"
+				style="display:none"
 				src="https://www.facebook.com/tr?id=2026830631201738&ev=PageView&noscript=1"
 			/>
 		</noscript>
@@ -98,8 +135,6 @@ const resolveUrl = (path: string) => new URL(resolvePath(path), Astro.site);
 </html>
 
 <style>
-
-
 	:root {
 		/* Colors - Brand */
 		--color-primary: #0077ff;
@@ -107,14 +142,14 @@ const resolveUrl = (path: string) => new URL(resolvePath(path), Astro.site);
 		--color-whatsapp: #25d366;
 		--color-whatsapp-dark: #128c7e;
 		--color-whatsapp-rgb: 37, 211, 102;
-		
+
 		/* Colors - Base */
 		--color-black: #000000;
 		--color-white: #ffffff;
 		--color-white-rgb: 255, 255, 255;
-		
+
 		/* Text Colors */
-		--color-text-body: #EDF0F4;
+		--color-text-body: #edf0f4;
 		--color-text-bold: #f1f1f1;
 		--color-text-heading: #fcfcfc;
 		--color-text-muted: #aaaaaa;
@@ -135,34 +170,33 @@ const resolveUrl = (path: string) => new URL(resolvePath(path), Astro.site);
 		--color-button-hover: #111111;
 		--color-button-text-hover: #f0f0f0;
 		--color-border-light: rgba(var(--color-white-rgb), 0.1);
-		
+
 		/* Brand Logos & SVGs */
 		--color-logo: #000;
-		
+
 		/* Accent / Special */
-		--color-gold: #FCBF49;
+		--color-gold: #fcbf49;
 		--color-brown: #843511;
-		--color-red-accent: #FF4D59;
-		
+		--color-red-accent: #ff4d59;
+
 		/* Flag Colors (for reference or dynamic use) */
-		--color-flag-ar-blue: #75AADB;
-		--color-flag-ar-sun: #FCBF49;
-		--color-flag-py-red: #D52B1E;
-		--color-flag-py-blue: #0038A8;
+		--color-flag-ar-blue: #75aadb;
+		--color-flag-ar-sun: #fcbf49;
+		--color-flag-py-red: #d52b1e;
+		--color-flag-py-blue: #0038a8;
 		--color-flag-py-green: #007127;
-		--color-flag-py-yellow: #FFAC33;
-		--color-flag-py-gray: #99AAB5;
-	}   
+		--color-flag-py-yellow: #ffac33;
+		--color-flag-py-gray: #99aab5;
+	}
 
 	html,
 	body {
 		padding: 8px;
 		margin: 0;
-		
+
 		background-color: var(--color-bg-main);
 
 		font-family: var(--font-clash-display), sans-serif;
 		color: var(--color-text-body);
 	}
-
 </style>

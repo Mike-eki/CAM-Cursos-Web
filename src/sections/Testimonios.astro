@@ -1,0 +1,99 @@
+---
+import TestimoniesCarousel from "../components/TestimoniesCarousel.astro";
+import Wrapper from "../components/Wrapper.astro";
+
+const testimonies = [
+    {
+        quote: "Inicie con la formación y es mi primer contacto con la página. Las chicas telefónicamente han sido muy atentas.",
+        author: "Sonia Francisca Aramendi",
+        role: "Estudiante",
+        img: "landingpage-src/img/authors/sonia_francisca_aramendi.png",
+        alt: "Foto de Sonia Francisca Aramendi",
+    },
+    {
+        quote: "El lugar, el cursado, los profes, las personas que trabajan allá son todos muy buenos. Además hacen un trabajo espectacular con los cursos, la plataforma virtual y la enseñanza. ¡Siempre lo recomiendo a todos que me preguntan!",
+        author: "Lily",
+        role: "Estudiante",
+        img: "landingpage-src/img/authors/lily.png",
+        alt: "Foto de Lily",
+    },
+    {
+        quote: "Excelente la atención. Es integral, se ocupan no solo de lo académico sino de sostener a los chicos emocionalmente. Como experiencia de una hija estudiando afuera, estamos muy agradecidos.",
+        author: "Claudia Centurion",
+        role: "Madre de estudiante",
+        img: "landingpage-src/img/authors/claudia_centurion.png",
+        alt: "Foto de Claudia Centurion",
+    },
+    {
+        quote: "Son super rápidos y eficientes. Nada que quejarme, todo lo contrario, son muy buenos.",
+        author: "Dellanyra Claudia Pariguana Bernal",
+        role: "Estudiante de idiomas",
+        img: "landingpage-src/img/authors/dellanyra_claudia_pariguana_bernal.png",
+        alt: "Foto de Dellanyra Claudia Pariguana Bernal",
+    },
+    {
+        quote: "Muy buena experiencia, te ayudan en todo lo referido al cursado y también los cursos intensivos para preparar mesas te salvan la vida, son cortos, las clases son integradoras y participativas, lo que te ayuda un montón ya que todos los finales son orales. Lo súper recomiendo 10/10.",
+        author: "Lorena Escobar",
+        role: "Estudiante de medicina",
+        img: "landingpage-src/img/authors/lorena_escobar.png",
+        alt: "Foto de Lorena Escobar",
+    },
+    {
+        quote: "Excelente lugar y profes. ¡La atención un 10, súper recomendados!",
+        author: "Priscila Gómez",
+        role: "Estudiante de medicina",
+        img: "landingpage-src/img/authors/prisci_gomez.png",
+        alt: "Foto de Priscila Gómez",
+    }
+];
+
+export interface Props {
+    isModal?: boolean;
+}
+
+const { isModal = false } = Astro.props;
+---
+
+<Wrapper className="grid-wrapper">
+    <section class="heading-icon h-testimonies">
+        <h2>Experiencias de estudiantes</h2>
+    </section>
+
+    <section class="testimonies">
+        <TestimoniesCarousel testimonies={testimonies} />
+    </section>
+</Wrapper>
+
+<style>
+    .heading-icon {
+        text-align: center;
+        padding-top: 2rem;
+    }
+
+    h2 {
+        margin: 0;
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+
+    .testimonies {
+        width: 100%;
+        margin-bottom: 2rem;
+        padding-top: 1rem;
+    }
+    
+    @media screen and (min-width: 850px) {
+        .h-testimonies {
+            grid-column: 1/-1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .testimonies {
+            grid-column: 1/-1;
+            display: flex;
+            justify-content: center;
+        }
+    }
+</style>

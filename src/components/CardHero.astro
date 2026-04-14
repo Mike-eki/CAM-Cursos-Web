@@ -4,17 +4,24 @@ import ArrowDownIcon from "../icons/ArrowDownIcon.astro";
 import CAMIcon from "../icons/CAMIcon.astro";
 import ParaguayFlagIcon from "../icons/ParaguayFlagIcon.astro";
 import CardCountry from "./CardCountry.astro";
-
 ---
 
 <main>
     <header>
         <CAMIcon size="142" />
         <h1>El futuro que queres lo empezas en CAM</h1>
+        <a
+            href="https://campus.caminstituto.com/"
+            target="_blank"
+            class="campus-button">Campus</a
+        >
     </header>
 
     <picture>
-        <img src="img/hero-image.jpg" alt="Estudiantes del Instituto CAM - Cursos con Salida Laboral e Idiomas" />
+        <img
+            src="landingpage-src/img/hero-image.jpg"
+            alt="Estudiantes del Instituto CAM - Cursos con rápida Salida Laboral e Idiomas"
+        />
     </picture>
 
     <footer>
@@ -81,6 +88,7 @@ import CardCountry from "./CardCountry.astro";
         z-index: 10;
     }
     header {
+        position: relative;
         color: #0077ff;
         top: 0;
         left: 0;
@@ -99,6 +107,35 @@ import CardCountry from "./CardCountry.astro";
     }
     footer {
         gap: 1.25rem;
+    }
+
+    .campus-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: clamp(32px, 5vw, 42px);
+        padding: 0 clamp(1rem, 3vw, 1.5rem);
+        background-color: var(--color-white, #ffffff);
+        color: var(--color-black, #000000);
+        border: none;
+        border-radius: 9999px; /* Garantiza la forma de píldora siempre */
+        font-weight: 600;
+        font-size: clamp(0.85rem, 2vw, 1rem);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        transition:
+            transform 0.2s ease,
+            background-color 0.2s ease;
+        z-index: 20;
+    }
+
+    .campus-button:hover {
+        background-color: #f0f0f0;
+        transform: translateY(-2px);
     }
 
     @media screen and (max-width: 480px) {

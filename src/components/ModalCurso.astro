@@ -379,8 +379,9 @@ const styles = {
   .cta-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(var(--color-whatsapp-rgb), 0.3);
-    background: var(--modal-cta-bg);
-    filter: brightness(1.05);
+    background: var(--modal-cta-text, var(--color-primary));
+    color: var(--modal-cta-bg, var(--color-white));
+    filter: brightness(1.1);
   }
 
   .cta-button:active {

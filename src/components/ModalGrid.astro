@@ -5,6 +5,7 @@ import Icon from "./Icon.astro";
 import Programas from "../sections/Programas.astro";
 import ApoyoRevalida from "../sections/ApoyoRevalida.astro";
 import Idiomas from "../sections/Idiomas.astro";
+import Testimonios from "../sections/Testimonios.astro";
 
 export interface Props {
   id?: string;
@@ -13,59 +14,265 @@ export interface Props {
   country?: string;
 }
 
-const { 
-  id = "modalGrid", 
+const {
+  id = "modalGrid",
   title = "Nuestros Programas",
   filterCategory,
-  country
+  country,
 } = Astro.props;
 
-const filteredPrograms = filterCategory 
-  ? programs.filter(p => p.category === filterCategory)
+const filteredPrograms = filterCategory
+  ? programs.filter((p) => p.category === filterCategory)
   : programs;
 ---
 
 <div class="modal-grid" id={id}>
   <div class="modal-overlay" data-close-modal-grid></div>
-  
+
   <div class="modal-content">
-    <button class="close-button" data-close-modal-grid aria-label="Cerrar modal">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <button
+      class="close-button"
+      data-close-modal-grid
+      aria-label="Cerrar modal"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
         <line x1="18" y1="6" x2="6" y2="18"></line>
         <line x1="6" y1="6" x2="18" y2="18"></line>
       </svg>
     </button>
 
     <div class="modal-header">
-      <h2 class="modal-title">{title}</h2>
+      <h2 class="modal-title">
+        {title}
+      </h2>
       <div class="title-underline"></div>
     </div>
 
     <div class="modal-body">
-      {country === "Argentina" ? (
-        <div class="country-sections">
-          <Programas isModal={true} />
-          <div class="section-divider"></div>
-          <ApoyoRevalida isModal={true} />
-          <div class="section-divider"></div>
-          <Idiomas isModal={true} />
-        </div>
-      ) : (
-        <div class="programs-grid">
-          {filteredPrograms.map((program) => (
-            <CardLink
-              title={program.title}
-              path={program.path}
-              desc={program.desc}
-              courseId={program.courseId}
-              className={program.className}
-              aspectRatio={program.aspectRatio as any}
-            >
-              <Icon icon={program.icon} width="30" slot="icon" />
-            </CardLink>
-          ))}
-        </div>
-      )}
+      {
+        country === "Argentina" ? (
+          <div class="country-sections">
+            <Programas isModal={true} />
+            <div class="section-divider" />
+            <ApoyoRevalida isModal={true} />
+            <div class="section-divider" />
+            <Idiomas isModal={true} />
+            <div class="section-divider" />
+            <Testimonios isModal={true} />
+          </div>
+        ) : country === "Paraguay" ? (
+          <div class="country-sections" style="text-align: center;">
+            <div class="paraguay-header-content" style="margin-bottom: 2rem;">
+              <p style="font-weight: bold; font-size: 1.2em; opacity: 0.9; color: white; margin-bottom: 1.5rem;">
+                Certificación Internacional
+              </p>
+              <div style="display: flex; justify-content: center; gap: 1.5rem;">
+                <Icon icon="CAM-Res" width="80" height="70" />
+                <img
+                  src="landingpage-src/img/ministerio-educ-paraguay-white.webp"
+                  alt="MEC"
+                  style="height: 60px; object-fit: contain; border-radius: 8px;"
+                />
+              </div>
+            </div>
+
+            <div class="paraguay-section">
+              <div style="text-align: center; margin-bottom: 1.5rem;">
+                <h3 style="color: white; font-size: 1.5rem; margin-bottom: 0.5rem;">
+                  Instituto Técnico Superior CAM
+                </h3>
+                <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; max-width: 600px; margin: 0 auto; line-height: 1.4;">
+                  Formación técnica de nivel superior enfocada en la excelencia
+                  académica
+                  <br />y la rápida inserción en el mercado laboral profesional.
+                </p>
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                  <small style="color: rgba(255, 255, 255, 0.6); font-size: 0.85rem;">
+                    Tecnicaturas avaladas por:
+                  </small>
+                  <img
+                    src="landingpage-src/img/ministerio-educ-paraguay-white.webp"
+                    alt="MEC"
+                    style="height: 50px; object-fit: contain;"
+                  />
+                </div>
+              </div>
+              <div
+                class="programs-grid"
+                style="padding-top: 10px; display: flex; flex-wrap: wrap; justify-content: center; gap: 24px;"
+              >
+                <div style="flex: 1 1 250px; max-width: 380px; width: 100%;">
+                  <CardLink
+                    title="Tecnicaturas"
+                    path="landingpage-src/img/tecnicatura.jpg"
+                    courseId="py-tecnicaturas"
+                    desc="Avalados por el MEC"
+                    aspectRatio="rect"
+                  >
+                    <Icon icon="salud" width="30" slot="icon" />
+                  </CardLink>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="section-divider"
+              style="margin-top: 2rem; margin-bottom: 2rem;"
+            />
+
+            <div class="paraguay-section">
+              <div style="text-align: center; margin-bottom: 1.5rem;">
+                <h3 style="color: white; font-size: 1.5rem; margin-bottom: 0.5rem;">
+                  Cursos de capacitación
+                </h3>
+                <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; max-width: 600px; margin: 0 auto; line-height: 1.4;">
+                  Especializaciones y cursos de actualización profesional
+                  diseñados para
+                  <br />
+                  potenciar tus habilidades y ampliar tus horizontes laborales.
+                </p>
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                  <small style="color: rgba(255, 255, 255, 0.6); font-size: 0.85rem;">
+                    Avalados y certificados por:
+                  </small>
+                  <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.5rem;">
+                    <Icon icon="CAM-Res" width="60" height="50" />
+                    <img
+                      src="landingpage-src/img/HAIZEA_logo.svg"
+                      alt="Haizea"
+                      style="height: 35px; object-fit: contain;"
+                    />
+                    <img
+                      src="landingpage-src/img/siele_LOGO_white.webp"
+                      alt="Siele"
+                      style="height: 30px; object-fit: contain;"
+                    />
+                    <img
+                      src="landingpage-src/img/cele_LOGO_white.webp"
+                      alt="Cele"
+                      style="height: 30px; object-fit: contain;"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                class="programs-grid"
+                style="padding-top: 10px; display: flex; flex-wrap: wrap; justify-content: center; gap: 24px;"
+              >
+                <div style="flex: 1 1 250px; max-width: 280px; width: 100%;">
+                  <CardLink
+                    title="Area Salud"
+                    path="landingpage-src/img/ingreso-medicina.webp"
+                    courseId="py-salud"
+                    desc="Cursos de capacitación en salud"
+                  >
+                    <Icon icon="salud" width="30" slot="icon" />
+                  </CardLink>
+                </div>
+                <div style="flex: 1 1 250px; max-width: 280px; width: 100%;">
+                  <CardLink
+                    title="Area Educación física y fitness"
+                    path="landingpage-src/img/fitness.png"
+                    courseId="py-fitness"
+                    desc="Cursos de capacitación"
+                  >
+                    <Icon icon="educ_fisica_fitness" width="30" slot="icon" />
+                  </CardLink>
+                </div>
+                <div style="flex: 1 1 250px; max-width: 280px; width: 100%;">
+                  <CardLink
+                    title="Area de idiomas"
+                    path="landingpage-src/img/idioma.png"
+                    courseId="py-idiomas"
+                    desc="Cursos de capacitación"
+                  >
+                    <Icon icon="idiomas" width="30" slot="icon" />
+                  </CardLink>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="section-divider"
+              style="margin-top: 2rem; margin-bottom: 2rem;"
+            />
+
+            <div class="paraguay-section">
+              <div style="text-align: center; margin-bottom: 1.5rem;">
+                <h3 style="color: white; font-size: 1.5rem; margin-bottom: 0.5rem;">
+                  Gestión de Trámites
+                </h3>
+                <p style="color: rgba(255, 255, 255, 0.8); font-size: 0.95rem; max-width: 600px; margin: 0 auto; line-height: 1.4;">
+                  Asesoramiento integral y acompañamiento personalizado para
+                  <br />
+                  la gestión eficiente de tu documentación oficial y reválida.
+                </p>
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+                  <small style="color: rgba(255, 255, 255, 0.6); font-size: 0.85rem;">
+                    Con respaldo de:
+                  </small>
+                  <img
+                    src="landingpage-src/img/logo-medlink-trans.png"
+                    alt="MedLink"
+                    style="height: 50px; object-fit: contain;"
+                  />
+                </div>
+              </div>
+              <div
+                class="programs-grid"
+                style="padding-top: 10px; display: flex; flex-wrap: wrap; justify-content: center; gap: 24px;"
+              >
+                <div style="flex: 1 1 250px; max-width: 280px; width: 100%;">
+                  <CardLink
+                    title="Revalida"
+                    path="landingpage-src/img/revalida.jpg"
+                    courseId="py-revalida"
+                    desc="Cursos revalida"
+                    aspectRatio="rect"
+                  >
+                    <Icon icon="convalidacion" width="30" slot="icon" />
+                  </CardLink>
+                </div>
+                <div style="flex: 1 1 250px; max-width: 280px; width: 100%;">
+                  <CardLink
+                    title="Documentación"
+                    path="landingpage-src/img/acomp.webp"
+                    courseId="py-documentacion"
+                    desc="Registro oficial y Vistos"
+                    aspectRatio="rect"
+                  >
+                    <Icon icon="admin_recursos" width="30" slot="icon" />
+                  </CardLink>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div class="programs-grid">
+            {filteredPrograms.map((program) => (
+              <CardLink
+                title={program.title}
+                path={program.path}
+                desc={program.desc}
+                courseId={program.courseId}
+                className={program.className}
+                aspectRatio={program.aspectRatio as any}
+              >
+                <Icon icon={program.icon} width="30" slot="icon" />
+              </CardLink>
+            ))}
+          </div>
+        )
+      }
     </div>
   </div>
 </div>
@@ -206,7 +413,12 @@ const filteredPrograms = filterCategory
 
   .section-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, var(--color-border-light), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--color-border-light),
+      transparent
+    );
     width: 100%;
   }
 
@@ -221,7 +433,7 @@ const filteredPrograms = filterCategory
       width: 95%;
       max-height: 95vh;
     }
-    
+
     .modal-header {
       padding: 30px 20px 10px;
     }
@@ -238,7 +450,7 @@ const filteredPrograms = filterCategory
       grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
       gap: 16px;
     }
-    
+
     .close-button {
       top: 15px;
       right: 15px;
@@ -252,7 +464,7 @@ const filteredPrograms = filterCategory
       grid-template-columns: 1fr;
       gap: 12px;
     }
-    
+
     .modal-header {
       padding: 25px 15px 5px;
     }
@@ -265,50 +477,50 @@ const filteredPrograms = filterCategory
 
 <script>
   function initModalGrid() {
-    const modals = document.querySelectorAll('.modal-grid');
-    
-    modals.forEach(modal => {
-      const closeButtons = modal.querySelectorAll('[data-close-modal-grid]');
-      
-      closeButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          modal.classList.remove('is-open');
+    const modals = document.querySelectorAll(".modal-grid");
+
+    modals.forEach((modal) => {
+      const closeButtons = modal.querySelectorAll("[data-close-modal-grid]");
+
+      closeButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          modal.classList.remove("is-open");
           // Only show scroll if no other modal is open
-          if (!document.querySelector('.course-modal.is-open')) {
-            document.body.style.overflow = '';
+          if (!document.querySelector(".course-modal.is-open")) {
+            document.body.style.overflow = "";
           }
         });
       });
 
       // Close on ESC
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('is-open')) {
-          modal.classList.remove('is-open');
-          if (!document.querySelector('.course-modal.is-open')) {
-            document.body.style.overflow = '';
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("is-open")) {
+          modal.classList.remove("is-open");
+          if (!document.querySelector(".course-modal.is-open")) {
+            document.body.style.overflow = "";
           }
         }
       });
     });
 
     // Handle triggers for these modals
-    const triggers = document.querySelectorAll('[data-open-modal-grid-id]');
-    triggers.forEach(trigger => {
-      trigger.addEventListener('click', (e) => {
+    const triggers = document.querySelectorAll("[data-open-modal-grid-id]");
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", (e) => {
         e.preventDefault();
-        const modalId = trigger.getAttribute('data-open-modal-grid-id');
+        const modalId = trigger.getAttribute("data-open-modal-grid-id");
         const modal = document.getElementById(modalId);
         if (modal) {
-          modal.classList.add('is-open');
-          document.body.style.overflow = 'hidden';
+          modal.classList.add("is-open");
+          document.body.style.overflow = "hidden";
         }
       });
     });
   }
 
   // Initialize on load and on astro page changes
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initModalGrid);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initModalGrid);
   } else {
     initModalGrid();
   }

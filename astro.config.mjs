@@ -6,8 +6,10 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
     integrations: [sitemap()],
 
-    site: "https://mike-eki.github.io",
-    base: process.env.GITHUB_ACTIONS ? "/CAM-Cursos-Web" : undefined,
+    // site: "https://mike-eki.github.io",
+    // base: process.env.GITHUB_ACTIONS ? "/CAM-Cursos-Web" : undefined,
+    site: "https://caminstituo.com",
+    base: "landingpage-src",
     trailingSlash: "never",
     experimental: {
         svgo: true,

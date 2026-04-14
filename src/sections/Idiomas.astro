@@ -1,36 +1,15 @@
 ---
-import CardLink from "../components/CardLink.astro";
 import CTAButton from "../components/CTAButton.astro";
-import Icon from "../components/Icon.astro";
-import TestimoniesCarousel from "../components/TestimoniesCarousel.astro";
 import TrustNumbers from "../components/TrustNumbers.astro";
 import Wrapper from "../components/Wrapper.astro";
 import HSBCIcon from "../icons/HSBCIcon.astro";
 import LanguageIcon from "../icons/LanguageIcon.astro";
-import programs from "../data/programs.json";
 
 export interface Props {
     isModal?: boolean;
 }
 
 const { isModal = false } = Astro.props;
-
-const testimonies = [
-    {
-        quote: "Excelente la atención. Es integral, se ocupan no solo de lo académico sino de sostener a los chicos emocionalmente. Como experiencia de una hija estudiando afuera, estamos muy agradecidos.",
-        author: "Claudia Centurion",
-        role: "Madre de estudiante",
-        img: "img/authors/claudia_centurion.png",
-        alt: "Foto de Claudia Centurion",
-    },
-    {
-        quote: "Son super rápidos y eficientes. Nada que quejarme, todo lo contrario, son muy buenos.",
-        author: "Dellanyra Claudia Pariguana Bernal",
-        role: "Estudiante de idiomas",
-        img: "img/authors/dellanyra_claudia_pariguana_bernal.png",
-        alt: "Foto de Dellanyra Claudia Pariguana Bernal",
-    },
-];
 ---
 
 <Wrapper className="grid-wrapper">
@@ -52,31 +31,12 @@ const testimonies = [
         </p>
     </section>
 
-    <section class="grid card-one">
-        {
-            programs
-                .filter((p) => p.category === "idiomas")
-                .map((program) => (
-                    <CardLink
-                        title={program.title}
-                        path={program.path}
-                        desc={program.desc}
-                        className="rect"
-                        aspectRatio="16/7.7"
-                        courseId={program.courseId}
-                    >
-                        <Icon icon={program.icon} width="30" slot="icon" />
-                    </CardLink>
-                ))
-        }
-    </section>
-
-    <section class="heading-icon h-grid-two">
-        <h2>Experiencias de nuestros estudiantes extranjeros</h2>
-    </section>
-
-    <section class="testimonies">
-        <TestimoniesCarousel testimonies={testimonies} />
+    <section class="badges-container card-one">
+        <div class="badge-square">Español como lengua extranjera</div>
+        <div class="badge-square">Inglés</div>
+        <div class="badge-square">Portugués</div>
+        <div class="badge-square">Italiano</div>
+        <div class="badge-square">Francés</div>
     </section>
 
     <footer class="button">
@@ -120,15 +80,40 @@ const testimonies = [
         gap: 0.75rem;
     }
 
-    .grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.75rem;
+    .badges-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem 1.5rem;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 1rem;
     }
 
-    /* Rectangle cards span 2 columns by default */
-    :global(.grid > .rect) {
-        grid-column: span 2;
+    .badge-square {
+        width: 135px;
+        box-sizing: border-box;
+        aspect-ratio: 1 / 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: linear-gradient(135deg, var(--color-surface-soft, #2a2a2a), var(--color-surface-dark, #1a1a1a));
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 0.75rem;
+        font-weight: 600;
+        font-size: min(1rem, 4vw);
+        color: var(--color-text-body, #ffffff);
+        transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+    .badge-square:hover {
+        transform: translateY(-5px);
+        border-color: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 12px rgba(0,0,0,0.3);
     }
 
     h2,
@@ -136,30 +121,26 @@ const testimonies = [
         margin: 0;
     }
 
-    @media screen and (max-width: 400px) {
-        .grid {
-            grid-template-columns: 1fr;
+    @media screen and (max-width: 600px) {
+        .badges-container {
+            gap: 1.5rem 1rem;
         }
-        /* On mobile, all cards take full width */
-        :global(.grid > .rect) {
-            grid-column: span 1;
+        .badge-square {
+            width: calc(50% - 0.5rem);
+            max-width: 140px;
+            font-size: 0.95rem;
         }
     }
 
-    /* Tablet: cards fill 2 columns */
-    @media screen and (min-width: 401px) and (max-width: 849px) {
-        .grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-        :global(.grid > .rect) {
-            grid-column: span 2;
+    @media screen and (max-width: 350px) {
+        .badge-square {
+            width: 100%;
+            max-width: 200px;
         }
     }
 
     @media screen and (min-width: 850px) {
-        .grid {
-            grid-template-columns: auto;
-        }
+
         .mobile-wrapper {
             grid-template-columns: 1fr 1fr 1fr 1fr;
         }
@@ -176,18 +157,7 @@ const testimonies = [
             font-size: 1.5rem;
             font-weight: 500;
         }
-        .h-grid-two {
-            grid-column: 1/5;
-            grid-row: 5;
 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            font-size: 1.5rem;
-            font-weight: 500;
-        }
         .trust-container {
             grid-column: 1/5;
             grid-row: 2;
@@ -202,16 +172,12 @@ const testimonies = [
             margin-inline: auto;
         }
         .card-one {
-            grid-column: 2/4;
+            grid-column: 1/5;
             grid-row: 4;
-        }
-        .testimonies {
-            grid-column: 2/4;
-            grid-row: 6;
         }
         .button {
             grid-column: 2/4;
-            grid-row: 7;
+            grid-row: 5;
         }
     }
 </style>

@@ -2,7 +2,7 @@
   "adultos-mayores": {
     "id": "adultos-mayores",
     "title": "Adultos mayores",
-    "backgroundImage": "img/mayores.jpg",
+    "backgroundImage": "landingpage-src/img/mayores.jpg",
     "accentColor": "var(--color-primary)",
     "accentTextColor": "var(--color-white)",
     "ctaBgColor": "var(--color-white)",
@@ -23,7 +23,7 @@
   "educacion-fisica-fitness": {
     "id": "educacion-fisica-fitness",
     "title": "Educación Fisica y Fitness",
-    "backgroundImage": "img/fitness.png",
+    "backgroundImage": "landingpage-src/img/fitness.png",
     "accentColor": "#292354",
     "accentTextColor": "#e2a9f1",
     "ctaBgColor": "#e2a9f1",
@@ -52,7 +52,7 @@
   "desarrollo-digital": {
     "id": "desarrollo-digital",
     "title": "Desarrollo Digital",
-    "backgroundImage": "img/digital.png",
+    "backgroundImage": "landingpage-src/img/digital.png",
     "accentColor": "var(--color-black)",
     "accentTextColor": "var(--color-white)",
     "ctaBgColor": "var(--color-white)",
@@ -68,7 +68,7 @@
             "buttons": [
               {
                 "label": "Ver temario",
-                "url": "pdf/inicio-javascript2026.pdf"
+                "url": "landingpage-src/pdf/inicio-javascript2026.pdf"
               }
             ]
           },
@@ -77,7 +77,7 @@
             "buttons": [
               {
                 "label": "Ver temario",
-                "url": "pdf/inicio-python2026.pdf"
+                "url": "landingpage-src/pdf/inicio-python2026.pdf"
               }
             ]
           }
@@ -89,7 +89,7 @@
   "desarrollo-personal": {
     "id": "desarrollo-personal",
     "title": "Desarrollo Personal",
-    "backgroundImage": "img/personal.webp",
+    "backgroundImage": "landingpage-src/img/personal.webp",
     "accentColor": "var(--color-black)",
     "accentTextColor": "var(--color-white)",
     "ctaBgColor": "var(--color-white)",
@@ -100,9 +100,11 @@
         "title": "Cursos disponibles:",
         "kind": "list",
         "items": [
-          "Liderazgo y Oratoria",
-          "Técnicas de Estudio",
-          "Coaching Ontológico y Liderazgo"
+          "Liderazgo",
+          "Inteligencia artificial aplicada",
+          "Técnicas de estudio",
+          "Oratoria",
+          "Coaching Ontológico"
         ]
       }
     ],
@@ -111,7 +113,7 @@
   "herramientas-tecnologicas": {
     "id": "herramientas-tecnologicas",
     "title": "Herramientas tecnologicas",
-    "backgroundImage": "img/herramientas-tecnologicas.png",
+    "backgroundImage": "landingpage-src/img/herramientas-tecnologicas.png",
     "accentColor": "var(--color-primary)",
     "accentTextColor": "var(--color-white)",
     "ctaBgColor": "var(--color-white)",
@@ -132,7 +134,7 @@
   "cuidado": {
     "id": "cuidado",
     "title": "Bienestar y Cuidado personal",
-    "backgroundImage": "img/cuidado.webp",
+    "backgroundImage": "landingpage-src/img/cuidado.webp",
     "accentColor": "#292354",
     "accentTextColor": "#e2a9f1",
     "ctaBgColor": "#e2a9f1",
@@ -146,19 +148,24 @@
           "Maquillaje profesional",
           "Automaquillaje",
           "Depilación con cera",
-          "Manicura profesional",
+          "Full manicurista",
           {
             "text": "Pedicuría profesional",
             "buttons": [
               {
                 "label": "Ver temario",
-                "url": "pdf/temario-pedicuria2026.pdf"
+                "url": "landingpage-src/pdf/temario-pedicuria2026.pdf"
               }
             ]
           },
+          "Masterclass uñas esculpidas",
+          "Masterclass soft gel",
+          "Masterclass capping gel",
+          "Lashista",
+          "Extensiones de pestañas",
+          "Lifting de pestañas, laminado y perfilado de cejas",
           "Barberia",
-          "Operador laser",
-          "Estetica corporal"
+          "Operador laser"
         ]
       }
     ],
@@ -167,7 +174,7 @@
   "salud": {
     "id": "salud",
     "title": "Salud",
-    "backgroundImage": "img/salud.png",
+    "backgroundImage": "landingpage-src/img/salud.png",
     "accentColor": "#292354",
     "accentTextColor": "#e2a9f1",
     "ctaBgColor": "#e2a9f1",
@@ -191,7 +198,7 @@
   "administracion": {
     "id": "administracion",
     "title": "Administración",
-    "backgroundImage": "img/administracion.png",
+    "backgroundImage": "landingpage-src/img/administracion.png",
     "accentColor": "var(--color-primary)",
     "accentTextColor": "var(--color-white)",
     "ctaBgColor": "var(--color-white)",
@@ -217,7 +224,7 @@
   "organizacion-eventos": {
     "id": "organizacion-eventos",
     "title": "Eventos sociales y Celebraciones",
-    "backgroundImage": "img/organizacioneventos.png",
+    "backgroundImage": "landingpage-src/img/organizacioneventos.png",
     "accentColor": "var(--color-black)",
     "accentTextColor": "var(--color-white)",
     "ctaBgColor": "var(--color-white)",
@@ -239,7 +246,7 @@
   "disenio-marketing": {
     "id": "disenio-marketing",
     "title": "Diseño y Marketing",
-    "backgroundImage": "img/diseniomarketing.png",
+    "backgroundImage": "landingpage-src/img/diseniomarketing.png",
     "accentColor": "var(--color-black)",
     "accentTextColor": "var(--color-white)",
     "ctaBgColor": "var(--color-white)",
@@ -250,36 +257,55 @@
         "title": "Cursos disponibles:",
         "kind": "list",
         "items": [
-          "Canva",
-          "Community Manager",
-          "Illustrator",
-          "Marketing Digital desde cero",
-          "Fotografía"
+          "Marketing digital",
+          "Redes sociales",
+          "Creación de contenidos con celular",
+          "Marca personal"
         ]
       }
     ],
     "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa saber mas sobre los cursos de marketing y diseño."
   },
-  "clases-apoyo-medicina": {
-    "id": "clases-apoyo-medicina",
-    "title": "Alumnos de Ciencias Medicas",
-    "backgroundImage": "img/apoyo.webp",
+  "ingreso-medicina": {
+    "id": "ingreso-medicina",
+    "title": "Ingreso a la carrera de medicina",
+    "backgroundImage": "landingpage-src/img/ingreso-medicina.webp",
     "sections": [
       {
-        "id": "ingreso-medicina",
-        "title": "Cursos de ingreso, apoyo académico y preparación de finales:",
+        "id": "ingreso",
+        "title": "Cursos disponibles:",
         "kind": "list",
         "items": [
           {
-            "text": "Crecimiento y Desarrollo",
+            "text": "Ingreso",
             "buttons": [
               {
-                "label": "Ver temario (Acompaña)",
-                "url": "pdf/TEMARIO-DE-CYD-ACOMPANA.pdf"
-              },
+                "label": "Ver temario en PDF",
+                "url": "#"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa saber más acerca del Ingreso a la carrera de medicina."
+  },
+  "acompanamiento-cursado": {
+    "id": "acompanamiento-cursado",
+    "title": "Acompaña tu cursado",
+    "backgroundImage": "landingpage-src/img/acomp.webp",
+    "sections": [
+      {
+        "id": "materias",
+        "title": "Materias:",
+        "kind": "list",
+        "items": [
+          {
+            "text": "Crecimiento y desarrollo",
+            "buttons": [
               {
-                "label": "Ver temario (Final)",
-                "url": "pdf/TEMARIO-DE-CYD-FINAL.pdf"
+                "label": "Ver temario",
+                "url": "landingpage-src/pdf/TEMARIO-DE-CYD-ACOMPANA.pdf"
               }
             ]
           },
@@ -287,12 +313,8 @@
             "text": "Nutrición",
             "buttons": [
               {
-                "label": "Ver temario (Acompaña)",
-                "url": "pdf/TEMARIO-DE-NUTRI-ACOMPANA.pdf"
-              },
-              {
-                "label": "Ver temario (Final)",
-                "url": "pdf/TEMARIO-DE-NUTRI-FINAL.pdf"
+                "label": "Ver temario",
+                "url": "landingpage-src/pdf/TEMARIO-DE-NUTRI-ACOMPANA.pdf"
               }
             ]
           },
@@ -300,24 +322,77 @@
             "text": "Sexualidad",
             "buttons": [
               {
-                "label": "Ver temario (Acompaña)",
-                "url": "pdf/TEMARIO-DE-SGYR-ACOMPANA.pdf"
-              },
-              {
-                "label": "Ver temario (Final)",
-                "url": "pdf/TEMARIO-DE-SGYR-FINAL.pdf"
+                "label": "Ver temario",
+                "url": "landingpage-src/pdf/TEMARIO-DE-SGYR-ACOMPANA.pdf"
               }
             ]
           },
-          "Trabajo y Tiempo libre",
-          "El Ser",
+          "Trabajo y tiempo libre",
+          "El ser y su medio",
           "Injuria",
           "Defensa"
         ]
-      },
+      }
+    ],
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa saber más sobre Acompaña tu cursado."
+  },
+  "finales-medicina": {
+    "id": "finales-medicina",
+    "title": "Finales",
+    "backgroundImage": "landingpage-src/img/finales.webp",
+    "sections": [
+      {
+        "id": "finales",
+        "title": "Materias:",
+        "kind": "list",
+        "items": [
+          {
+            "text": "Crecimiento y desarrollo",
+            "buttons": [
+              {
+                "label": "Ver temario",
+                "url": "landingpage-src/pdf/TEMARIO-DE-CYD-FINAL.pdf"
+              }
+            ]
+          },
+          {
+            "text": "Nutrición",
+            "buttons": [
+              {
+                "label": "Ver temario",
+                "url": "landingpage-src/pdf/TEMARIO-DE-NUTRI-FINAL.pdf"
+              }
+            ]
+          },
+          {
+            "text": "Sexualidad",
+            "buttons": [
+              {
+                "label": "Ver temario",
+                "url": "landingpage-src/pdf/TEMARIO-DE-SGYR-FINAL.pdf"
+              }
+            ]
+          },
+          "Trabajo y tiempo libre",
+          "El ser y su medio",
+          "Injuria",
+          "Defensa",
+          "Gineco – Obstetricia",
+          "Pediatría",
+          "Cirugía"
+        ]
+      }
+    ],
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa prepararme para los Finales."
+  },
+  "capacitacion-medicina": {
+    "id": "capacitacion-medicina",
+    "title": "Cursos de capacitación",
+    "backgroundImage": "landingpage-src/img/apoyo.png",
+    "sections": [
       {
         "id": "capacitacion",
-        "title": "Cursos de capacitación:",
+        "title": "Cursos disponibles:",
         "kind": "list",
         "items": [
           {
@@ -325,36 +400,37 @@
             "buttons": [
               {
                 "label": "Ver temario",
-                "url": "pdf/temario-sutura-basica2026.pdf"
+                "url": "landingpage-src/pdf/temario-sutura-basica2026.pdf"
               }
             ]
           },
+          "Inyectables",
           "Extraccionista",
           "Primeros auxilios y soporte vital extrahospitalario",
           "RCP y DEA",
           "Cálculo de goteo",
           "Colocación de sonda vesical y nasogástrica",
           "Farmacología",
-          "Colocación de férulas y yesos",
+          "Confección de férulas y yesos",
           "Electrocardiograma",
           "Temas de guardia"
         ]
       }
     ],
-    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa saber más acerca de las clases de apoyo en medicina."
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa saber más acerca de los Cursos de capacitación."
   },
   "revalidacion-tramites": {
     "id": "revalidacion-tramites",
-    "title": "Revalidación y Trámites Académicos",
-    "backgroundImage": "img/revalida.jpg",
+    "title": "Revalida",
+    "backgroundImage": "landingpage-src/img/revalida.jpg",
     "sections": [
       {
         "id": "requirements",
-        "title": "Requisitos:",
+        "title": "Curso de revalida:",
         "kind": "list",
         "items": [
-          "Ser estudiante activo",
-          "Contar con documentación académica básica"
+          "Fase 1: Etapa teórica",
+          "Fase 2: Etapa práctica"
         ]
       }
     ],
@@ -363,7 +439,7 @@
   "idiomas": {
     "id": "idiomas",
     "title": "Idiomas",
-    "backgroundImage": "img/idioma.png",
+    "backgroundImage": "landingpage-src/img/idioma.png",
     "sections": [
       {
         "id": "cursos-disponibles",
@@ -378,5 +454,117 @@
       }
     ],
     "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa saber más acerca de los cursos de idiomas."
+  },
+  "py-tecnicaturas": {
+    "id": "py-tecnicaturas",
+    "title": "Tecnicaturas",
+    "backgroundImage": "landingpage-src/img/tecnicatura.jpg",
+    "sections": [
+      {
+        "id": "avalados",
+        "title": "Avalados por el MEC:",
+        "kind": "list",
+        "items": [
+          "Tecnicatura en cosmetología",
+          "Técnico superior en cosmetología",
+          "Técnico superior en comisaria",
+          "Técnico superior en masaje terapéutico",
+          "Técnico superior en Hemoterapia"
+        ]
+      }
+    ],
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa inscribirme y/o reservar en Tecnicaturas."
+  },
+  "py-salud": {
+    "id": "py-salud",
+    "title": "Area Salud",
+    "backgroundImage": "landingpage-src/img/ingreso-medicina.webp",
+    "sections": [
+      {
+        "id": "cursos",
+        "title": "Cursos de capacitación:",
+        "kind": "list",
+        "items": [
+          "Sutura",
+          "Primeros auxilios",
+          "RCP y DEA",
+          "Cálculo de goteo",
+          "Colocación de sonda vesical y nasogástrica",
+          "Farmacología",
+          "Confección de férulas y yesos",
+          "Electrocardiograma",
+          "Temas de guardia",
+          "Inyectables y extracción de sangre"
+        ]
+      }
+    ],
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa inscribirme y/o reservar en cursos de Área Salud."
+  },
+  "py-fitness": {
+    "id": "py-fitness",
+    "title": "Area Educación física y fitness",
+    "backgroundImage": "landingpage-src/img/fitness.png",
+    "sections": [
+      {
+        "id": "cursos",
+        "title": "Cursos de capacitación:",
+        "kind": "list",
+        "items": [
+          "Personal Trainer"
+        ]
+      }
+    ],
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa inscribirme y/o reservar en Personal Trainer."
+  },
+  "py-idiomas": {
+    "id": "py-idiomas",
+    "title": "Area de idiomas",
+    "backgroundImage": "landingpage-src/img/idioma.png",
+    "sections": [
+      {
+        "id": "cursos",
+        "title": "Cursos de capacitación:",
+        "kind": "list",
+        "items": [
+          "Español como lengua extranjera",
+          "Inglés"
+        ]
+      }
+    ],
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa inscribirme y/o reservar en Área de idiomas."
+  },
+  "py-revalida": {
+    "id": "py-revalida",
+    "title": "Revalida",
+    "backgroundImage": "landingpage-src/img/revalida.jpg",
+    "sections": [
+      {
+        "id": "cursos",
+        "title": "Cursos revalida. Resolución 7324/2024",
+        "kind": "list",
+        "items": [
+          "Fase 1: Teórico",
+          "Fase 2: Práctico"
+        ]
+      }
+    ],
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa inscribirme y/o reservar en Revalida."
+  },
+  "py-documentacion": {
+    "id": "py-documentacion",
+    "title": "Documentación",
+    "backgroundImage": "landingpage-src/img/acomp.webp",
+    "sections": [
+      {
+        "id": "vistos",
+        "title": "Vistos:",
+        "kind": "list",
+        "items": [
+          "Provisorio por ley",
+          "Permanente"
+        ]
+      }
+    ],
+    "ctaLink": "https://wa.me/5493412166867?text=¡Hola! Les escribo desde su web, me interesa la Documentación."
   }
 }

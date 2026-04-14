@@ -2,7 +2,6 @@
 import CardLink from "../components/CardLink.astro";
 import CTAButton from "../components/CTAButton.astro";
 import Icon from "../components/Icon.astro";
-import TestimoniesCarousel from "../components/TestimoniesCarousel.astro";
 import TrustNumbers from "../components/TrustNumbers.astro";
 import Wrapper from "../components/Wrapper.astro";
 import CertificateIcon from "../icons/CertificateIcon.astro";
@@ -14,23 +13,6 @@ export interface Props {
 }
 
 const { isModal = false } = Astro.props;
-
-const testimonies = [
-    {
-        quote: "Muy buena experiencia, te ayudan en todo lo referido al cursado y también los cursos intensivos para preparar mesas te salvan la vida, son cortos, las clases son integradoras y participativas, lo que te ayuda un montón ya que todos los finales son orales. Lo súper recomiendo 10/10.",
-        author: "Lorena Escobar",
-        role: "Estudiante de medicina",
-        img: "img/authors/lorena_escobar.png",
-        alt: "Foto de Lorena Escobar",
-    },
-    {
-        quote: "Excelente lugar y profes. ¡La atención un 10, súper recomendados!",
-        author: "Priscila Gómez",
-        role: "Estudiante de medicina",
-        img: "img/authors/prisci_gomez.png",
-        alt: "Foto de Priscila Gómez",
-    },
-];
 ---
 
 <Wrapper className="grid-wrapper">
@@ -39,11 +21,11 @@ const testimonies = [
         <h2>¡Acelera tu carrera de medicina!</h2>
     </header>
 
-    <section class="trust-container">
-        <!-- <TrustNumbers num="600" title="Clases impartidas" />
+    <!-- <section class="trust-container"> -->
+    <!-- <TrustNumbers num="600" title="Clases impartidas" />
         <TrustNumbers num="36" title="Medicos" />
         <TrustNumbers num="90" title="Simulacros" /> -->
-    </section>
+    <!-- </section> -->
 
     <section class="companies description-one">
         <p>
@@ -55,14 +37,20 @@ const testimonies = [
     <section class="grid card-one">
         {
             programs
-                .filter((p) => p.courseId === "clases-apoyo-medicina")
+                .filter((p) =>
+                    [
+                        "ingreso-medicina",
+                        "acompanamiento-cursado",
+                        "finales-medicina",
+                        "capacitacion-medicina",
+                    ].includes(p.courseId),
+                )
                 .map((program) => (
                     <CardLink
                         title={program.title}
                         path={program.path}
                         desc={program.desc}
-                        className="rect"
-                        aspectRatio="16/7.7"
+                        aspectRatio="rect"
                         courseId={program.courseId}
                     >
                         <Icon icon={program.icon} width="30" slot="icon" />
@@ -77,10 +65,18 @@ const testimonies = [
     </header>
 
     <section class="companies description-two">
-        <p>
-            Solicita la reválida y mantén viva tu oportunidad de rendir el
-            final. Gestiona tus trámites académicos y mantenete en camino.
-        </p>
+        <div class="revalida-container">
+            <!-- <h3 class="revalida-title">CURSO DE REVALIDA</h3> -->
+            <!-- <ul class="revalida-phases">
+                <li><strong>Fase 1:</strong> Etapa teórica</li>
+                <li><strong>Fase 2:</strong> Etapa Práctica</li>
+            </ul> -->
+            <p>
+                Ofrecemos cursos preparatorios para Revalidación que se adaptan
+                a vos. Estudia a tu ritmo, domina el examen y alcanza tu meta
+                con confianza.
+            </p>
+        </div>
     </section>
 
     <section class="grid card-two">
@@ -100,14 +96,6 @@ const testimonies = [
                     </CardLink>
                 ))
         }
-    </section>
-
-    <section class="heading-icon h-grid-three">
-        <h2>Experiencias de estudiantes</h2>
-    </section>
-
-    <section class="testimonies">
-        <TestimoniesCarousel testimonies={testimonies} />
     </section>
 
     <footer class="button">
@@ -167,6 +155,50 @@ const testimonies = [
         margin: 0;
     }
 
+    .revalida-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        background-color: transparent;
+        text-align: center;
+        width: 100%;
+        align-items: center;
+    }
+
+    .revalida-title {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--color-text-heading, #fcfcfc);
+        margin: 0;
+        text-transform: uppercase;
+    }
+
+    .revalida-phases {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .revalida-phases li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--color-surface-soft, #1e1e1e);
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        gap: 0.5rem;
+        border: 1px solid var(--color-border-light, rgba(255, 255, 255, 0.1));
+        font-weight: 500;
+        font-size: 1.125rem;
+        color: var(--color-text-body, #edf0f4);
+        list-style-type: none;
+    }
+
     @media screen and (max-width: 400px) {
         .grid {
             grid-template-columns: 1fr;
@@ -218,16 +250,7 @@ const testimonies = [
             font-size: 1.5rem;
             font-weight: 500;
         }
-        .h-grid-three {
-            grid-column: 1/5;
 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            font-size: 1.5rem;
-        }
         .trust-container {
             grid-column: 1/5;
             grid-row: 3;
@@ -248,17 +271,17 @@ const testimonies = [
         .card-one {
             grid-column: 3/5;
             grid-row: 1/3;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
         }
         .card-two {
             grid-column: 1/3;
-            grid-row: 4/6;
+            grid-row: 3/5;
         }
         .last-card {
             grid-column: 3;
             grid-row: 1;
-        }
-        .testimonies {
-            grid-column: 2/4;
         }
         .button {
             grid-column: 2/4;
